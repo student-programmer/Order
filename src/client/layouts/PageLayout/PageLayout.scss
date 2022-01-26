@@ -1,8 +1,25 @@
-.page-layout__viewport {
-  padding-top: 4rem;
+#headerBlock {
+    background-color: #FE3E3C;
 }
 
-.page-layout__nav-item--active {
-  font-weight: bold;
-  text-decoration: underline;
+#footerBlock .ui.menu .item {
+    padding: 0.3em !important;
+}
+
+@media only screen and (max-width: 400px) {
+    #headerBlock .ui.menu .item {
+        font-size: 16px !important;
+    }
+
+    #headerBlock .ui.menu .item:first-child {
+        padding: 0 5px 0 0 !important;
+    }
+
+    #headerBlock .ui.menu .item {
+        padding: 10px !important;
+    }
+
+    #footerBlock .ui.menu .item {
+        padding: initial !important;
+    }
 }

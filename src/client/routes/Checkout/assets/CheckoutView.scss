@@ -1,5 +1,72 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#checkoutBlock {
+    .form {
+        img {
+            display: inline-block;
+        }
+    }
+
+    #payBlock {
+        width: 30.82%;
+        font-weight: normal;
+        font-size: 18px;
+
+        .segment {
+            padding: 30px;
+        }
+
+        .ui.button {
+            border-radius: 1.5px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .order-total {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        a {
+            display: block;
+            color: #F6B100;
+        }
+    }
+
+    #paymentMethods {
+        font-size: 18px;
+
+/*        .ui.checkbox label:before,
+        .ui.checkbox label:after {
+            width: 30px;
+            height: 30px;
+        }*/
+    }
+
+    .item {
+        .price {
+            font-weight: 600;
+            font-size: 22px;
+            color: #000000;
+        }
+    }
+
+    .quantity {
+        width: 5em;
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+    }
+
+    .payment-method-logo {
+        max-width: 5em;
+        max-height: 1em;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .ui.items:not(.unstackable) > .item > .image, .ui.items:not(.unstackable) > .item > .image > img {
+        max-width: 150px !important;
+    }
 }

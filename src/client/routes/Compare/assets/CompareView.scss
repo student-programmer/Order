@@ -1,5 +1,61 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#compareBlock {
+
+    .segment {
+        padding: 78px;
+    }
+
+    .vs-divided {
+        font-weight: 500;
+        font-size: 36px;
+        text-align: center;
+        line-height: 1em;
+
+        color: #078549;
+    }
+
+    .form {
+        text-align: center;
+    }
+
+    .compare-button {
+        text-align: center;
+        width: 351px;
+        height: 39px;
+
+        .button {
+            width: 100%;
+        }
+    }
+
+}
+
+#compareListTable {
+    border: none;
+
+    .ui.image {
+        margin: auto;
+        max-width: 5em;
+        max-height: 5em;
+    }
+
+    tr td:first-child {
+        font-weight: 600;
+        font-size: 18px;
+
+        color: #000000;
+    }
+
+    tr td {
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .compare-button {
+        width: initial !important;
+
+        .button {
+            width: initial !important;
+        }
+    }
 }

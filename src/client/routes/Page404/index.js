@@ -1,6 +1,13 @@
-import HomeView from './components/HomeView'
+import React from 'react';
+import Loadable from 'react-loadable';
 
-// Sync route definition
+const Page404Container = Loadable({
+  loader: () => import('./containers/Page404Container'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 export default {
-  component : HomeView
+    component: Page404Container
 }

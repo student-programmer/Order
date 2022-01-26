@@ -1,5 +1,57 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#compareVendorBlock {
+    
+    .vs-divided {
+        font-weight: 500;
+        font-size: 36px;
+        text-align: center;
+        line-height: 1em;
+
+        color: #078549;
+    }
+    
+    .table {
+        .image {
+            margin: auto;
+            max-width: 5em;
+            max-height: 5em;
+        }
+        
+        font-size: 18px;
+        
+        tr td:first-child {
+            font-weight: 500;
+        }
+    }
+    
+    .compare-button {
+        text-align: center;
+    }
+    
+    button {
+        width: 351px;
+        height: 39px;
+    }
+    
+    .more-button {
+        color: #078549;
+        margin-left: 2px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    #compareVendor {
+        .ui.image {
+            margin: auto;
+        }
+    }
+}
+
+.modal-countries.ui.modal {
+    /*padding: 50px 70px;*/
+    
+    .header {
+        text-align: center !important;
+    }
+    
+    /*max-height: 600px;*/
 }

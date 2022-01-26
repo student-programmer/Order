@@ -1,5 +1,61 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#offerBlock {
+    
+    
+    .info-block {
+        padding: 42px;
+    }
+    
+    .item {
+        
+        .title {
+            font-weight: 800;
+            font-size: 20px;
+        }
+        
+        .logo {
+            width: 18.65em;
+            height: 16em;
+            
+            img {
+                width: 15em;
+                max-height: 12em;
+            }
+        }
+        
+        .price {
+            font-weight: 600;
+            font-size: 22px;
+            color: #000000;
+        }
+        
+        .old-price {
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration-line: line-through;
+            color: #858585;
+            margin-left: 1em;
+        }
+    }
+    
+    .quantity {
+        width: 5em;
+        
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button {  
+            opacity: 1;
+        }
+    }
+    
+    .category {
+        font-size: 16px;
+
+        color: #8C8C8C;
+    }
+    
+    .category-value {
+        font-size: 16px;
+
+        color: #000000;
+    }
+    
 }

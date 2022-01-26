@@ -1,5 +1,44 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#registerBlock {
+    border: none;
+
+    h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 39px;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+
+        margin: 25px 0;
+    }
+
+    #registerButton{
+        text-align: center;
+        margin: 76px 0;
+
+        button {
+            width: 300px;
+            height: 39px;
+        }
+
+        a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: underline;
+
+            color: #000000;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #registerBlock #registerButton button {
+        width: 300px !important;
+    }
 }

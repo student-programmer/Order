@@ -1,38 +1,208 @@
-import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
+import React from 'react'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
-/*  This is a container component. Notice it does not contain any JSX,
-    nor does it import React. This component is **only** responsible for
-    wiring in the actions and state necessary to render a presentational
-    component - in this case, the counter:   */
+import {
+  Form,
+  Tab,
+  Header,
+  Table,
+  Modal,
+  Icon
+} from 'semantic-ui-react'
 
-import Counter from '../components/Counter'
+import AccountView from '../components/AccountView'
 
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
+import {
+  getAccountInfo
+} from '../../../api/user'
 
-const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
+import {
+  getAccountOrders
+} from '../../../api/order'
+
+class AccountContainer extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      loading: 0,
+      accountInfo: false,
+      orders: false,
+    }
+
+    this.getAccountInfo()
+    this.getAccountOrders()
+  }
+
+  componentWillReceiveProps (nextProps) {
+  }
+
+  getAccountInfo = () => {
+    let result = getAccountInfo()
+
+    result.then(
+      result => {
+        let {
+          status,
+          row,
+        } = result
+        if (status) {
+          this.setState({
+            accountInfo: row,
+          })
+        }
+      },
+      error => {
+        alert('Rejected: ' + error) // error - аргумент reject
+      }
+    )
+  }
+
+  getAccountOrders = () => {
+    let result = getAccountOrders()
+
+    result.then(
+      result => {
+        let {
+          status,
+          rows,
+        } = result
+        if (status) {
+          this.setState({
+            orders: rows,
+          })
+        }
+      },
+      error => {
+        alert('Rejected: ' + error) // error - аргумент reject
+      }
+    )
+  }
+
+  getPanes = () => {
+    let {
+      accountInfo,
+      orders
+    } = this.state
+    return [
+      {
+        menuItem: 'Account info',
+        render: () => (
+          <Tab.Pane>
+            <Form className="edit-account-form">
+              <Form.Group widths="equal">
+                <Form.Input
+                  fluid
+                  label="Your email"
+                  placeholder="Your email"
+                  value={accountInfo['email']}
+                />
+                <Form.Input
+                  fluid
+                  label="Your password"
+                  placeholder="Your password"
+                  type="password"
+                  value={accountInfo['password']}
+                />
+              </Form.Group>
+              <Form.Group widths="equal" className="edit-account-button">
+                <Form.Button
+                  basic
+                  fluid
+                  color="red"
+                  content="Edit"
+                />
+                <Form.Button
+                  primary
+                  fluid
+                  content="Save"
+                />
+              </Form.Group>
+            </Form>
+          </Tab.Pane>
+        )
+      },
+      {
+        menuItem: 'Purchase',
+        render: () => (
+          <Tab.Pane id="purchaseBlock">
+            <Header
+              as="h1"
+              textAlign="center"
+            >
+              Your last purchase
+            </Header>
+            <Table
+              basic
+              celled
+              textAlign="center"
+            >
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>№</Table.HeaderCell>
+                  <Table.HeaderCell>Item</Table.HeaderCell>
+                  <Table.HeaderCell>Price</Table.HeaderCell>
+                  <Table.HeaderCell>Code</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+
+              <Table.Body>
+                {Object.keys(orders).map((rowKey) => (
+                  <Table.Row>
+                    <Table.Cell>
+                      {parseInt(rowKey) + 1}
+                    </Table.Cell>
+                    <Table.Cell>
+                      {orders[rowKey]['item']}
+                    </Table.Cell>
+                    <Table.Cell>
+                      ${orders[rowKey]['price']}
+                    </Table.Cell>
+                    <Table.Cell>
+                      <Modal
+                        closeIcon
+                        dimmer="inverted"
+                        trigger={<a className="show-coupon">Show Code</a>}
+                        size="mini"
+                      >
+                        <Modal.Content className="coupon-modal">
+                          <p>
+                            Your code - <span className="coupon">{orders[rowKey]['code']}</span>
+                            <CopyToClipboard
+                              text={orders[rowKey]['code']}
+                            >
+                              <Icon
+                                name="copy outline"
+                              />
+                            </CopyToClipboard>
+                          </p>
+                          {(orders[rowKey]['link']) && (
+                            <p>
+                              Follow this link <a className="link" target="_blank"
+                                                  href={orders[rowKey]['link']}>{orders[rowKey]['link']}</a> to activate
+                              your code
+                            </p>
+                          )}
+                        </Modal.Content>
+                      </Modal>
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+
+              </Table.Body>
+            </Table>
+          </Tab.Pane>
+        )
+      },
+    ]
+  }
+
+  render () {
+    return <AccountView
+      {...this.state}
+      getPanes={this.getPanes}
+    />
+  }
 }
 
-const mapStateToProps = (state) => ({
-  counter : state.counter
-})
-
-/*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
-
-    import { createSelector } from 'reselect'
-    const counter = (state) => state.counter
-    const tripleCount = createSelector(counter, (count) => count * 3)
-    const mapStateToProps = (state) => ({
-      counter: tripleCount(state)
-    })
-
-    Selectors can compute derived data, allowing Redux to store the minimal possible state.
-    Selectors are efficient. A selector is not recomputed unless one of its arguments change.
-    Selectors are composable. They can be used as input to other selectors.
-    https://github.com/reactjs/reselect    */
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default AccountContainer

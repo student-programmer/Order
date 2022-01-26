@@ -1,38 +1,102 @@
+import React from 'react'
 import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
+import {
+    withRouter
+} from 'react-router-dom'
 
-/*  This is a container component. Notice it does not contain any JSX,
-    nor does it import React. This component is **only** responsible for
-    wiring in the actions and state necessary to render a presentational
-    component - in this case, the counter:   */
+import BundleView from '../components/BundleView'
 
-import Counter from '../components/Counter'
+import {
+    getFilterList
+} from '../../../api/filter'
 
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
+import {
+    cloneObject
+} from '../../../inc/inc'
+
+import { fetchCartOffers }  from '../../../actions/getCartOffers'
 
 const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
+    fetchCartOffers
 }
 
-const mapStateToProps = (state) => ({
-  counter : state.counter
+const mapStateToProps = (store) => ({
+    getCartOffers  : store.getCartOffers
 })
 
-/*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
+class BundleContainer extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading    : 0,
+            filter     : false,
+            filterData : {},
+            searchData : { 'category' : 'bundle' }
+        }
 
-    import { createSelector } from 'reselect'
-    const counter = (state) => state.counter
-    const tripleCount = createSelector(counter, (count) => count * 3)
-    const mapStateToProps = (state) => ({
-      counter: tripleCount(state)
-    })
+        this.getFilterList()
+    }
 
-    Selectors can compute derived data, allowing Redux to store the minimal possible state.
-    Selectors are efficient. A selector is not recomputed unless one of its arguments change.
-    Selectors are composable. They can be used as input to other selectors.
-    https://github.com/reactjs/reselect    */
+    getFilterList = () => {
+        let {
+            searchData
+        } = this.state
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+        let result = getFilterList(searchData);
+
+        result.then(
+            result => {
+                let {
+                    status,
+                    rows,
+                } = result
+                if (status) {
+                    this.setState({
+                        filter : rows,
+                    })
+                }
+            },
+            error => {
+              alert("Rejected: " + error); // error - аргумент reject
+            }
+        );
+    }
+
+    actionCheckedBrands = (brands) => {
+        let {
+            searchData
+        } = this.state
+        let br = cloneObject(brands)
+        let sD = cloneObject(searchData)
+        sD['brands'] = br
+
+        this.setState({
+            searchData: sD
+        })
+    }
+
+    actionClickFind = (filterData) => {
+        let {
+            searchData
+        } = this.state
+        let br = cloneObject(filterData)
+        let sD = cloneObject(searchData)
+
+        let array = Object.assign(br, sD);
+
+        this.setState({
+            searchData: array
+        })
+    }
+
+    render() {
+        return <BundleView
+                    { ...this.state }
+
+                    actionClickFind={ this.actionClickFind }
+                    actionCheckedBrands={ this.actionCheckedBrands }
+                />
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BundleContainer))

@@ -1,38 +1,130 @@
-import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
+import React from 'react'
 
-/*  This is a container component. Notice it does not contain any JSX,
-    nor does it import React. This component is **only** responsible for
-    wiring in the actions and state necessary to render a presentational
-    component - in this case, the counter:   */
+import {
+    Image,
+    Checkbox,
+    Modal,
+    Header
+} from 'semantic-ui-react'
 
-import Counter from '../components/Counter'
+import CompareVendorsView from '../components/CompareVendorsView'
 
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
+import {
+    getCompareVendorsInfo
+} from '../../../api/vendor'
 
-const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
+class CompareVendorsContainer extends React.Component{
+    constructor(props) {
+        super(props);
+
+        let vendorsStr = props.match.params.vendors;
+        let vendors = this.parseType(vendorsStr);
+
+        this.state = {
+            loading     : 0,
+            vendors     : vendors,
+            info        : false,
+            compareInfo : false
+        }
+
+        this.getCompareVendorsInfo()
+    }
+
+    parseType = (vendorsStr) => {
+        let str = vendorsStr.replace('compare-', '')
+
+        let arr = str.split('-with-');
+
+        return arr
+    }
+
+    getCompareVendorsInfo = () => {
+        let {
+            vendors
+        } = this.state
+
+        let result = getCompareVendorsInfo(vendors);
+
+        result.then(
+            result => {
+                let {
+                    status,
+                    info,
+                    rows
+                } = result
+
+                if (status) {
+                    this.setState({
+                        info        : info,
+                        compareInfo : rows,
+                    })
+                }
+            },
+            error => {
+              alert("Rejected: " + error); // error - аргумент reject
+            }
+        );
+    }
+
+    getTableCell = (type, cell) => {
+        switch(type) {
+            case 'image':
+                return <Image src={cell} />
+                break;
+            case 'text':
+                return cell
+                break;
+            case 'checkbox':
+                if (parseInt(cell)) {
+                    return <Image src='/images/check.png' />
+                } else {
+                    return <Image src='/images/cancel.png' />
+                }
+                break;
+            case 'dropdown':
+                let countries = []
+                let i = 1
+                for (let k in cell) {
+                    countries.push(cell[i])
+                    i++;
+                    if (i >= 8) {
+                        break;
+                    }
+                }
+
+                return (
+                    <React.Fragment>
+                        { countries.join(', ') }
+                        <Modal
+                            trigger={<span className='more-button'>more</span>}
+                            size='mini'
+                            dimmer='inverted'
+                            className='modal-countries'
+                            closeIcon
+                        >
+                            <Modal.Content image scrolling>
+                                <Modal.Description>
+                                    <Header>All countries</Header>
+                                    {Object.keys(cell).map((key) => (
+                                        <p>{ cell[key] }</p>
+                                    ))}
+                                </Modal.Description>
+                            </Modal.Content>
+                        </Modal>
+                    </React.Fragment>
+                )
+
+                break;
+        }
+    }
+
+    render() {
+        return <CompareVendorsView
+                    {...this.state}
+
+                    getTableCell={ this.getTableCell }
+                />
+    }
 }
 
-const mapStateToProps = (state) => ({
-  counter : state.counter
-})
-
-/*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
-
-    import { createSelector } from 'reselect'
-    const counter = (state) => state.counter
-    const tripleCount = createSelector(counter, (count) => count * 3)
-    const mapStateToProps = (state) => ({
-      counter: tripleCount(state)
-    })
-
-    Selectors can compute derived data, allowing Redux to store the minimal possible state.
-    Selectors are efficient. A selector is not recomputed unless one of its arguments change.
-    Selectors are composable. They can be used as input to other selectors.
-    https://github.com/reactjs/reselect    */
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default CompareVendorsContainer

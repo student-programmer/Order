@@ -1,6 +1,15 @@
-import HomeView from './components/HomeView'
+import React from 'react';
+import Loadable from 'react-loadable';
 
-// Sync route definition
+import './assets/VendorView.scss'
+
+const VendorContainer = Loadable({
+  loader: () => import('./containers/VendorContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 export default {
-  component : HomeView
+    component: VendorContainer
 }

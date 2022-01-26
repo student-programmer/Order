@@ -1,5 +1,95 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#accountBlock {
+    .ui.menu {
+        border: none;
+
+        .item {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            color: #FE3E3C;
+            border: none;
+        }
+
+        .item.active {
+            color: #000000;
+        }
+
+    }
+
+    .segment {
+        border: none;
+    }
+
+    #purchaseBlock {
+        padding: 35px 210px;
+
+        table.table {
+            border: 1px solid #666666;
+            box-shadow: -3px -2px 8px rgba(227, 227, 227, 0.15);
+            border-radius: 5px;
+
+            tr {
+                border-bottom: 1px solid #666666;
+
+                th,
+                td {
+                    border-left: 1px solid #666666;
+                }
+
+                th:first-child,
+                td:first-child {
+                    border-left: none;
+                }
+
+                td {
+                    border-top: 1px solid #666666;
+                }
+            }
+        }
+    }
+
+    .edit-account-form {
+        width: 70%;
+        margin: 3em auto;
+
+        .edit-account-button {
+            width: 50%;
+            margin: 2em auto;
+        }
+    }
+
+    .show-coupon {
+        font-size: 16px;
+        cursor: pointer;
+        color: #FE3E3C;
+    }
+
+}
+
+.coupon-modal {
+    font-size: 20px;
+    text-align: center;
+    padding: 3em 0 3em 0;
+
+    .coupon {
+        font-weight: bold;
+    }
+
+    .link {
+        color: #F6B100;
+    }
+
+    .icon {
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .edit-account-form {
+        width: 70%;
+        margin: 2em !important;
+    }
 }

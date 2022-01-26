@@ -1,6 +1,15 @@
-import HomeView from './components/HomeView'
+import React from 'react';
+import Loadable from 'react-loadable';
 
-// Sync route definition
+import './assets/ContactUsView.scss'
+
+const ContactUsContainer = Loadable({
+  loader: () => import('./containers/ContactUsContainer'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
 export default {
-  component : HomeView
+    component: ContactUsContainer
 }

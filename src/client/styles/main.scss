@@ -1,21 +1,814 @@
-@import 'base';
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
-// Some best-practice CSS that's useful for most apps
-// Just remove them if they're not what you want
-html {
-  box-sizing: border-box;
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-ExtraBold.eot');
+    src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),
+        url('/fonts/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-ExtraBold.woff') format('woff'),
+        url('/fonts/Gilroy-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Heavy.eot');
+    src: local('Gilroy Heavy'), local('Gilroy-Heavy'),
+        url('/fonts/Gilroy-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-Heavy.woff') format('woff'),
+        url('/fonts/Gilroy-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-LightItalic.eot');
+    src: local('Gilroy Light Italic'), local('Gilroy-LightItalic'),
+        url('/fonts/Gilroy-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-LightItalic.woff') format('woff'),
+        url('/fonts/Gilroy-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-ThinItalic.eot');
+    src: local('Gilroy Thin Italic'), local('Gilroy-ThinItalic'),
+        url('/fonts/Gilroy-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-ThinItalic.woff') format('woff'),
+        url('/fonts/Gilroy-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-BlackItalic.eot');
+    src: local('Gilroy Black Italic'), local('Gilroy-BlackItalic'),
+        url('/fonts/Gilroy-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-BlackItalic.woff') format('woff'),
+        url('/fonts/Gilroy-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-BoldItalic.eot');
+    src: local('Gilroy Bold Italic'), local('Gilroy-BoldItalic'),
+        url('/fonts/Gilroy-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-BoldItalic.woff') format('woff'),
+        url('/fonts/Gilroy-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-SemiBold.eot');
+    src: local('Gilroy SemiBold'), local('Gilroy-SemiBold'),
+        url('/fonts/Gilroy-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-SemiBold.woff') format('woff'),
+        url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-UltraLightItalic.eot');
+    src: local('Gilroy UltraLight Italic'), local('Gilroy-UltraLightItalic'),
+        url('/fonts/Gilroy-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-UltraLightItalic.woff') format('woff'),
+        url('/fonts/Gilroy-UltraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-SemiBoldItalic.eot');
+    src: local('Gilroy SemiBold Italic'), local('Gilroy-SemiBoldItalic'),
+        url('/fonts/Gilroy-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-SemiBoldItalic.woff') format('woff'),
+        url('/fonts/Gilroy-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Light.eot');
+    src: local('Gilroy Light'), local('Gilroy-Light'),
+        url('/fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-Light.woff') format('woff'),
+        url('/fonts/Gilroy-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-MediumItalic.eot');
+    src: local('Gilroy Medium Italic'), local('Gilroy-MediumItalic'),
+        url('/fonts/Gilroy-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-MediumItalic.woff') format('woff'),
+        url('/fonts/Gilroy-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-ExtraBoldItalic.eot');
+    src: local('Gilroy ExtraBold Italic'), local('Gilroy-ExtraBoldItalic'),
+        url('/fonts/Gilroy-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-ExtraBoldItalic.woff') format('woff'),
+        url('/fonts/Gilroy-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Regular.eot');
+    src: local('Gilroy Regular'), local('Gilroy-Regular'),
+        url('/fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-Regular.woff') format('woff'),
+        url('/fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-HeavyItalic.eot');
+    src: local('Gilroy Heavy Italic'), local('Gilroy-HeavyItalic'),
+        url('/fonts/Gilroy-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-HeavyItalic.woff') format('woff'),
+        url('/fonts/Gilroy-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Medium.eot');
+    src: local('Gilroy Medium'), local('Gilroy-Medium'),
+        url('/fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-Medium.woff') format('woff'),
+        url('/fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-RegularItalic.eot');
+    src: local('Gilroy Regular Italic'), local('Gilroy-RegularItalic'),
+        url('/fonts/Gilroy-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-RegularItalic.woff') format('woff'),
+        url('/fonts/Gilroy-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-UltraLight.eot');
+    src: local('Gilroy UltraLight'), local('Gilroy-UltraLight'),
+        url('/fonts/Gilroy-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-UltraLight.woff') format('woff'),
+        url('/fonts/Gilroy-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Bold.eot');
+    src: local('Gilroy Bold'), local('Gilroy-Bold'),
+        url('/fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-Bold.woff') format('woff'),
+        url('/fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Thin.eot');
+    src: local('Gilroy Thin'), local('Gilroy-Thin'),
+        url('/fonts/Gilroy-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-Thin.woff') format('woff'),
+        url('/fonts/Gilroy-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Black.eot');
+    src: local('Gilroy Black'), local('Gilroy-Black'),
+        url('/fonts/Gilroy-Black.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Gilroy-Black.woff') format('woff'),
+        url('/fonts/Gilroy-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+#headerBlock {
+    height: 5rem;
+
+    display: flex!important;
+
+    .menu:not(.transition) {
+        height: 100%;
+        background-color: transparent;
+    }
+
+    .menu.transition {
+        background-color: #FE3E3C;
+
+        .item {
+            color: white!important;
+        }
+    }
+
+    .ui.menu .item {
+        font-style: normal!important;
+        font-weight: bold!important;
+        font-size: 20px!important;
+        line-height: 24px!important;
+        align-items: center!important;
+
+        color: #FFFFFF;
+        padding: .7em .21em;
+    }
+
+    .ui.menu .item:first-child {
+        padding: 0 19px 0 0;
+    }
+
+    .ui.menu .item {
+        padding: 20px;
+    }
+
+    .ui.dropdown > .dropdown.icon {
+        color: #FFFFFF;
+        margin-left: .3em;
+    }
+
+    .ui.menu .right.menu .item {
+        padding: 14px 6.66px;
+    }
+
+    margin-bottom: 0.429rem;
+}
+
+#sliderBlock {
+    margin-bottom: 1.5em;
+
+    #previewSlide {
+        max-width: 100%;
+        height: 24em;
+    }
+}
+
+#breadcrumb {
+    margin-bottom: 4em;
+    display: block;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.no-padding {
+    padding: 0!important;
+}
+
+.no-margin-top {
+    margin-top: 0!important;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0!important;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0!important;
+}
+
+.no-padding-right {
+    padding-right: 0!important;
+}
+
+.color-green {
+    color: #078549;
+}
+
+.custom-slick.prev,
+.custom-slick.next {
+    color: #FE3E3C;
+    font-size: 0;
+    line-height: 0;
+    position: absolute!important;
+    top: 50%;
+    display: block;
+/*    width: 20px;
+    height: 20px;*/
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.custom-slick.prev {
+    left: -4.7rem;
+}
+
+.custom-slick.next {
+    right: -4.7rem;
+}
+
+.slick-dots {
+    bottom: -35px;
+
+    li {
+        margin: 0 11px;
+
+        .slider-paging {
+            opacity: .3;
+            background-color: #FE3E3C;
+            height: 3px;
+            width: 30px;
+        }
+    }
+
+    li.slick-active {
+        .slider-paging {
+            opacity: 1;
+        }
+    }
+}
+
+.slick-slide > .card:focus {
+    outline: none !important;
+}
+
+
+.ui.grid > .row > div {
+    /*background-color: #FFFFFF;*/
+}
+
+.sort-by-block {
+    float: right;
+    margin-bottom: 10px;
+
+    .ui.dropdown {
+        margin-left: 10px;
+    }
+}
+
+#couponsBlock {
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .to-cart-button {
+        padding: 0.78571429em 1.2em 0.78571429em;
+    }
+}
+
+.coupon-item {
+    overflow: hidden;
+
+    .first-block {
+        width: 27.8% !important;
+    }
+
+    .second-block {
+        width: 50.66% !important;
+    }
+
+    .ribbon {
+        position: absolute;
+        width: 150px;
+        background-color: #078549;
+        text-align: center;
+        z-index: 9;
+        font-weight: bold;
+        font-size: 8px;
+        color: #FFFFFF;
+        left: -73px;
+        top: -10px;
+        -webkit-transform: rotate(-41.37deg);
+        -moz-transform:    rotate(-41.37deg);
+        -ms-transform:     rotate(-41.37deg);
+        -o-transform:      rotate(-41.37deg);
+    }
+}
+
+.bundle-item {
+    .first-block {
+        width: 18.8% !important;
+    }
+
+    .second-block {
+        width: 59.66% !important;
+    }
+}
+
+.coupon-item,
+.bundle-item {
+
+    /*margin: 1.4em 0;*/
+
+    .transition.visible.out-of-stock {
+        background: rgba(0, 0, 0, 0.3)!important;
+        box-shadow: -3px -2px 8px rgba(227, 227, 227, 0.15)!important;
+        border-radius: 5px!important;
+        display: flex!important;
+
+        .content .title {
+            font-weight: 800!important;
+            font-size: 30px!important;
+
+            color: white!important;
+        }
+    }
+
+    .first-block {
+
+        .logo {
+            max-width: 11.5rem;
+            max-height: 5em;
+        }
+
+        .verified-block {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: initial;
+
+            margin: 12px 0;
+        }
+
+        .review {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            text-decoration-line: underline;
+
+            color: #078549;
+        }
+    }
+
+
+    .title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    .brands-block > a {
+        margin-right: 5px;
+        font-size: 12px;
+        color: black;
+        text-decoration: underline;
+        text-transform: lowercase;
+    }
+
+    .price-block {
+        margin-bottom: 10px;
+    }
+
+    .price-block > * {
+        margin: 0 10px 0 0;
+    }
+
+    .old-price {
+        color: #D0D0D0;
+        text-decoration: line-through;
+    }
+
+    .price {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 17px;
+        line-height: 21px;
+        color: #FE3E3C;
+    }
+
+    .discount-title {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+
+        color: #078549;
+    }
+
+    .description {
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+
+        color: #000000;
+
+        margin-bottom: 10px;
+    }
+
+    .sub-description {
+        font-size: 10px;
+
+        color: #A1A1A1;
+    }
+
+    .third-block {
+        width: 21.54%;
+
+        button.ui.button,
+        a.ui.button {
+            width: 9.71em;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .third-block {
+        width: 100% !important;
+
+        button.ui.button,
+        a.ui.button {
+            width: 9.71em;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #leftSidebar {
+        width: 22% !important;
+    }
+
+    #contentBlock {
+        width: 56.5% !important;
+    }
+}
+#leftSidebar {
+
+    label {
+        font-weight: normal;
+    }
+
+    i.icon {
+        color: #FE3E3C;
+    }
+
+    .header {
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+
+        margin-bottom: 1.1rem;
+    }
+
+    .subheader {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .field {
+        line-height: 26px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .center-button {
+        text-align: center;
+    }
+}
+
+#leftSidebar > div,
+#couponsBlock div.coupon-item,
+#couponsBlock div.bundle-item,
+#rightSidebar > div {
+    padding: 19px;
+    background-color: #FFFFFF;
+    box-shadow: -3px -2px 8px rgba(227, 227, 227, 0.15);
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+}
+
+#contentBlock {
+    div.coupon-item,
+    div.bundle-item {
+        /*padding-left: 0;*/
+        /*height: 10.215rem;*/
+    }
+}
+
+#rightSidebar {
+    width: 21.5% !important;
+
+    .item {
+        .header {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .meta {
+            font-size: 12px;
+            text-decoration-line: underline;
+
+            color: #6F6F6F;
+        }
+
+        .description {
+            font-weight: bold;
+            font-size: 14px;
+
+            color: #078549;
+        }
+
+    }
+
+}
+
+.header-top {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 25px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.color-red {
+    color: #FE3E3C;
+}
+
+.h2 {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.h3 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+p {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#footerBlock {
+
+    margin-top: 11em;
+    background: #000210;
+    font-size: 16px;
+    line-height: 19px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+
+    .ui.menu .item {
+        font-size: 16px;
+        color: #FFFFFF;
+    }
+
+    color: #FFFFFF;
+
+    .container {
+        padding: 1em 0;
+    }
+
+    .right-block {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        align-items: center;
+        text-align: right;
+
+        color: #000000;
+    }
+
+    .menu {
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .icon {
+        background-color: white;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+#bestVpnDeals {
+
+    .image:not(.header) {
+        padding: 1em;
+    }
+
+    .content {
+        padding-left: 0;
+    }
+}
+
+
+ol.ui.list ol li ol li:before {
+    margin-left: -2.5em;
+}
+
+
+.top-horizontal-block {
+
+    .price {
+        font-weight: 600;
+        font-size: 22px;
+
+        color: #FE3E3C;
+    }
+
+    .menu.secondary .item.active {
+        border: 2px solid #FE3E3C;
+        box-sizing: border-box;
+        border-radius: 5px;
+
+        background: transparent;
+
+        color: #FE3E3C;
+    }
+
+    .extra.content {
+        border-top: none!important;
+    }
+
+    .content {
+        border: none;
+
+        .title {
+            font-weight: 600;
+            font-size: 18px;
+
+            color: #000000;
+        }
+    }
+
+    .slick-slide {
+        margin: 0 15px;
+    }
+
+    .slick-track .slick-current {
+        margin-left: 0;
+    }
+
+    .card,
+    .placeholder {
+
+        .header {
+            height: 150px;
+            vertical-align: middle;
+        }
+
+        box-shadow: 0px 15px 20px rgba(206, 206, 227, 0.15);
+        border-radius: 10px;
+    }
+
+    .card{
+
+        .header {
+            background: #FCFCFD;
+
+            display: table-cell;
+        }
+
+        background: #FFFFFF;
+
+    }
+
+    .card > div,
+    .placeholder > div {
+        padding: 20px;
+    }
 }

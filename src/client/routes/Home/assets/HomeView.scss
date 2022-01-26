@@ -1,5 +1,266 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#homePage {
+    .container {
+        padding: 100px 0;
+
+        .h1 {
+            margin-bottom: 40px;
+        }
+    }
+
+    .white-block {
+        background-color: #FFFFFF;
+    }
+
+    .grey-block {
+        background-color: #FCFCFD;
+    }
+
+    .h1 {
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 50px;
+
+        .subheader {
+            font-size: 30px;
+            line-height: 30px;
+        }
+    }
+
+    .title {
+        font-weight: 500;
+        font-size: 20px;
+        color: #241B04;
+        width: 70%;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    .title-wide {
+        font-weight: 500;
+        font-size: 20px;
+        color: #241B04;
+        width: 80%;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    .segment.tab {
+        box-shadow: none;
+        background: transparent;
+    }
+
+    #chooseUsBlock {
+        div.column > div {
+            background: #FCFCFD;
+
+            box-shadow: 0px 15px 20px rgba(206, 206, 227, 0.15);
+            border-radius: 10px;
+        }
+    }
+
+    #categoryBlock {
+        div.column > div {
+            background: #FCFCFD;
+
+            box-shadow: 0px 15px 20px rgba(206, 206, 227, 0.15);
+            border-radius: 10px;
+
+            .description {
+                background: #FFFFFF;
+
+                padding: 27px;
+
+
+                .title {
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: #241B04;
+
+                    margin-bottom: 19px;
+                }
+            }
+        }
+    }
+
+    #bundleBlock {
+        font-size: 30px;
+        line-height: 35px;
+        color: #241B04;
+
+        .old-price {
+            text-decoration: line-through;
+        }
+
+        .btn-block > div {
+            display: inline-block;
+        }
+
+        #bundleDesc {
+            padding-left: 90px;
+        }
+
+        .float-right {
+            float: right;
+        }
+    }
+
+    #recommendationBlock {
+        .menu.secondary .item.active {
+            border: 2px solid #FE3E3C;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+            background: transparent;
+
+            color: #FE3E3C;
+        }
+
+        .slick-slide {
+            margin: 0 15px;
+        }
+
+        .slick-track .slick-current {
+            margin-left: 0;
+        }
+    /*    .slick-track .slick-active:last-child {
+            margin-right: 0;
+        }*/
+
+        .content:not(.extra) {
+            min-height: 214px;
+        }
+
+        .card,
+        .placeholder {
+
+            .header {
+                height: 150px;
+                vertical-align: middle;
+            }
+
+            box-shadow: 0px 15px 20px rgba(206, 206, 227, 0.15);
+            border-radius: 10px;
+        }
+
+        .card{
+
+            .header {
+                background: #FCFCFD;
+
+                display: table-cell;
+            }
+
+            background: #FFFFFF;
+
+        }
+
+        .card > div,
+        .placeholder > div {
+            padding: 20px;
+        }
+    }
+
+    #buyWithDiscountBlock {
+        position: relative;
+    /*    background-image: url(/images/home/stop-paying-image.png);*/
+        /*background-size: cover;*/
+
+        /*min-height: 400px;*/
+        /*min-height: 29em;*/
+
+        div.button {
+            position: absolute;
+            width: 235px;
+            height: 60px;
+            bottom: 5%;
+            left: 40%;
+
+            .button {
+                width: 100%;
+            }
+        }
+
+    }
+
+    #feedbackBlock {
+
+        .card {
+            background: transparent;
+            box-shadow: none;
+
+            .header > * {
+                display: inline-block;
+            }
+
+            .header .image {
+                margin-bottom: 1em;
+            }
+
+            .name-block {
+                padding: 1em;
+            }
+
+            .name {
+                font-weight: 500;
+                font-size: 20px;
+
+                color: #241B04;
+            }
+
+            .date {
+                vertical-align: bottom;
+            }
+
+            .content {
+                background: #FFFFFF;
+                border-radius: 10px;
+                border-top: none;
+            }
+        }
+
+        .slick-slide {
+            margin: 0 26px;
+        }
+
+        .slick-track .slick-active:first-child {
+            margin-left: 0;
+        }
+
+        .slick-track .slick-active:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .item-block {
+        max-width: 250px;
+        height: 200px;
+    }
+
+    .block-title {
+        font-size: 50px;
+        line-height: 50px;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .block-title {
+        font-size: 35px !important;
+        line-height: 35px !important;
+    }
+
+    #buyWithDiscountBlock {
+
+        max-width: 300px !important;
+
+        div.button {
+            position: absolute;
+            width: auto !important;
+            left: 10%;
+
+            .button {
+                width: auto !important;
+            }
+        }
+    }
 }

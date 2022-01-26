@@ -1,5 +1,19 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#signinBlock {
+    width: 37.5em;
+
+    box-shadow: -3px -2px 8px rgba(227, 227, 227, 0.15);
+    border-radius: 5px;
+    border: none;
+
+    margin: auto;
+
+    padding: 78px;
+}
+
+
+@media only screen and (max-width: 400px) {
+    #signinBlock {
+        width: 24.5em !important;
+        padding: 18px !important;
+    }
 }

@@ -1,38 +1,121 @@
+import React from 'react'
 import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
 
-/*  This is a container component. Notice it does not contain any JSX,
-    nor does it import React. This component is **only** responsible for
-    wiring in the actions and state necessary to render a presentational
-    component - in this case, the counter:   */
+import SigninView from '../components/SigninView'
 
-import Counter from '../components/Counter'
+import {
+    withRouter
+} from 'react-router-dom'
 
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
+import { validateEmail } from '../../../inc/inc'
+
+import { sendSignIn } from '../../../api/user'
+
+import { fetchUser }  from '../../../actions/getUser'
 
 const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
+    fetchUser
 }
 
-const mapStateToProps = (state) => ({
-  counter : state.counter
+const mapStateToProps = (store) => ({
+    getUser  : store.getUser,
 })
 
-/*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
+class SigninContainer extends React.Component{
+    constructor(props) {
+        super(props);
 
-    import { createSelector } from 'reselect'
-    const counter = (state) => state.counter
-    const tripleCount = createSelector(counter, (count) => count * 3)
-    const mapStateToProps = (state) => ({
-      counter: tripleCount(state)
-    })
+        this.state = {
+            loading   : 1,
+            error: false,
+        }
+    }
 
-    Selectors can compute derived data, allowing Redux to store the minimal possible state.
-    Selectors are efficient. A selector is not recomputed unless one of its arguments change.
-    Selectors are composable. They can be used as input to other selectors.
-    https://github.com/reactjs/reselect    */
+    validateFormValues = () => {
+        let {
+            email,
+            password
+        } = this.state;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+        let {
+            email_error,
+        } = false;
+        if (!validateEmail(email)) {
+            email_error = true;
+        }
+        if (email_error) {
+            this.setState({
+                email_error        : email_error,
+            });
+            return false;
+        }
+
+        return true;
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+
+        if (!this.validateFormValues()) {
+            return false;
+        }
+
+        this.setState({
+            loading: 0,
+        });
+
+        let data = {...this.state}
+
+        let result = sendSignIn(data);
+
+        result.then(
+            result => {
+                let {
+                    status,
+                    user,
+                    error
+                } = result
+                if (parseInt(status)) {
+                    this.props.fetchUser(user)
+                    this.props.history.push('/account')
+
+                } else {
+                    this.setState({
+                        loading: 1,
+                        error: error
+                    })
+                }
+            },
+            error => {
+              alert("Rejected: " + error); // error - аргумент reject
+            }
+        );
+
+    }
+
+    handleInputChange = (e, { name, value }) => {
+        if (name == 'email' && this.state['email_error']) {
+            if (validateEmail(value)) {
+                this.setState({
+                    [name]          : value,
+                    ['email_error'] : false
+                });
+                return;
+            }
+        }
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    render() {
+        return <SigninView
+                    {...this.state}
+                    handleSubmit={ this.handleSubmit }
+                    handleInputChange={ this.handleInputChange }
+                />
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SigninContainer))

@@ -1,12 +1,46 @@
 import React from 'react'
-import DuckImage from '../assets/Duck.jpg'
-import './HomeView.scss'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
+import {
+  Container,
+  Breadcrumb,
+  Tab
+} from 'semantic-ui-react'
 
-export const HomeView = () => (
+const head = (url) => {
+  const pageUrl = (typeof url !== 'undefined') ? url : ''
+  let canonical = 'https://savingsdealz.com' + pageUrl
+  return (
+    <Helmet key={Math.random()}>
+      <title>Savingsdealz</title>
+      <meta name="robots" content="index, follow"/>
+      <link rel="canonical" href={canonical}/>
+    </Helmet>
+  )
+}
+
+export const AccountView = (props) => (
   <div>
-    <h4>Welcome!</h4>
-    <img alt='This is a duck, because Redux!' className='duck' src={DuckImage} />
+    {head(props.url)}
+    <Container>
+      <Breadcrumb id="breadcrumb">
+        <Breadcrumb.Section
+          link
+          as={Link}
+          to="/"
+        >
+          Main
+        </Breadcrumb.Section>
+        <Breadcrumb.Divider icon="right chevron"/>
+        <Breadcrumb.Section active>
+          Account
+        </Breadcrumb.Section>
+      </Breadcrumb>
+
+      <Tab id="accountBlock" panes={props.getPanes()}/>
+    </Container>
   </div>
 )
 
-export default HomeView
+export default AccountView

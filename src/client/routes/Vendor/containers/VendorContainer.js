@@ -1,38 +1,97 @@
-import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
+import React from 'react'
 
-/*  This is a container component. Notice it does not contain any JSX,
-    nor does it import React. This component is **only** responsible for
-    wiring in the actions and state necessary to render a presentational
-    component - in this case, the counter:   */
+import VendorView from '../components/VendorView'
 
-import Counter from '../components/Counter'
+import { getVendorInfo } from '../../../api/vendor'
 
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
+class VendorContainer extends React.Component{
+    constructor(props) {
+        super(props);
 
-const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
+        let vendor = props.match.params.vendor;
+        let vendorId = this.parseType(vendor);
+
+        this.state = {
+            loading   : 0,
+            activeIndex : 0,
+            vendorId: vendorId,
+            info: false
+        }
+
+        this.getVendorInfo()
+    }
+
+    parseType = (vendor) => {
+        let arr = vendor.split('-');
+
+        return arr[arr.length-1]
+    }
+
+    getVendorInfo = () => {
+
+        let {
+            vendorId
+        } = this.state
+
+        let result = getVendorInfo({ vendorId: vendorId });
+        result.then(
+            result => {
+                let {
+                    status,
+                    row
+                } = result
+
+                if (status) {
+                    this.setState({
+                        info : row,
+                    })
+                }
+            },
+            error => {
+              alert("Rejected: " + error); // error - аргумент reject
+            }
+        );
+    }
+
+    handleClickAccordion = (e, titleProps) => {
+        const { index } = titleProps
+        const { activeIndex } = this.state
+        const newIndex = activeIndex === index ? -1 : index
+
+        this.setState({
+            activeIndex: newIndex
+        })
+    }
+
+    getCategoryUrl = () => {
+        let {
+            info
+        } = this.state
+
+        if (!info) return ''
+
+        let {
+            category
+        } = info
+
+        switch(category.toLowerCase()) {
+            case 'vpn':
+                return '/vpn'
+                break;
+            case 'bundle':
+                return '/bundle'
+                break;
+        }
+    }
+
+    render() {
+        return <VendorView
+                    {...this.state}
+                    handleClickAccordion={ this.handleClickAccordion }
+
+                    getCategoryUrl={ this.getCategoryUrl }
+                />
+    }
 }
 
-const mapStateToProps = (state) => ({
-  counter : state.counter
-})
-
-/*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
-
-    import { createSelector } from 'reselect'
-    const counter = (state) => state.counter
-    const tripleCount = createSelector(counter, (count) => count * 3)
-    const mapStateToProps = (state) => ({
-      counter: tripleCount(state)
-    })
-
-    Selectors can compute derived data, allowing Redux to store the minimal possible state.
-    Selectors are efficient. A selector is not recomputed unless one of its arguments change.
-    Selectors are composable. They can be used as input to other selectors.
-    https://github.com/reactjs/reselect    */
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default VendorContainer

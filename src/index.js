@@ -23,7 +23,7 @@ app.use(
   })
 )
 
-const port = process.env.PORT || 3000
+const port = 80
 
 // To be able to serve static files
 app.use(express.static('public'))
@@ -69,6 +69,6 @@ app.get('*', (req, res) => {
 
 Loadable.preloadAll().then(() => {
   app.listen(port, () => {
-    console.log('Running on http://localhost:3000/')
+    console.log(`Running on http://localhost:${port}`)
   })
 })

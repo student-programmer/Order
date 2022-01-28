@@ -21,8 +21,8 @@ const head = (url) => {
   let canonical = "https://savingsdealz.com" + pageUrl;
   return (
     <Helmet key={Math.random()}>
-      <title>The best place to buy VPN with discount</title>
-      <meta name="description" content="See the best VPN with discount, based on price and users review"/>
+      <title>Choose a VPN service. One-click online security</title>
+      <meta name="description" content="An online VPN service that encrypts internet traffic and hides your physical location and IP address. Improve your privacy and security now"/>
       <meta name="robots" content="index, follow"/>
       <link rel="canonical" href={canonical} />
     </Helmet>
@@ -33,6 +33,11 @@ export const VpnView = (props) => (
   <div>
     <Container>
       <Grid>
+      <Grid.Row columns={1} textAlign="center">
+              <Grid.Column className="block-title">
+              <h1>The Best VPN Services for 2022 </h1>
+              </Grid.Column>
+            </Grid.Row>
         {head(props.url)}
         <Grid.Row id="sliderBlock">
           <Grid.Column width={16} verticalAlign="middle">

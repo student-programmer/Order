@@ -23,8 +23,9 @@ const loaderItems = [
 const head = (url) => {
   return (
     <Helmet key={Math.random()}>
-      <title>2022 s vpn Compare tool free and Good</title>
-      <meta name="robots" content="noindex, nofollow"/>
+      <title>2022’s VPN Compare Tool – Free and Good</title>
+      <meta name="description" content="Compare the best VPNs and find yours now. VPN experts compare and rate the best VPNs on the market in 2022. "/>
+      <meta name="robots" content="all"/>
     </Helmet>
   )
 }
@@ -48,6 +49,11 @@ export const CompareView = (props) => (
       </Breadcrumb>
 
       <Grid>
+      {/* <Grid.Row columns={1} textAlign="center">
+              <Grid.Column className="block-title">
+              <h1>VPN providers comparison</h1>
+              </Grid.Column>
+            </Grid.Row> */}
         <Grid.Row stretched id="compareBlock">
           <Grid.Column width={16}>
             <Segment>
@@ -55,7 +61,7 @@ export const CompareView = (props) => (
                 as="h1"
                 textAlign="center"
               >
-                VPN provide comparison
+                VPN providers comparison
                 <Header.Subheader>
                   Side - by - side comparison of features? prices and review. Select up to 3 VPNs
                 </Header.Subheader>
@@ -175,6 +181,7 @@ export const CompareView = (props) => (
                             </Table.Cell>
                             <Table.Cell textAlign="center">
                               <Image
+                                alt="banner"
                                 src={props.vendorsList[rowKey]['image']}
                               />
                             </Table.Cell>

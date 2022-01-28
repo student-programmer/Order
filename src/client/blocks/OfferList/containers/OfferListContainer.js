@@ -208,6 +208,7 @@ class OfferListContainer extends React.Component {
                         )
                     }
                     <Image
+                        alt="vpn logo"
                         as={Link}
                         to={offer['url']}
                         className='logo'

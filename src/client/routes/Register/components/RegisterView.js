@@ -14,14 +14,16 @@ import {
 const head = (url) => {
   return (
     <Helmet key={Math.random()}>
-      <title>Register</title>
-      <meta name="robots" content="noindex, nofollow"/>
+      <title>VPN Online for U - Find Your VPN Today</title>
+      <meta name="robots" content="all"/>
+      <meta name="description" content='Savingsdealz looks at various VPN services and gives a detailed overview of the strengths and weaknesses of each'/>
     </Helmet>
   )
 }
 
 export const RegisterView = (props) => (
   <div>
+      <h1 className='block-title'>Find your VPN Online </h1>
     <Container>
       {head(props.url)}
       <Breadcrumb id="breadcrumb">

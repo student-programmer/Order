@@ -7,6 +7,7 @@ import { Image } from 'semantic-ui-react'
 
 export const AccountButtonView = (props) => (
     <Image
+        alt="profile picture"
         as={ Link }
         to={ props.user ? '/account' : '/register' }
         src='/images/icon-man.svg'

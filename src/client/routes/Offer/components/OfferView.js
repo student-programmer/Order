@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import {
@@ -22,16 +22,41 @@ import {
 const head = (url) => {
   const pageUrl = (typeof url !== 'undefined') ? url : ''
   let canonical = 'https://savingsdealz.com' + pageUrl
+  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState('')
+  // let urls = ["offer-vpnsecure-1-month-premium-vpn-1", '/offer-vpnsecure-6-month-premium-vpn-2' ]
+  // let result = urls.some((element) => {
+  //   if(element == pageUrl){
+  //     setDescription("yes")
+  //   }else{
+  //     setDescription("false")
+  //   }
+  // })
+  // console.log(description)
+//   for(let i = 0; i < 10; i++){ 
+//      if(pageUrl === "\/offer-vpnsecure-1-month-premium-vpn-1"){
+//     setDescription("Protect your data and privacy, browse the web anonymously. Fast and secure access to websites, applications and services. Get it for FREE")
+//     setTitle("Protect your data and privacy, browse the web anonymously. Fast and secure access to websites, applications and services. Get it for FREE")
+//   } else if(pageUrl === "\/offer-vpnsecure-6-month-premium-vpn-2 "){
+//     setDescription("VPN or virtual private network is an easy way to improve your online privacy. We've looked at a lot of them, and these are the best VPNs we've tested. ")
+//     setTitle("VPN or virtual private network is an easy way to improve your online privacy. We've looked at a lot of them, and these are the best VPNs we've tested. ")
+//   }
+// }
+// console.log(description)
+
   return (
     <Helmet key={Math.random()}>
-      <title>Savingsdealz</title>
+      <title></title>
       <meta name="robots" content="index, follow"/>
+      <meta name="description" content={description}/> 
       <link rel="canonical" href={canonical}/>
     </Helmet>
   )
+
 }
 
 export const OfferView = (props) => (
+      
   <div>
     {head(props.url)}
     <Container>
@@ -62,6 +87,7 @@ export const OfferView = (props) => (
                     )
                   }
                   <Item.Image
+                  alt="logo"
                     size="tiny"
                     className="logo"
                     verticalAlign="middle"

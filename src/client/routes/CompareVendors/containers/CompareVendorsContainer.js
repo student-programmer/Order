@@ -76,9 +76,9 @@ class CompareVendorsContainer extends React.Component{
                 break;
             case 'checkbox':
                 if (parseInt(cell)) {
-                    return <Image src='/images/check.png' />
+                    return <Image alt="check" src='/images/check.png' />
                 } else {
-                    return <Image src='/images/cancel.png' />
+                    return <Image alt="cancel" src='/images/cancel.png' />
                 }
                 break;
             case 'dropdown':

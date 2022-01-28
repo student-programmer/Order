@@ -8,6 +8,7 @@ import { Image, Label } from 'semantic-ui-react'
 export const CartButtonView = (props) => (
     <Link to="/checkout" id="cartButton">
         <Image
+            alt="cart"
             src='/images/icon-cart.svg'
             size='mini'
         />

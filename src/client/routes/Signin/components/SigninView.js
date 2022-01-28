@@ -14,8 +14,9 @@ import {
 const head = (url) => {
   return (
     <Helmet key={Math.random()}>
-      <title>Savingsdealz</title>
-      <meta name="robots" content="noindex, nofollow"/>
+      <title>Signin</title>
+      <meta name="robots" content="all"/>
+      <meta name="description" content='Please log in. Stay on top of your professional world. By email or phone. Show password. Forgot password?'/>
     </Helmet>
   )
 }

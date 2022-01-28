@@ -62,6 +62,7 @@ export const VendorView = (props) => (
           <Grid.Column width={16}>
             <Segment>
               <Image
+              alt="vendor vpn"
                 src={props.info['image']}
               />
               <Accordion>

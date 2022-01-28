@@ -201,6 +201,16 @@
   #bundlePage #contentBlock {
     width: 78% !important; } }
 
+.block-title {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 500; }
+
+@media only screen and (max-width: 400px) {
+  .block-title {
+    font-size: 35px !important;
+    line-height: 35px !important; } }
+
 @media only screen and (min-width: 768px) {
   #bundlePage #contentBlock {
     width: 78% !important; } }
@@ -236,6 +246,19 @@
   #registerBlock #registerButton button {
     width: 300px !important; } }
 
+.block-title {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); }
+
+@media only screen and (max-width: 400px) {
+  .block-title {
+    font-size: 35px !important;
+    line-height: 35px !important; } }
+
 #signinBlock {
   width: 37.5em;
   box-shadow: -3px -2px 8px rgba(227, 227, 227, 0.15);
@@ -256,6 +279,19 @@
   border: none;
   margin: auto;
   padding: 78px; }
+
+.block-title {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); }
+
+@media only screen and (max-width: 400px) {
+  .block-title {
+    font-size: 35px !important;
+    line-height: 35px !important; } }
 
 #accountBlock .ui.menu {
   border: none; }
@@ -366,6 +402,19 @@
   .ui.items:not(.unstackable) > .item > .image, .ui.items:not(.unstackable) > .item > .image > img {
     max-width: 150px !important; } }
 
+.block-title {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); }
+
+@media only screen and (max-width: 400px) {
+  .block-title {
+    font-size: 35px !important;
+    line-height: 35px !important; } }
+
 #offerBlock .info-block {
   padding: 42px; }
 
@@ -444,6 +493,16 @@
     width: initial !important; }
     .compare-button .button {
       width: initial !important; } }
+
+.block-title {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 500; }
+
+@media only screen and (max-width: 400px) {
+  .block-title {
+    font-size: 35px !important;
+    line-height: 35px !important; } }
 
 #compareVendorBlock .vs-divided {
   font-weight: 500;

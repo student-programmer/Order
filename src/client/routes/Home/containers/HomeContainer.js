@@ -95,6 +95,7 @@ class HomeContainer extends React.Component {
       <Card key={'of-' + id} style={{ width: 230 }}>
         <Card.Header>
           <Image
+          alt="offer"
             src={image}
                     />
         </Card.Header>

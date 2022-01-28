@@ -16,14 +16,18 @@ const options = [
 const head = (url) => {
   return (
     <Helmet key={Math.random()}>
-      <title>Savingsdealz</title>
-      <meta name="robots" content="index, follow"/>
+      <title>Contact us</title>
+      <meta name="robots" content="all"/>
+      <meta name="description" content="Find out how we find the best products and services to help you easily compare and make the right buying decisions"/>
     </Helmet>
   )
 }
 
 export const ContactUsView = (props) => (
   <div>
+
+  <h1 className='block-title'>Сontact details </h1>
+           
     {head(props.url)}
     <Container>
       <Breadcrumb id="breadcrumb">

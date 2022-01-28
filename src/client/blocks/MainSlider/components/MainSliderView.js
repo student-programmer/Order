@@ -15,6 +15,7 @@ export function CustomPrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <Image
+            alt="One slide"
             src="/images/arrow-left.svg"
             onClick={ onClick }
             className="custom-slick prev mobile hidden"
@@ -28,6 +29,7 @@ export function CustomNextArrow(props) {
     const { className, style, onClick } = props;
     return (
         <Image
+        alt="Two slide"
             src="/images/arrow-right.svg"
             onClick={ onClick }
             className="custom-slick next mobile hidden"

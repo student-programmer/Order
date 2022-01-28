@@ -27,6 +27,7 @@ export const TopBlockView = (props) => (
                 Object.keys(props.data).map((rowKey) => (
                     <Item>
                         <Item.Image  verticalAlign='middle'
+                            alt=""
                             src={ props.data[rowKey]['image'] }
                             size='tiny'
                         />

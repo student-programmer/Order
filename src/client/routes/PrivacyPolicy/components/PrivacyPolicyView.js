@@ -8,8 +8,9 @@ const head = (url) => {
   let canonical = "https://savingsdealz.com" + pageUrl;
   return (
     <Helmet key={Math.random()}>
-      <title>Privacy policy | Savingsdealz</title>
+      <title>Privacy Policy</title>
       <meta name="robots" content="no index, no follow"/>
+      <meta name="description" content='A privacy policy is a statement or legal document that states how a company or website collects, processes and processes data from its customers and visitors. It clearly states whether this information is confidential, transferred or sold to third parties.'/>
       <link rel="canonical" href={canonical}/>
     </Helmet>
   )
@@ -34,7 +35,7 @@ export const PrivacyPolicyView = (props) => (
       </Breadcrumb>
       <Segment>
         <Header as="h1" textAlign="center">
-          Privacy Policy
+        Site privacy policy 
         </Header>
         <List as="ol" size="big">
           <List.Item as="li">

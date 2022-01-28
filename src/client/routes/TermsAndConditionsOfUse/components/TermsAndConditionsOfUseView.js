@@ -8,8 +8,9 @@ const head = (url) => {
   let canonical = "https://savingsdealz.com" + pageUrl;
   return (
     <Helmet key={Math.random()}>
-      <title>Terms and conditions of use | Savingsdealz</title>
+      <title>Terms and conditions of use</title>
       <meta name="robots" content="no index, no follow"/>
+      <meta name="description" content='Terms of Service are legal agreements between the service provider and the person who wants to use the service. The person must agree to comply with the terms of service in order to use the offered service.'/>
       <link rel="canonical" href={canonical}/>
     </Helmet>
   )
@@ -17,6 +18,7 @@ const head = (url) => {
 
 export const TermsAndConditionsOfUseView = (props) => (
   <div>
+  
     {head(props.url)}
     <Container>
       <Breadcrumb id="breadcrumb">
@@ -34,7 +36,7 @@ export const TermsAndConditionsOfUseView = (props) => (
       </Breadcrumb>
       <Segment>
         <Header as="h1" textAlign="center">
-          Terms and conditions of use
+          Terms of Service
         </Header>
         <List as="ol" size="big">
           <List.Item as="li">

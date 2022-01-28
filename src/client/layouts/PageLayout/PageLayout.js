@@ -54,6 +54,7 @@ class PageLayout extends  React.Component{
                         <Menu inverted borderless>
                             <Menu.Item>
                                 <Image
+                                    alt="logo"
                                     as={ Link }
                                     to='/'
                                     src='/images/logo.png'

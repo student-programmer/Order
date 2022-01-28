@@ -23,14 +23,16 @@ import {
 const head = (url) => {
   return (
     <Helmet key={Math.random()}>
-      <title>Savingsdealz</title>
-      <meta name="robots" content="noindex, nofollow"/>
+      <title>Сheckout</title>
+      <meta name="robots" content="all"/>
+      <meta name="description" content="Online shopping process, follow the steps indicated to complete the transaction"/>
     </Helmet>
   )
 }
 
 export const CheckoutView = (props) => (
   <div>
+         <h1 className='block-title'>Checkout deals</h1>
     {head(props.url)}
     <Container>
       <Breadcrumb id="breadcrumb">
@@ -62,7 +64,7 @@ export const CheckoutView = (props) => (
                   <Item.Group>
                     {Object.keys(props.offers).map((rowKey) => (
                       <Item key={'c-' + props.offers[rowKey]['id']}>
-                        <Item.Image size="tiny" src={props.offers[rowKey]['image']}/>
+                        <Item.Image alt="$" size="tiny" src={props.offers[rowKey]['image']}/>
 
                         <Item.Content>
                           <Item.Header as="a">{props.offers[rowKey]['title']}</Item.Header>
@@ -113,6 +115,7 @@ export const CheckoutView = (props) => (
                         </Table.Cell>
                         <Table.Cell>
                           <Image
+                          alt="$"
                             className="payment-method-logo"
                             src={props.paymentMethods[rowKey]['image']}
                           />

@@ -18,7 +18,7 @@ const head = (url) => {
   return (
     <Helmet key={Math.random()}>
       <title>The best place to buy VPN coupon with discount</title>
-      <meta name="description" content="See the best digital offer, based on price and users review"/>
+      <meta name="description" content="Every VPN is tested so you don't have to. Rigorous testing has been done to find the best VPN for you"/>
       <meta name="robots" content="index, follow"/>
       {/*<link rel="canonical" href={canonical} />*/}
     </Helmet>
@@ -45,7 +45,12 @@ const settings = {
 export const HomeView = (props) => (
   <div>
     <Container>
-      <Grid>
+<Grid>
+      <Grid.Row columns={1} textAlign="center">
+              <Grid.Column className="block-title">
+              <h1>The Best VPNs to Protect Yourself Online</h1>
+              </Grid.Column>
+            </Grid.Row>
         {head(props.url)}
         <Grid.Row id="sliderBlock">
           <Grid.Column width={16} verticalAlign="middle">
@@ -67,6 +72,7 @@ export const HomeView = (props) => (
               <Grid.Column mobile={12} computer={3}>
                 <div className="item-block">
                   <Image
+                  alt="price tag"
                     src="/images/home/choose-1.png"
                     centered
                   />
@@ -78,6 +84,7 @@ export const HomeView = (props) => (
               <Grid.Column mobile={12} computer={3}>
                 <div className="item-block">
                   <Image
+                    alt="piggy bank"
                     src="/images/home/choose-2.png"
                     centered
                   />
@@ -89,6 +96,7 @@ export const HomeView = (props) => (
               <Grid.Column mobile={12} computer={3}>
                 <div className="item-block">
                   <Image
+                    alt="percentages"
                     src="/images/home/choose-3.png"
                     centered
                   />
@@ -100,6 +108,7 @@ export const HomeView = (props) => (
               <Grid.Column mobile={12} computer={3}>
                 <div className="item-block">
                   <Image
+                    alt="bank card"
                     src="/images/home/choose-4.png"
                     centered
                   />
@@ -111,6 +120,7 @@ export const HomeView = (props) => (
               <Grid.Column mobile={12} computer={3}>
                 <div className="item-block">
                   <Image
+                    alt="magnifier"
                     src="/images/home/choose-5.png"
                     centered
                   />
@@ -169,6 +179,7 @@ export const HomeView = (props) => (
               <Grid.Column textAlign="center" computer={12} mobile={12}>
                 <div>
                   <Image
+                  alt="vpn security"
                     src="/images/home/category-3.png"
                     centered
                   />
@@ -318,6 +329,7 @@ export const HomeView = (props) => (
       </div>
       <div className="white-block" id="buyWithDiscountBlock">
         <Image
+        alt="economy"
           src="/images/home/stop-paying-image.png"
         />
         <div className="button">
@@ -343,11 +355,13 @@ export const HomeView = (props) => (
                   <Card style={{ width: 354 }}>
                     <Card.Header>
                       <Image
+                      alt="feedback"
                         className="image"
                         src="/images/home/feedback-1.png"
                       />
                       <div className="name-block">
                         <Image
+                        alt="quotation marks"
                           className="mark"
                           src="/images/home/c.png"
                         />
@@ -368,11 +382,13 @@ export const HomeView = (props) => (
                   <Card style={{ width: 354 }}>
                     <Card.Header>
                       <Image
+                      alt="feedback"
                         className="image"
                         src="/images/home/feedback-2.png"
                       />
                       <div className="name-block">
                         <Image
+                          alt="quotation marks"
                           className="mark"
                           src="/images/home/c.png"
                         />
@@ -395,11 +411,13 @@ export const HomeView = (props) => (
                   <Card style={{ width: 354 }}>
                     <Card.Header>
                       <Image
+                      alt="feedback"
                         className="image"
                         src="/images/home/feedback-3.png"
                       />
                       <div className="name-block">
                         <Image
+                        alt="quotation marks"
                           className="mark"
                           src="/images/home/c.png"
                         />

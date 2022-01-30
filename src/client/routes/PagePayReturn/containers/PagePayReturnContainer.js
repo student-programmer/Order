@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import PagePayReturnView from '../components/PagePayReturnView'
-import {savePayerEmail} from "../../../api/offer";
+import {savePayerEmail} from "../../../api_test/offer";
 
 class PagePayReturnContainer extends React.Component{
     constructor(props) {

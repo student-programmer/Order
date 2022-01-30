@@ -23,7 +23,14 @@ const head = (url) => {
 
 export const RegisterView = (props) => (
   <div>
-      <h1 className='block-title'>Find your VPN Online </h1>
+        <Header className='block-title' as="h1" textAlign="center">
+      {/* <h1 className='block-title'>Checkout deals</h1> */}
+      Find your VPN Online
+  <Header.Subheader>
+  Discover The Best VPN in Your Country
+</Header.Subheader>
+</Header>
+
     <Container>
       {head(props.url)}
       <Breadcrumb id="breadcrumb">

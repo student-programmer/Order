@@ -24,6 +24,12 @@ const head = (url) => {
   return (
     <Helmet key={Math.random()}>
       <title>Сheckout</title>
+      <meta property="og:title" content="Checkout" />
+      <meta property="og:url" content="https://savingsdealz.com/checkout" />
+      <meta property="og:image" content="https://savingsdealz.com/images/logo.png" />
+      <meta property="og:type" content="article" />
+      <meta property="og:image:width" content="50"/>
+      <meta property="og:image:height" content="50"/>
       <meta name="robots" content="all"/>
       <meta name="description" content="Online shopping process, follow the steps indicated to complete the transaction"/>
     </Helmet>
@@ -31,8 +37,16 @@ const head = (url) => {
 }
 
 export const CheckoutView = (props) => (
-  <div>
-         <h1 className='block-title'>Checkout deals</h1>
+  <div>  
+    <Header className='block-title' as="h1" textAlign="center">
+      {/* <h1 className='block-title'>Checkout deals</h1> */}
+      Checkout deals
+  <Header.Subheader>
+  Online shopping model steps
+
+</Header.Subheader>
+</Header>
+   
     {head(props.url)}
     <Container>
       <Breadcrumb id="breadcrumb">

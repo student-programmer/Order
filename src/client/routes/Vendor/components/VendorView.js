@@ -13,12 +13,24 @@ import {
 } from 'semantic-ui-react'
 
 import OfferList from '../../../blocks/OfferList'
-
+import { ProductCollection } from "schema-dts";
+import { helmetJsonLdProp } from "react-schemaorg";
 const head = (url) => {
   const pageUrl = (typeof url !== 'undefined') ? url : '';
   let canonical = "https://savingsdealz.com" + pageUrl;
   return (
-    <Helmet key={Math.random()}>
+    <Helmet key={Math.random()} script={[
+      helmetJsonLdProp<import('schema-dts').ProductCollection>({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: "vendor",
+        description: "Vendor product",
+        brand: {
+          "@type": "Brand",
+          "name": "Vendor product"
+        }
+      }),
+    ]}>
       <title>Savingsdealz</title>
       <meta name="robots" content="index, follow"/>
       <link rel="canonical" href={canonical}/>

@@ -2,7 +2,7 @@ export const GET_CART_OFFERS = 'fetchCartOffers';
 
 import {
     addToCart
-} from '../api/cart'
+} from '../api_test/cart'
 
 export const fetchCartOffers = value => async dispatch => {
     for(let k in value) {

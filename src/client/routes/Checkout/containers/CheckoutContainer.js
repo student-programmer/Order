@@ -6,12 +6,12 @@ import {
 
 import CheckoutView from '../components/CheckoutView'
 
-import {getPaymentMethods} from '../../../api/paymentMethod'
+import {getPaymentMethods} from '../../../api_test/paymentMethod'
 
 import {
     getCartOffers,
     getPayLink
-} from '../../../api/cart'
+} from '../../../api_test/cart'
 
 import {
     cloneObject

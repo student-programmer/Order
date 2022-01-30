@@ -14,11 +14,11 @@ import AccountView from '../components/AccountView'
 
 import {
   getAccountInfo
-} from '../../../api/user'
+} from '../../../api_test/user'
 
 import {
   getAccountOrders
-} from '../../../api/order'
+} from '../../../api_test/order'
 
 class AccountContainer extends React.Component {
   constructor (props) {

@@ -4,7 +4,7 @@ import MainSliderView from '../components/MainSliderView'
 
 import {
     getSliderList
-} from '../../../api/slider'
+} from '../../../api_test/slider'
 
 class MainSliderContainer extends React.Component{
     constructor(props, context) {

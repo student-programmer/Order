@@ -6,7 +6,7 @@ import {
 
 import CartButtonView from '../components/CartButtonView'
 
-import { getCartOffersButton } from '../../../api/cart'
+import { getCartOffersButton } from '../../../api_test/cart'
 
 import { fetchCartOffers }  from '../../../actions/getCartOffers'
 

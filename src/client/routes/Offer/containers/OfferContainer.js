@@ -6,7 +6,7 @@ import {
 
 import OfferView from '../components/OfferView'
 
-import { getOfferInfo } from '../../../api/offer'
+import { getOfferInfo } from '../../../api_test/offer'
 
 import {
     cloneObject

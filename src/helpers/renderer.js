@@ -19,13 +19,14 @@ export default (req, store, context) => {
   );
   const helmet = Helmet.renderStatic();
   return `<!DOCTYPE html>
-            <html lang="en">
+            <html lang="en" prefix="og: http://ogp.me/ns#">
             <head>
                 ${helmet.title.toString()}
                 ${helmet.meta.toString()}
                 ${helmet.link.toString()}
                 ${helmet.style.toString()}
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <link rel="icon" href="../../images/logo.png"/>
 
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXJ5E3D9GJ"></script>

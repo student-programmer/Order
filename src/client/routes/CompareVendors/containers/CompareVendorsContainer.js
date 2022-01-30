@@ -11,7 +11,7 @@ import CompareVendorsView from '../components/CompareVendorsView'
 
 import {
     getCompareVendorsInfo
-} from '../../../api/vendor'
+} from '../../../api_test/vendor'
 
 class CompareVendorsContainer extends React.Component{
     constructor(props) {

@@ -16,6 +16,7 @@ import TermsAndConditionsOfUse from './routes/TermsAndConditionsOfUse'
 import PagePayReturn from './routes/PagePayReturn'
 import Page404 from './routes/Page404'
 
+
 export default [
     {
         ...CoreLayout,

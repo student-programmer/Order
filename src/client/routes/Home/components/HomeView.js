@@ -9,15 +9,33 @@ import {
   Button,
   Tab,
   Card,
-  Container
+  Container, 
+  Header
 } from 'semantic-ui-react'
 
 import MainSlider from '../../../blocks/MainSlider'
+import('schema-dts').Organization
+import { Organization } from "schema-dts";
+import { helmetJsonLdProp } from "react-schemaorg";
 
 const head = (url) => {
   return (
-    <Helmet key={Math.random()}>
+    <Helmet key={Math.random()} script={[
+      helmetJsonLdProp<Organization>({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "savingsdealz",
+        url: "https://savingsdealz.com/",
+      }),
+    ]}>
+
       <title>The best place to buy VPN coupon with discount</title>
+      <meta property="og:title" content="The best place to buy VPN coupon with discount" />
+      <meta property="og:url" content="https://savingsdealz.com/" />
+      <meta property="og:image" content="https://savingsdealz.com/images/logo.png" />
+      <meta property="og:type" content="article" />
+      <meta property="og:image:width" content="50"/>
+      <meta property="og:image:height" content="50"/>
       <meta name="description" content="Every VPN is tested so you don't have to. Rigorous testing has been done to find the best VPN for you"/>
       <meta name="robots" content="index, follow"/>
       {/*<link rel="canonical" href={canonical} />*/}
@@ -48,20 +66,45 @@ export const HomeView = (props) => (
 <Grid>
       <Grid.Row columns={1} textAlign="center">
               <Grid.Column className="block-title">
-              <h1>The Best VPNs to Protect Yourself Online</h1>
+              <Header as="h1" textAlign="center">
+              The Best VPNs to Protect Yourself Online
+        <Header.Subheader>
+        Safe and confidential Internet access
+        </Header.Subheader>
+        </Header>
               </Grid.Column>
-            </Grid.Row>
+
+           </Grid.Row>
         {head(props.url)}
-        <Grid.Row id="sliderBlock">
+         {/* <Grid.Row id="sliderBlock">
           <Grid.Column width={16} verticalAlign="middle">
             <MainSlider/>
-          </Grid.Column>
-        </Grid.Row>
+          </Grid.Column> 
+        </Grid.Row>*/}
       </Grid>
     </Container>
     <div id="homePage">
+        <div className="grey-block">
+        <Container >
+          <Grid id="recommendationBlock">
+            <Grid.Row textAlign="center">
+              <Grid.Column className="block-title-rates">
+              Popular VPN rates
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={1}>
+              <Grid.Column>
+                {/* <Tab panes={props.getRecomedationPanes()}/> */}
+                <Tab menu={{ secondary: true }} panes={props.getRecomedationPanes()}/>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+        </div>
       <div className="white-block">
+        
         <Container>
+        
           <Grid>
             <Grid.Row columns={1} textAlign="center">
               <Grid.Column className="block-title">
@@ -70,7 +113,7 @@ export const HomeView = (props) => (
             </Grid.Row>
             <Grid.Row columns={5} textAlign="center" stretched id="chooseUsBlock" centered>
               <Grid.Column mobile={12} computer={3}>
-                <div className="item-block">
+                <div className="first-item-block">
                   <Image
                   alt="price tag"
                     src="/images/home/choose-1.png"
@@ -131,6 +174,7 @@ export const HomeView = (props) => (
               </Grid.Column>
             </Grid.Row>
           </Grid>
+          <h2 className="block-titleH2">  </h2>
         </Container>
       </div>
       <div className="grey-block">
@@ -188,11 +232,13 @@ export const HomeView = (props) => (
                       VPN service
                     </div>
                     <Button
+                      className="view"
                       as={Link}
                       to="/vpn"
                       primary
                       content="View more"
                     />
+                    <div className="description-vpn">To view the entire range of VPN products, click on the link at the top. There you will get all the information you are interested in.</div>
                   </div>
                 </div>
               </Grid.Column>
@@ -311,7 +357,7 @@ export const HomeView = (props) => (
             </div>
             */}
 
-      <div className="grey-block">
+      {/* <div className="grey-block">
         <Container>
           <Grid id="recommendationBlock">
             <Grid.Row textAlign="center">
@@ -326,7 +372,16 @@ export const HomeView = (props) => (
             </Grid.Row>
           </Grid>
         </Container>
-      </div>
+      </div> */}
+      <Container> 
+      <Grid>
+           <Grid.Row textAlign="center" id="sliderBlock">
+          <Grid.Column width={16} verticalAlign="middle">
+            <MainSlider/>
+          </Grid.Column> 
+      </Grid.Row>
+    </Grid>
+    </Container>
       <div className="white-block" id="buyWithDiscountBlock">
         <Image
         alt="economy"

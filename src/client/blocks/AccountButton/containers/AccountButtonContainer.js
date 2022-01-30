@@ -6,7 +6,7 @@ import {
 
 import AccountButtonView from '../components/AccountButtonView'
 
-import { checkSession } from '../../../api/user'
+import { checkSession } from '../../../api_test/user'
 
 import { fetchUser }  from '../../../actions/getUser'
 

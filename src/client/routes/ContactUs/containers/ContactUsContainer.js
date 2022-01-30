@@ -4,7 +4,7 @@ import React from 'react'
 import ContactUsView from '../components/ContactUsView'
 
 import { validateEmail } from '../../../inc/inc'
-import { sendSupportForm } from '../../../api/support'
+import { sendSupportForm } from '../../../api_test/support'
 
 class ContactUsContainer extends React.Component{
     constructor(props) {

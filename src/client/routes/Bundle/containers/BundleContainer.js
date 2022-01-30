@@ -8,7 +8,7 @@ import BundleView from '../components/BundleView'
 
 import {
     getFilterList
-} from '../../../api/filter'
+} from '../../../api_test/filter'
 
 import {
     cloneObject

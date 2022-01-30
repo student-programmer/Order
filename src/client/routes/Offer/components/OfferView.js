@@ -17,13 +17,16 @@ import TopBlockHorizontal from '../../../blocks/TopBlockHorizontal'
 
 import {
   getBestVpnDeals
-} from '../../../api/offer'
+} from '../../../api_test/offer'
+import('schema-dts').ProductCollection
+import { ProductCollection } from "schema-dts";
+import { helmetJsonLdProp } from "react-schemaorg";
 
-const head = (url) => {
+const head = (url, info) => {
   const pageUrl = (typeof url !== 'undefined') ? url : ''
   let canonical = 'https://savingsdealz.com' + pageUrl
-  const [description, setDescription] = useState('')
-  const [title, setTitle] = useState('')
+  // const [description, setDescription] = useState('')
+  // const [title, setTitle] = useState('')
   // let urls = ["offer-vpnsecure-1-month-premium-vpn-1", '/offer-vpnsecure-6-month-premium-vpn-2' ]
   // let result = urls.some((element) => {
   //   if(element == pageUrl){
@@ -45,7 +48,19 @@ const head = (url) => {
 // console.log(description)
 
   return (
-    <Helmet key={Math.random()}>
+    <Helmet key={Math.random()} script={[
+      helmetJsonLdProp<ProductCollection>({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name:"vpn",
+        image: "",
+        description: 'All vpn on your choice',
+        brand: {
+          "@type": "Brand",
+          name: "vpn"
+        }
+      }),
+    ]}>
       <title></title>
       <meta name="robots" content="index, follow"/>
       <meta name="description" content={description}/> 
@@ -58,7 +73,7 @@ const head = (url) => {
 export const OfferView = (props) => (
       
   <div>
-    {head(props.url)}
+    {head(props.url, props.info)}
     <Container>
       <Breadcrumb id="breadcrumb">
         <Breadcrumb.Section

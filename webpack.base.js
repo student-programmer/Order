@@ -151,6 +151,7 @@ config.module.rules.push({
             name  : '/fonts/[name].[ext]',
             limit : 10000,
             mimetype,
+            
         },
     })
 })

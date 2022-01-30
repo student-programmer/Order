@@ -19,7 +19,7 @@ import OfferListView from '../components/OfferListView'
 
 import {
     getOfferList
-} from '../../../api/offer'
+} from '../../../api_test/offer'
 
 import {fetchCartOffers} from '../../../actions/getCartOffers'
 

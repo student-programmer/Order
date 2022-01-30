@@ -6,7 +6,7 @@ import FilterBlockView from '../components/FilterBlockView'
 
 import {
     getFilterList
-} from '../../../api/filter'
+} from '../../../api_test/filter'
 
 class FilterBlockContainer extends React.Component{
     constructor(props, context) {

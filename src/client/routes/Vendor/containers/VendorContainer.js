@@ -2,7 +2,7 @@ import React from 'react'
 
 import VendorView from '../components/VendorView'
 
-import { getVendorInfo } from '../../../api/vendor'
+import { getVendorInfo } from '../../../api_test/vendor'
 
 class VendorContainer extends React.Component{
     constructor(props) {

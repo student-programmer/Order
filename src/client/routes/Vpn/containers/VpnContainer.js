@@ -8,7 +8,7 @@ import VpnView from '../components/VpnView'
 
 import {
     getFilterList
-} from '../../../api/filter'
+} from '../../../api_test/filter'
 
 import {
     cloneObject

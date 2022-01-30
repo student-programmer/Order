@@ -68,6 +68,20 @@
     .block-title {
         font-size: 35px !important;
         line-height: 35px !important;
+
+}
+}
+@media only screen and (max-width: 770px) {
+
+    .block-titleH2{
+    display:none;
     }
 }
 
+
+.block-titleH2{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%);
+    top:240px;
+}

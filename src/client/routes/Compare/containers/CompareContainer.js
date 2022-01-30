@@ -6,11 +6,12 @@ import CompareView from '../components/CompareView'
 
 import {
     getVendorsList
-} from '../../../api/vendor'
+} from '../../../api_test/vendor'
 
 import {
     getFilterList
-} from '../../../api/filter'
+} from '../../../api_test/filter'
+import { Redirect, useHistory } from 'react-router'
 
 class CompareContainer extends React.Component{
     constructor(props) {
@@ -346,6 +347,7 @@ class CompareContainer extends React.Component{
         return i < 2 ? true : false
     }
 
+
     render() {
         return <CompareView
                     {...this.state}
@@ -363,6 +365,7 @@ class CompareContainer extends React.Component{
                     checkCompareVendorChecked={ this.checkCompareVendorChecked }
 
                     checkCompareVendorButtonDisabled={ this.checkCompareVendorButtonDisabled }
+                    checkUrl={ this.checkUrl}
                 />
     }
 }

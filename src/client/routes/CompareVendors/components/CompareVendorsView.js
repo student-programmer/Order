@@ -12,11 +12,10 @@ import {
 const head = (url) => {
   const pageUrl = (typeof url !== 'undefined') ? url : '';
   let canonical = "https://savingsdealz.com" + pageUrl;
-  console.log(canonical)
   return (
     <Helmet key={Math.random()}>
       <title>2022 s vpn Compare tool free and Good</title>
-      <meta name="robots" content="index, follow"/>
+      <meta name="robots" content="all"/>
       <link rel="canonical" href={canonical}/>
     </Helmet>
   )

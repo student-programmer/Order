@@ -2,14 +2,63 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { Container, Segment, Header, List, Breadcrumb } from 'semantic-ui-react'
-
+import { FAQPage } from "schema-dts";
+import { helmetJsonLdProp } from "react-schemaorg";
+import('schema-dts').FAQPage
 const head = (url) => {
   const pageUrl = (typeof url !== 'undefined') ? url : '';
   let canonical = "https://savingsdealz.com" + pageUrl;
   return (
-    <Helmet key={Math.random()}>
+    <Helmet key={Math.random()} script={[
+      helmetJsonLdProp<FAQPage>({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Copyright notice",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copyright (c) Savingdealz.com"
+          }
+        },{
+          "@type": "Question",
+          "name": "License to use website",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": ""
+          }
+        },{
+          "@type": "Question",
+          "name": "Unless you own or control the relevant rights in the material, you must not:",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": ""
+          }
+        },{
+          "@type": "Question",
+          "name": "Acceptable use",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": ""
+          }
+        },{
+          "@type": "Question",
+          "name": "Registration and accounts",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": ""
+          }
+        }]
+      }),
+    ]}>
       <title>Terms and conditions of use</title>
-      <meta name="robots" content="no index, no follow"/>
+      <meta property="og:title" content="Terms and conditions of use" />
+      <meta property="og:url" content="https://savingsdealz.com/terms-and-conditions-of-use" />
+      <meta property="og:image" content="https://savingsdealz.com/images/logo.png" />
+      <meta property="og:type" content="article" />
+      <meta property="og:image:width" content="50"/>
+      <meta property="og:image:height" content="50"/>
+      <meta name="robots" content="all"/>
       <meta name="description" content='Terms of Service are legal agreements between the service provider and the person who wants to use the service. The person must agree to comply with the terms of service in order to use the offered service.'/>
       <link rel="canonical" href={canonical}/>
     </Helmet>
@@ -37,6 +86,9 @@ export const TermsAndConditionsOfUseView = (props) => (
       <Segment>
         <Header as="h1" textAlign="center">
           Terms of Service
+          <Header.Subheader>
+          Important information
+        </Header.Subheader>
         </Header>
         <List as="ol" size="big">
           <List.Item as="li">

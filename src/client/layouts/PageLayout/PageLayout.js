@@ -101,11 +101,33 @@ class PageLayout extends  React.Component{
                 <div id="footerBlock">
                     <div className="ui container">
                         <div width="12" className="ui centered middle aligned grid">
-                            <Grid.Column width={5} textAlign='center'>
+                        <Grid.Column width={4} textAlign='center'>
+                                <Menu borderless compact vertical>
+                                    <Menu.Item
+                                        as={Link}
+                                        to='/vpn'
+                                    >
+                                        VPN
+                                    </Menu.Item>
+                                    <Menu.Item
+                                        as={Link}
+                                        to='/compare'
+                                    >
+                                       Compare
+                                    </Menu.Item>
+                                    <Menu.Item
+                                        as={Link}
+                                        to='/checkout'
+                                    >
+                                        Check Out
+                                    </Menu.Item>
+                                </Menu>
+                            </Grid.Column>
+                            <Grid.Column width={4} textAlign='center'>
                                 Our mission: Give you best price to keep your money
                             </Grid.Column>
 
-                            <Grid.Column width={7} textAlign='center'>
+                            <Grid.Column width={4} textAlign='center'>
                                 <Menu borderless compact vertical>
                                     <Menu.Item
                                         as={Link}

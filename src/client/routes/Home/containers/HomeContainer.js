@@ -7,7 +7,7 @@ import { Button, Card, Grid, Image, List, Placeholder, Tab } from 'semantic-ui-r
 
 import HomeView from '../components/HomeView'
 
-import { getRecomendationOffers } from '../../../api/offer'
+import { getRecomendationOffers } from '../../../api_test/offer'
 
 import { fetchCartOffers } from '../../../actions/getCartOffers'
 
@@ -146,7 +146,7 @@ class HomeContainer extends React.Component {
 
     return [
       {
-        menuItem: 'VPN service',
+        // menuItem: 'VPN service',
         render: () => (
           <Tab.Pane attached={false} key='vpn-tab'>
             <Slider {...settings}>

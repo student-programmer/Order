@@ -27,6 +27,7 @@ export const ContactUsView = (props) => (
   <div>
 
   <h1 className='block-title'>Сontact details </h1>
+  <h2 className='block-title2'>Savingsdealz is a comparison platform</h2>
            
     {head(props.url)}
     <Container>

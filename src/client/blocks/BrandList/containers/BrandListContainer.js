@@ -2,7 +2,7 @@ import React from 'react';
 
 import BrandListView from '../components/BrandListView'
 
-import {getBrandList} from '../../../api/brand'
+import {getBrandList} from '../../../api_test/brand'
 
 class BrandListContainer extends React.Component {
     constructor(props, context) {

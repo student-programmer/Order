@@ -9,7 +9,7 @@ import {
 
 import { validateEmail } from '../../../inc/inc'
 
-import { sendRegister } from '../../../api/user'
+import { sendRegister } from '../../../api_test/user'
 
 import { fetchUser }  from '../../../actions/getUser'
 

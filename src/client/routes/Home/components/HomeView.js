@@ -37,7 +37,7 @@ const head = (url) => {
       <meta property="og:image:width" content="50"/>
       <meta property="og:image:height" content="50"/>
       <meta name="description" content="Every VPN is tested so you don't have to. Rigorous testing has been done to find the best VPN for you"/>
-      <meta name="robots" content="noindex, nofollow"/>
+      <meta name="robots" content="index, follow"/>
       {/*<link rel="canonical" href={canonical} />*/}
     </Helmet>
   )

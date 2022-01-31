@@ -102,7 +102,7 @@ export const PrivacyPolicyView = (props) => (
       <Segment>
         <Header as="h1" textAlign="center">
         Site privacy policy 
-        <Header.Subheader>
+        <Header.Subheader as="h2">
         General Provisions 
         </Header.Subheader>
         </Header>

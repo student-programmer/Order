@@ -59,7 +59,7 @@ export const VpnView = (props) => (
               <Grid.Column className="block-title">
               <Header as="h1" textAlign="center">
               The Best VPN Services for 2022
-        <Header.Subheader>
+        <Header.Subheader as="h2">
         What is a VPN service?
         </Header.Subheader>
         </Header>

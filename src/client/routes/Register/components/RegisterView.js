@@ -26,7 +26,7 @@ export const RegisterView = (props) => (
         <Header className='block-title' as="h1" textAlign="center">
       {/* <h1 className='block-title'>Checkout deals</h1> */}
       Find your VPN Online
-  <Header.Subheader>
+  <Header.Subheader as="h2">
   Discover The Best VPN in Your Country
 </Header.Subheader>
 </Header>

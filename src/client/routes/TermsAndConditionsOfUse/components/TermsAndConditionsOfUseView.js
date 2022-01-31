@@ -86,7 +86,7 @@ export const TermsAndConditionsOfUseView = (props) => (
       <Segment>
         <Header as="h1" textAlign="center">
           Terms of Service
-          <Header.Subheader>
+          <Header.Subheader as="h2">
           Important information
         </Header.Subheader>
         </Header>

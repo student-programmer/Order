@@ -71,7 +71,7 @@ export const CompareView = (props) => (
                 textAlign="center"
               >
                 VPN providers comparison
-                <Header.Subheader>
+                <Header.Subheader as="h2">
                 Parallel comparison of features, reviews and prices. Choose up to 3 VPNs 
                 </Header.Subheader>
               </Header>

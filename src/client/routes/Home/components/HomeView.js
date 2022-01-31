@@ -37,7 +37,7 @@ const head = (url) => {
       <meta property="og:image:width" content="50"/>
       <meta property="og:image:height" content="50"/>
       <meta name="description" content="Every VPN is tested so you don't have to. Rigorous testing has been done to find the best VPN for you"/>
-      <meta name="robots" content="index, follow"/>
+      <meta name="robots" content="noindex, nofollow"/>
       {/*<link rel="canonical" href={canonical} />*/}
     </Helmet>
   )
@@ -68,7 +68,7 @@ export const HomeView = (props) => (
               <Grid.Column className="block-title">
               <Header as="h1" textAlign="center">
               The Best VPNs to Protect Yourself Online
-        <Header.Subheader>
+        <Header.Subheader as="h2" >
         Safe and confidential Internet access
         </Header.Subheader>
         </Header>

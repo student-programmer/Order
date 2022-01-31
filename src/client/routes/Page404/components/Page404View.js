@@ -21,7 +21,7 @@ export const Page404View = () => (
       <Segment>
         <Header as='h1' textAlign='center'>
           404
-          <Header.Subheader>
+          <Header.Subheader as="h2">
             The page you requested cannot be found!
             Perhaps it was deleted, or you entered an invalid address.
           </Header.Subheader>

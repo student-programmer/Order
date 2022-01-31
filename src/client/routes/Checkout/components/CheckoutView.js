@@ -41,7 +41,7 @@ export const CheckoutView = (props) => (
     <Header className='block-title' as="h1" textAlign="center">
       {/* <h1 className='block-title'>Checkout deals</h1> */}
       Checkout deals
-  <Header.Subheader>
+  <Header.Subheader as="h2">
   Online shopping model steps
 
 </Header.Subheader>

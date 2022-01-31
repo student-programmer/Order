@@ -21,7 +21,7 @@ export const PagePayReturnView = (props) => (
       <Segment>
         <Header as="h1" textAlign="center">
           Your payment is accepted.
-          <Header.Subheader>
+          <Header.Subheader as="h2">
             After a few minutes check your emails we sent you the data to activate the service.
           </Header.Subheader>
         </Header>

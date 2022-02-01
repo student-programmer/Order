@@ -15,7 +15,7 @@ const head = (url) => {
   return (
     <Helmet key={Math.random()}>
       <title>VPN Online for U - Find Your VPN Today</title>
-      <meta name="robots" content="noindex, nofollow"/>
+      <meta name="robots" content="all"/>
       <meta name="description" content='Savingsdealz looks at various VPN services and gives a detailed overview of the strengths and weaknesses of each'/>
     </Helmet>
   )

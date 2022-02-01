@@ -76,8 +76,9 @@ const head = (url) => {
       <meta property="og:image:width" content="50"/>
       <meta property="og:image:height" content="50"/>
       <meta name="robots" content="all"/>
+      <meta name="robots" content="index, follow"/>
       <meta name="description" content='A privacy policy is a statement or legal document that states how a company or website collects, processes and processes data from its customers and visitors. It clearly states whether this information is confidential, transferred or sold to third parties.'/>
-      <link rel="canonical" href={canonical}/>
+      {/* <link rel="canonical" href={canonical}/> */}
     </Helmet>
   )
 }

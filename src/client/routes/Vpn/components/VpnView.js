@@ -46,7 +46,7 @@ const head = (url) => {
       <meta property="og:image:height" content="50"/>
       <meta name="description" content="An online VPN service that encrypts internet traffic and hides your physical location and IP address. Improve your privacy and security now"/>
       <meta name="robots" content="all"/>
-      <link rel="canonical" href={canonical} />
+      {/* <link rel="canonical" href={canonical} /> */}
     </Helmet>
   )
 }

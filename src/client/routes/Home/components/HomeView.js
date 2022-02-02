@@ -62,27 +62,7 @@ const settings = {
 
 export const HomeView = (props) => (
   <div>
-    <Container>
-<Grid>
-      <Grid.Row columns={1} textAlign="center">
-              <Grid.Column className="block-title">
-              <Header as="h1" textAlign="center">
-              The Best VPNs to Protect Yourself Online
-        <Header.Subheader as="h2" >
-        Safe and confidential Internet access
-        </Header.Subheader>
-        </Header>
-              </Grid.Column>
-
-           </Grid.Row>
-        {head(props.url)}
-         {/* <Grid.Row id="sliderBlock">
-          <Grid.Column width={16} verticalAlign="middle">
-            <MainSlider/>
-          </Grid.Column> 
-        </Grid.Row>*/}
-      </Grid>
-    </Container>
+ {head(props.url)}
     <div id="homePage">
         <div className="grey-block">
         <Container >
@@ -102,7 +82,15 @@ export const HomeView = (props) => (
         </Container>
         </div>
       <div className="white-block">
-        
+      <Container> 
+      <Grid>
+           <Grid.Row textAlign="center" id="sliderBlock">
+          <Grid.Column width={16} verticalAlign="middle">
+            <MainSlider/>
+          </Grid.Column> 
+      </Grid.Row>
+    </Grid>
+    </Container>
         <Container>
         
           <Grid>
@@ -122,6 +110,12 @@ export const HomeView = (props) => (
                   <div className="title">
                     Best price you can find
                   </div>
+                  <Button
+                      className="card-button"
+                      as={Link}
+                      primary
+                      content="Learn more >"
+                    />
                 </div>
               </Grid.Column>
               <Grid.Column mobile={12} computer={3}>
@@ -134,6 +128,13 @@ export const HomeView = (props) => (
                   <div className="title">
                     Buy 4 services pay for 1
                   </div>
+                  {/* <p className="card-text">Learn more ></p> */}
+                  <Button
+                      className="card-button"
+                      as={Link}
+                      primary
+                      content="Learn more >"
+                    />
                 </div>
               </Grid.Column>
               <Grid.Column mobile={12} computer={3}>
@@ -146,6 +147,12 @@ export const HomeView = (props) => (
                   <div className="title">
                     More than 4000 offers
                   </div>
+                  <Button
+                      className="card-button"
+                      as={Link}
+                      primary
+                      content="Learn more >"
+                    />
                 </div>
               </Grid.Column>
               <Grid.Column mobile={12} computer={3}>
@@ -158,6 +165,12 @@ export const HomeView = (props) => (
                   <div className="title">
                     Accept any payment system
                   </div>
+                  <Button
+                      className="card-button"
+                      as={Link}
+                      primary
+                      content="Learn more >"
+                    />
                 </div>
               </Grid.Column>
               <Grid.Column mobile={12} computer={3}>
@@ -170,11 +183,16 @@ export const HomeView = (props) => (
                   <div className="title">
                     Don’t need to search all in one place
                   </div>
+                  <Button
+                      className="card-button"
+                      as={Link}
+                      primary
+                      content="Learn more >"
+                    />
                 </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <h2 className="block-titleH2">  </h2>
         </Container>
       </div>
       <div className="grey-block">
@@ -373,15 +391,6 @@ export const HomeView = (props) => (
           </Grid>
         </Container>
       </div> */}
-      <Container> 
-      <Grid>
-           <Grid.Row textAlign="center" id="sliderBlock">
-          <Grid.Column width={16} verticalAlign="middle">
-            <MainSlider/>
-          </Grid.Column> 
-      </Grid.Row>
-    </Grid>
-    </Container>
       <div className="white-block" id="buyWithDiscountBlock">
         <Image
         alt="economy"
@@ -494,6 +503,27 @@ export const HomeView = (props) => (
             </Grid.Row>
           </Grid>
         </Container>
+        <Container>
+    <Grid>
+      <Grid.Row columns={1} textAlign="center">
+              <Grid.Column className="block-title">
+              <Header as="h1" textAlign="center">
+              The Best VPNs to Protect Yourself Online
+        <Header.Subheader as="h2" >
+        Safe and confidential Internet access
+        </Header.Subheader>
+        </Header>
+              </Grid.Column>
+
+           </Grid.Row>
+        
+         {/* <Grid.Row id="sliderBlock">
+          <Grid.Column width={16} verticalAlign="middle">
+            <MainSlider/>
+          </Grid.Column> 
+        </Grid.Row>*/}
+      </Grid>
+    </Container>
       </div>
     </div>
   </div>

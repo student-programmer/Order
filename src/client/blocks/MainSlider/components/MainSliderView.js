@@ -69,6 +69,7 @@ export const MainSliderView = (props) => (
                 Object.keys(props.slides).map((rowKey) => (
                     <div key={ 'slide-' + props.slides['id'] }>
                         <Image
+                            alt="slider-image"
                             src={ props.slides[rowKey]['image'] }
                         />
                     </div>

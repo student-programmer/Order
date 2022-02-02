@@ -230,7 +230,27 @@
             margin-right: 0;
         }
     }
+    .card-button{
+        width:136px;
+        height:30px;
+        border-radius:20px;
+        position:absolute;
+        left:50%;
+        transform: translateX(-50%);
+        bottom:20px;
 
+    }
+    .card-text{
+        color:#FE3E3C;
+        position:absolute;
+        left:50%;
+        transform: translateX(-50%);
+        bottom:20px;
+        font-size:14px;
+        font-weight: bold;
+        font-family: Balsamiq Sans,Helvetica Neue,Arial,Helvetica,sans-serif;
+
+    }
     .item-block {
         max-width: 300px;
         height: 270px;
@@ -239,6 +259,7 @@
         cursor:pointer;
         overflow: hidden;
         margin-left:20px;
+        position: relative;
     }
     .item-block:hover {
         transform:scale(1.1);

@@ -233,11 +233,11 @@
     .card-button{
         width:136px;
         height:30px;
-        border-radius:20px;
         position:absolute;
         left:50%;
         transform: translateX(-50%);
-        bottom:20px;
+        bottom:10px;
+        font-weight: normal;
 
     }
     .card-text{
@@ -285,6 +285,12 @@
         line-height: 50px;
         font-weight: 500;
     }
+    .choose{
+        margin-bottom:60px;
+    }
+    .category{
+        margin-bottom:20px;
+    }
 
     .block-title-rates {
         font-size: 50px;
@@ -295,7 +301,7 @@
     }
 }
 .description-vpn{
-    margin-top:15px;
+    margin-top:45px;
     font-size:30px;
     line-height: 40px;
 }

@@ -14,6 +14,7 @@ import Vendor from './routes/Vendor'
 import PrivacyPolicy from './routes/PrivacyPolicy'
 import TermsAndConditionsOfUse from './routes/TermsAndConditionsOfUse'
 import PagePayReturn from './routes/PagePayReturn'
+import Sitemap from './routes/Sitemap/Sitemap'
 import Page404 from './routes/Page404'
 
 
@@ -88,6 +89,10 @@ export default [
             {
                 ...PagePayReturn,
                 path: '/payment/return',
+            },
+            {
+                Sitemap,
+                path:'/sitemap'
             },
             {
                 ...Page404,

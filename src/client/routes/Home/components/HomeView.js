@@ -14,9 +14,10 @@ import {
 } from 'semantic-ui-react'
 
 import MainSlider from '../../../blocks/MainSlider'
-import('schema-dts').Organization
+// import('schema-dts').Organization
 import { Organization } from "schema-dts";
 import { helmetJsonLdProp } from "react-schemaorg";
+
 
 const head = (url) => {
   return (
@@ -40,6 +41,7 @@ const head = (url) => {
       <meta name="robots" content="index, follow"/>
       {/*<link rel="canonical" href={canonical} />*/}
     </Helmet>
+
   )
 }
 
@@ -95,7 +97,7 @@ export const HomeView = (props) => (
         
           <Grid>
             <Grid.Row columns={1} textAlign="center">
-              <Grid.Column className="block-title">
+              <Grid.Column className="block-title choose">
                 Why choose us?
               </Grid.Column>
             </Grid.Row>
@@ -199,7 +201,7 @@ export const HomeView = (props) => (
         <Container>
           <Grid>
             <Grid.Row textAlign="center" column={1}>
-              <Grid.Column className="block-title">
+              <Grid.Column className="block-title category">
                 Category
               </Grid.Column>
             </Grid.Row>

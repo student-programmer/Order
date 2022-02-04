@@ -1,26 +1,52 @@
-import '@babel/polyfill'
-import express from 'express'
-import React from 'react'
-import { matchRoutes } from 'react-router-config'
-import compression from 'compression'
-import renderer from './helpers/renderer'
-import createStore from './store/createStore'
-import Routes from './client/Routes'
-
-import Loadable from 'react-loadable'
-
-const app = express()
+const express = require('express')
+const path = require('path')
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
 const privateKey  = fs.readFileSync('/etc/letsencrypt/keys/0003_key-certbot.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/csr/0003_csr-certbot.pem', 'utf8');
 const credentials = {key: privateKey, cert: certificate};
+
+
+const app = express()
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(80);
 httpsServer.listen(443);
+
+app.use(express.static(__dirname))
+app.use(express.static(path.resolve(__dirname, 'build')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'bundle.js'))
+})
+
+
+
+// import '@babel/polyfill'
+// import express from 'express'
+// import React from 'react'
+// import { matchRoutes } from 'react-router-config'
+// import compression from 'compression'
+// import renderer from './helpers/renderer'
+// import createStore from './store/createStore'
+// import Routes from './client/Routes'
+
+// import Loadable from 'react-loadable'
+
+// const app = express()
+// const fs = require('fs');
+// const http = require('http');
+// const https = require('https');
+// const privateKey  = fs.readFileSync('/etc/letsencrypt/keys/0003_key-certbot.pem', 'utf8');
+// const certificate = fs.readFileSync('/etc/letsencrypt/csr/0003_csr-certbot.pem', 'utf8');
+// const credentials = {key: privateKey, cert: certificate};
+// const httpServer = http.createServer(app);
+// const httpsServer = https.createServer(credentials, app);
+
+// httpServer.listen(80);
+// httpsServer.listen(443);
 
 // function shouldCompress (req, res) {
 //   if (req.headers['x-no-compression']) return false

@@ -1,41 +1,41 @@
-const express = require('express')
-const path = require('path')
-const fs = require('fs');
-const http = require('http');
-const https = require('https');
-const privateKey  = fs.readFileSync('/etc/letsencrypt/keys/0003_key-certbot.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/csr/0003_csr-certbot.pem', 'utf8');
-const credentials = {key: privateKey, cert: certificate};
+// const express = require('express')
+// const path = require('path')
+// const fs = require('fs');
+// const http = require('http');
+// const https = require('https');
+// const privateKey  = fs.readFileSync('/etc/letsencrypt/keys/0003_key-certbot.pem', 'utf8');
+// const certificate = fs.readFileSync('/etc/letsencrypt/csr/0003_csr-certbot.pem', 'utf8');
+// const credentials = {key: privateKey, cert: certificate};
 
-
-const app = express()
-const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
-
-httpServer.listen(80);
-httpsServer.listen(443);
-
-app.use(express.static(__dirname))
-app.use(express.static(path.resolve(__dirname, 'build')))
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'bundle.js'))
-})
-
-
-
-// import '@babel/polyfill'
-// import express from 'express'
-// import React from 'react'
-// import { matchRoutes } from 'react-router-config'
-// import compression from 'compression'
-// import renderer from './helpers/renderer'
-// import createStore from './store/createStore'
-// import Routes from './client/Routes'
-
-// import Loadable from 'react-loadable'
 
 // const app = express()
+// const httpServer = http.createServer(app);
+// const httpsServer = https.createServer(credentials, app);
+
+// httpServer.listen(80);
+// httpsServer.listen(443);
+
+// app.use(express.static(__dirname))
+// app.use(express.static(path.resolve(__dirname, 'build')))
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'build', 'bundle.js'))
+// })
+
+
+
+import '@babel/polyfill'
+import express from 'express'
+import React from 'react'
+import { matchRoutes } from 'react-router-config'
+import compression from 'compression'
+import renderer from './helpers/renderer'
+import createStore from './store/createStore'
+import Routes from './client/Routes'
+
+import Loadable from 'react-loadable'
+
+const app = express()
 // const fs = require('fs');
 // const http = require('http');
 // const https = require('https');
@@ -48,64 +48,64 @@ app.get('*', (req, res) => {
 // httpServer.listen(80);
 // httpsServer.listen(443);
 
-// function shouldCompress (req, res) {
-//   if (req.headers['x-no-compression']) return false
-//   return compression.filter(req, res)
-// }
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) return false
+  return compression.filter(req, res)
+}
 
-// app.use(
-//   compression({
-//     level: 2, // set compression level from 1 to 9 (6 by default)
-//     filter: shouldCompress // set predicate to determine whether to compress
-//   })
-// )
+app.use(
+  compression({
+    level: 2, // set compression level from 1 to 9 (6 by default)
+    filter: shouldCompress // set predicate to determine whether to compress
+  })
+)
 
-// const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 
-// // To be able to serve static files
-// app.use(express.static('public'))
+// To be able to serve static files
+app.use(express.static('public'))
 
-// app.get('*', (req, res) => {
-//   const params = req.params[0].split('/')
-//   const id = params[2]
-//   // We create store before rendering html
-//   const store = createStore()
-//   // We pass store to renderer
+app.get('*', (req, res) => {
+  const params = req.params[0].split('/')
+  const id = params[2]
+  // We create store before rendering html
+  const store = createStore()
+  // We pass store to renderer
 
-//   // Checks the given path, matches with component and returns array of items about to be rendered
-//   const routes = matchRoutes(Routes, req.path)
+  // Checks the given path, matches with component and returns array of items about to be rendered
+  const routes = matchRoutes(Routes, req.path)
 
-//   // Execute all loadData functions inside given urls and wrap promises with new promises to be able to render pages all the time
-//   // Even if we get an error while loading data, we will still attempt to render page.
-//   const promises = routes
-//     .map(({ route }) => {
-//       return route.loadData ? route.loadData(store, id) : null
-//     })
-//     .map(promise => {
-//       if (promise) {
-//         return new Promise((resolve, reject) => {
-//           promise.then(resolve).catch(resolve)
-//         })
-//       }
-//       return null
-//     })
+  // Execute all loadData functions inside given urls and wrap promises with new promises to be able to render pages all the time
+  // Even if we get an error while loading data, we will still attempt to render page.
+  const promises = routes
+    .map(({ route }) => {
+      return route.loadData ? route.loadData(store, id) : null
+    })
+    .map(promise => {
+      if (promise) {
+        return new Promise((resolve, reject) => {
+          promise.then(resolve).catch(resolve)
+        })
+      }
+      return null
+    })
 
-//   // Wait for all the loadData functions, if they are resolved, send the rendered html to browser.
-//   Promise.all(promises).then(() => {
-//     const context = {}
-//     const content = renderer(req, store, context)
-//     if (content.includes('The page you requested cannot be found!')) {
-//       res.status(404)
-//     }
-//     if (context.notFound) {
-//       res.status(404)
-//     }
-//     res.send(content)
-//   })
-// })
+  // Wait for all the loadData functions, if they are resolved, send the rendered html to browser.
+  Promise.all(promises).then(() => {
+    const context = {}
+    const content = renderer(req, store, context)
+    if (content.includes('The page you requested cannot be found!')) {
+      res.status(404)
+    }
+    if (context.notFound) {
+      res.status(404)
+    }
+    res.send(content)
+  })
+})
 
-// Loadable.preloadAll().then(() => {
-//   app.listen(port, () => {
-//     console.log(`Running on http://localhost:${port}`)
-//   })
-// })
+Loadable.preloadAll().then(() => {
+  app.listen(port, () => {
+    console.log(`Running on http://localhost:${port}`)
+  })
+})

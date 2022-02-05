@@ -39,7 +39,7 @@ class PagePayReturnContainer extends React.Component{
                 }
             },
             error => {
-                alert("Rejected: " + error); // error - аргумент reject
+                alert("Rejected: " + error);
             }
         );
     }

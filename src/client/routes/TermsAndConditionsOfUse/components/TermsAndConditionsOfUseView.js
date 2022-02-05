@@ -60,7 +60,6 @@ const head = (url) => {
       <meta property="og:image:height" content="50"/>
       <meta name="robots" content="all"/>
       <meta name="description" content='Terms of Service are legal agreements between the service provider and the person who wants to use the service. The person must agree to comply with the terms of service in order to use the offered service.'/>
-      {/* <link rel="canonical" href={canonical}/> */}
     </Helmet>
   )
 }

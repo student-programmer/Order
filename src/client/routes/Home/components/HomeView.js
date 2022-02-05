@@ -507,14 +507,26 @@ export const HomeView = (props) => (
         </Container>
         <Container>
     <Grid>
-      <Grid.Row columns={1} textAlign="center">
+      <Grid.Row columns={1}>
               <Grid.Column className="block-title">
               <Header as="h1" textAlign="center">
               The Best VPNs to Protect Yourself Online
-        <Header.Subheader as="h2" >
-        Safe and confidential Internet access
-        </Header.Subheader>
         </Header>
+        <Header as="h2" textAlign="center">
+        Every VPN is tested so you don't have to. Rigorous testing has been done to find the best VPN for you.
+        </Header>
+        <Header as="h2" textAlign="center">
+        Safe and confidential Internet access
+        </Header>
+        <div><p>What are VPNs and what are they for?<br/>
+           VPN (Virtual Private Network) is a technology that allows you to run a virtual cable through the Internet to your remote network (server). Today World Wide Web became a very insecure place. Everyone needs protection, and much more people are ready to sacrifice rate for security, we provide a better solution, no sacrifices, we provide the best VPN service, fastest, and safest.</p>
+           <Header as="h2" textAlign="center">
+           What is a VPN?
+        </Header>
+         <p> The general hallmarks of outstanding VPN’s choice are connection rate and data encryption quality. You have been looking the prime VPN for a long time, or, happy accident led you here, be sure, you are at the right place, the best VPN for gaming, mining & crypto-trading from every part of the world. A good VPN is fast and secure... what is the superior VPN? Fastest VPN that provides such rate and level of security that you just don't notice it. Confidence and full situation control, that's what perfect VPN is.<br/>
+          VPN works on «above» the Internet. This means, you can connect to it from anywhere. The principle of VPN is to create a secure connection over the network. The connection encrypts and protects the data being sent.<br/>
+          Best VPN with the highest speed, sounds amazing, but, how much does it cost? Our prices will pleasantly surprise you, as they surprise and please, thousands of our customers. The first-rate VPN for any purpose. Choose what you want and enjoy speed and security always and everywhere.</p><br/>
+            </div>
               </Grid.Column>
 
            </Grid.Row>

@@ -1,5 +1,4 @@
 import React from "react";
-// The import below should be updated to match your Router component
 import Routes from "../../Routes";
 import DynamicSitemap from "react-dynamic-sitemap";
 

@@ -24,6 +24,18 @@
 
 
 
+// const fs = require('fs');
+// const http = require('http');
+// const https = require('https');
+// const privateKey  = fs.readFileSync('/etc/letsencrypt/keys/0003_key-certbot.pem', 'utf8');
+// const certificate = fs.readFileSync('/etc/letsencrypt/csr/0003_csr-certbot.pem', 'utf8');
+// const credentials = {key: privateKey, cert: certificate};
+// const httpServer = http.createServer(app);
+// const httpsServer = https.createServer(credentials, app);
+
+// httpServer.listen(80);
+// httpsServer.listen(443);
+
 import '@babel/polyfill'
 import express from 'express'
 import React from 'react'
@@ -36,17 +48,6 @@ import Routes from './client/Routes'
 import Loadable from 'react-loadable'
 
 const app = express()
-// const fs = require('fs');
-// const http = require('http');
-// const https = require('https');
-// const privateKey  = fs.readFileSync('/etc/letsencrypt/keys/0003_key-certbot.pem', 'utf8');
-// const certificate = fs.readFileSync('/etc/letsencrypt/csr/0003_csr-certbot.pem', 'utf8');
-// const credentials = {key: privateKey, cert: certificate};
-// const httpServer = http.createServer(app);
-// const httpsServer = https.createServer(credentials, app);
-
-// httpServer.listen(80);
-// httpsServer.listen(443);
 
 function shouldCompress (req, res) {
   if (req.headers['x-no-compression']) return false

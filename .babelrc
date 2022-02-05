@@ -5,5 +5,5 @@
             "plugins": ["transform-react-remove-prop-types"]
         }
     },
-    "plugins": ["react-loadable/babel"]
+    "plugins": ["react-loadable/babel", "babel-plugin-styled-components"]
 }

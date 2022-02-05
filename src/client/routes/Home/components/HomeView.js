@@ -12,7 +12,6 @@ import {
   Container, 
   Header
 } from 'semantic-ui-react'
-
 import MainSlider from '../../../blocks/MainSlider'
 // import('schema-dts').Organization
 import { Organization } from "schema-dts";
@@ -21,15 +20,13 @@ import { helmetJsonLdProp } from "react-schemaorg";
 
 const head = (url) => {
   return (
-    <Helmet key={Math.random()} script={[
-      helmetJsonLdProp<Organization>({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "savingsdealz",
-        url: "https://savingsdealz.com/",
-      }),
-    ]}>
-
+    // <Helmet key={Math.random()} script={[
+    //   helmetJsonLdProp<Organization>({
+       
+    //   }),
+    // ]}>
+    <Helmet key={Math.random()}>
+        {/* <Title>The best place to buy VPN coupon with discount</Title> */}
       <title>The best place to buy VPN coupon with discount</title>
       <meta property="og:title" content="The best place to buy VPN coupon with discount" />
       <meta property="og:url" content="https://savingsdealz.com/" />
@@ -39,6 +36,14 @@ const head = (url) => {
       <meta property="og:image:height" content="50"/>
       <meta name="description" content="Every VPN is tested so you don't have to. Rigorous testing has been done to find the best VPN for you"/>
       <meta name="robots" content="index, follow"/>
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "savingsdealz",
+          url: "https://savingsdealz.com/",
+        }
+    `}</script>
       {/*<link rel="canonical" href={canonical} />*/}
     </Helmet>
 
@@ -64,7 +69,7 @@ const settings = {
 
 export const HomeView = (props) => (
   <div>
- {head(props.url)}
+ {head(props.url, props.title)}
     <div id="homePage">
         <div className="grey-block">
         <Container >
@@ -542,5 +547,5 @@ export const HomeView = (props) => (
     </div>
   </div>
 )
-
+// export default props => renderToString(<HomeView title="The best place to buy VPN coupon with discount" />)
 export default HomeView

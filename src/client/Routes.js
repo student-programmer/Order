@@ -74,10 +74,10 @@ export default [
                 ...Compare,
                 path: '/compare',
             },
-            {
-                ...Compare,
-                path: '/compare-',
-            },
+            // {
+            //     ...Compare,
+            //     path: '/compare-',
+            // },
             {
                 ...CompareVendors,
                 path: '/compare-:vendors',

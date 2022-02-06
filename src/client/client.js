@@ -5,6 +5,7 @@ import '@babel/polyfill';
 var React = require('react');
 var ReactDOM = require('react-dom');
 import { BrowserRouter } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 import './styles/main.scss'
 
@@ -26,6 +27,7 @@ ReactDOM.hydrate(
     <Provider store={store}>
         <BrowserRouter>
             <div>{renderRoutes(Routes)}</div>
+            <Redirect from="/compare-" to="/compare"/>
         </BrowserRouter>
     </Provider>,
     document.querySelector('#root')

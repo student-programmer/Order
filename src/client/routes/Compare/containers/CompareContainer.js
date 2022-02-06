@@ -115,7 +115,7 @@ class CompareContainer extends React.Component{
         if (vendor3) {
             vendorArray.push(this.checkVendorToUrl(vendor3))
         }
-
+            
         url += vendorArray.join('-with-')
 
         return url

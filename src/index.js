@@ -95,9 +95,9 @@ app.get('*', (req, res) => {
   Promise.all(promises).then(() => {
     const context = {}
     const content = renderer(req, store, context)
-    if (content.includes('The page you requested cannot be found!')) {
-      res.status(404)
-    }
+    // if (content.includes('The page you requested cannot be found!')) {
+    //   res.status(404)
+    // }
     if (context.notFound) {
       res.status(404)
     }

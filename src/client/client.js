@@ -27,7 +27,6 @@ ReactDOM.hydrate(
     <Provider store={store}>
         <BrowserRouter>
             <div>{renderRoutes(Routes)}</div>
-            <Redirect from="/compare-" to="/compare"/>
         </BrowserRouter>
     </Provider>,
     document.querySelector('#root')

@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Redirect, useHistory } from 'react-router'
+import { BrowserRouter, Link, useNavigate, Redirect } from 'react-router-dom'
+import { useHistory } from 'react-router'
 import { Helmet } from 'react-helmet'
+
 import {
   Grid,
   Segment,
@@ -22,6 +23,7 @@ const loaderItems = [
 ]
 
 const head = (url) => {
+
   return (
     
     <Helmet key={Math.random()}>
@@ -35,12 +37,15 @@ const head = (url) => {
       <meta name="description" content="Compare the best VPNs and find yours now. VPN experts compare and rate the best VPNs on the market in 2022. "/>
       <meta name="robots" content="all"/>
     </Helmet>
+
+  
   )
 }
 
 export const CompareView = (props) => (
 
   <div>
+
     {head(props.url)}
     <Container>
       <Breadcrumb id="breadcrumb">

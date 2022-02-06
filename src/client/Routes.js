@@ -94,10 +94,10 @@ export default [
                 ...PagePayReturn,
                 path: '/payment/return',
             },
-            {
-                Sitemap,
-                path:'/sitemap'
-            },
+            // {
+            //     Sitemap,
+            //     path:'/compare-'
+            // },
             {
                 ...Page404,
                 path: '*',

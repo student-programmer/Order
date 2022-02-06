@@ -16,6 +16,7 @@ import TermsAndConditionsOfUse from './routes/TermsAndConditionsOfUse'
 import PagePayReturn from './routes/PagePayReturn'
 import Sitemap from './routes/Sitemap/Sitemap'
 import Page404 from './routes/Page404'
+import CompareRedirect from './routes/CompareRedirect'
 
 
 export default [
@@ -74,10 +75,10 @@ export default [
                 ...Compare,
                 path: '/compare',
             },
-            // {
-            //     ...Compare,
-            //     path: '/compare-',
-            // },
+            {
+                ...CompareRedirect,
+                path: '/compare-',
+            },
             {
                 ...CompareVendors,
                 path: '/compare-:vendors',

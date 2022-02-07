@@ -54,17 +54,6 @@ export const VpnView = (props) => (
   <div>
     <Container>
       <Grid>
-      <Grid.Row columns={1} textAlign="center">
-              <Grid.Column className="block-title">
-              <Header as="h1" textAlign="center">
-              The Best VPN Services for 2022
-        <Header.Subheader as="h2">
-        What is a VPN service?
-        </Header.Subheader>
-        </Header>
-           
-              </Grid.Column>
-            </Grid.Row>
         {head(props.url)}
         <Grid.Row id="sliderBlock">
           <Grid.Column width={16} verticalAlign="middle">
@@ -132,9 +121,9 @@ export const VpnView = (props) => (
               <Header as="h1" textAlign="center">
               The Best VPN Services for 2022
         </Header>
-        <Header as="h2" textAlign="center">
+        <p className="pTextVpn" textAlign="center">
         An online VPN service that encrypts internet traffic and hides your physical location and IP address. Improve your privacy and security now.
-        </Header>
+        </p>
         <Header as="h2" textAlign="center">
         What is a VPN service?
         </Header>

@@ -17,6 +17,7 @@ import {
     Image
 } from 'semantic-ui-react'
 
+
 import {
     ShareButtons,
     ShareCounts,
@@ -150,23 +151,16 @@ class PageLayout extends  React.Component{
                                 </Menu>
                             </Grid.Column>
 
-                            {/*<Grid.Column*/}
-                            {/*    width={3}*/}
-                            {/*    textAlign='right'*/}
-                            {/*    className='right-block'*/}
-                            {/*>*/}
-                            {/*    Stay connected*/}
-                            {/*    <Icon*/}
-                            {/*        circular*/}
-                            {/*        color='red'*/}
-                            {/*        name='facebook f'*/}
-                            {/*    />*/}
-                            {/*    <Icon*/}
-                            {/*        circular*/}
-                            {/*        color='red'*/}
-                            {/*        name='twitter'*/}
-                            {/*    />*/}
-                            {/*</Grid.Column>*/}
+                            <Grid.Column
+                           width={4}
+                           textAlign='center'
+                           className='right-block'
+                            >
+                           <div className="stayCont">social networks</div>
+
+                           <a href="https://www.facebook.com/" className="iconsLink"><i class="fab fa-facebook-square iconsFooter"></i></a>
+                           <a href="https://www.instagram.com" className="iconsLink"><i class="fab fa-instagram iconsFooter"></i></a>
+                            </Grid.Column> 
                         </div>
                     </div>
                 </div>

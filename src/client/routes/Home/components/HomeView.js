@@ -517,9 +517,9 @@ export const HomeView = (props) => (
               <Header as="h1" textAlign="center">
               The Best VPNs to Protect Yourself Online
         </Header>
-        <Header as="h2" textAlign="center">
+        <p  className="pText" textAlign="center">
         Every VPN is tested so you don't have to. Rigorous testing has been done to find the best VPN for you.
-        </Header>
+        </p>
         <Header as="h2" textAlign="center">
         Safe and confidential Internet access
         </Header>

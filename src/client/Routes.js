@@ -76,7 +76,7 @@ export default [
                 path: '/compare',
             },
             {
-                ...CompareRedirect,
+                ...Compare,
                 path: '/compare-',
             },
             {

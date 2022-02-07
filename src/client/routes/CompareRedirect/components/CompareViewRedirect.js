@@ -15,8 +15,6 @@ const head = (url) => {
       <meta name="description" content="Compare the best VPNs and find yours now. VPN experts compare and rate the best VPNs on the market in 2022. "/>
       <meta name="robots" content="noindex, nofollow"/>
     </Helmet>
-
-  
   )
 }
 

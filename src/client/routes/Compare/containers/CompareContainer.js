@@ -118,9 +118,9 @@ class CompareContainer extends React.Component{
 
         url += vendorArray.join('-with-')
         
-        // const pageUrl = ( url == '/compare-') ? '/compare' : url;
+        const pageUrl = ( url == '/compare-') ? '/compare' : url;
 
-        return url
+        return pageUrl
 
     }
 

@@ -51,7 +51,7 @@ const head = (url) => {
 }
 
 export const VpnView = (props) => (
-  <div>
+  <div className="vpn-page">
     <Container>
       <Grid>
         {head(props.url)}

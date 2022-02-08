@@ -41,6 +41,12 @@
   margin-left: 10px;
   cursor: pointer; }
 
+.iconsFooter:hover {
+  color: white; }
+
+#footerBlock .ui.menu .item:hover {
+  color: #fe3e3c; }
+
 #cartButton {
   position: relative; }
   #cartButton img {
@@ -316,6 +322,9 @@
 @media only screen and (min-width: 768px) {
   #bundlePage #contentBlock {
     width: 78% !important; } }
+
+.vpn-page .block-title {
+  padding-top: 80px; }
 
 .block-title {
   font-size: 50px;
@@ -721,6 +730,8 @@
 
 #vendorBlock .active .divider {
   border: 1px solid #FE3E3C; }
+
+
 
 /* Slider */
 .slick-slider

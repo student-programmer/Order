@@ -67,6 +67,7 @@ class PageLayout extends  React.Component{
                                     <Dropdown.Item
                                         as={Link}
                                         to='/vpn'
+                                 
                                     >
                                         VPN
                                     </Dropdown.Item>
@@ -83,6 +84,7 @@ class PageLayout extends  React.Component{
                               name='testimonials'
                               as={Link}
                               to='/compare'
+                             
                             >
                                 Compare
                             </Menu.Item>
@@ -107,18 +109,21 @@ class PageLayout extends  React.Component{
                                     <Menu.Item
                                         as={Link}
                                         to='/vpn'
+                                        className="footer-link"
                                     >
                                         VPN
                                     </Menu.Item>
                                     <Menu.Item
                                         as={Link}
                                         to='/compare'
+                                        className="footer-link"
                                     >
                                        Compare
                                     </Menu.Item>
                                     <Menu.Item
                                         as={Link}
                                         to='/checkout'
+                                        className="footer-link"
                                     >
                                         Check Out
                                     </Menu.Item>
@@ -133,18 +138,21 @@ class PageLayout extends  React.Component{
                                     <Menu.Item
                                         as={Link}
                                         to='/privacy-policy'
+                                        className="footer-link"
                                     >
                                         Privacy policy
                                     </Menu.Item>
                                     <Menu.Item
                                         as={Link}
                                         to='/terms-and-conditions-of-use'
+                                        className="footer-link"
                                     >
                                         Terms and conditions of use
                                     </Menu.Item>
                                     <Menu.Item
                                         as={Link}
                                         to='/contact-us'
+                                        className="footer-link"
                                     >
                                         Contact us
                                     </Menu.Item>
@@ -159,7 +167,7 @@ class PageLayout extends  React.Component{
                            <div className="stayCont">social networks</div>
 
                            <a href="https://www.facebook.com/" className="iconsLink"><i class="fab fa-facebook-square iconsFooter"></i></a>
-                           <a href="https://www.instagram.com" className="iconsLink"><i class="fab fa-instagram iconsFooter"></i></a>
+                           <a href="https://www.instagram.com/#" className="iconsLink"><i class="fab fa-instagram iconsFooter"></i></a>
                             </Grid.Column> 
                         </div>
                     </div>

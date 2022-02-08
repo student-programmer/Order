@@ -14,8 +14,10 @@ import Vendor from './routes/Vendor'
 import PrivacyPolicy from './routes/PrivacyPolicy'
 import TermsAndConditionsOfUse from './routes/TermsAndConditionsOfUse'
 import PagePayReturn from './routes/PagePayReturn'
+import News from './routes/News'
 import Sitemap from './routes/Sitemap/Sitemap'
 import Page404 from './routes/Page404'
+import Articles from './routes/Articles'
 
 
 
@@ -86,6 +88,14 @@ export default [
             {
                 ...TermsAndConditionsOfUse,
                 path: '/terms-and-conditions-of-use',
+            },
+            {
+                ...News,
+                path: '/news',
+            },
+            {
+                ...Articles,
+                path: '/articles',
             },
             {
                 ...PagePayReturn,

@@ -238,7 +238,8 @@
         transform: translateX(-50%);
         bottom:10px;
         font-weight: normal;
-
+        display:flex;
+        align-items: center;
     }
     .card-text{
         color:#FE3E3C;

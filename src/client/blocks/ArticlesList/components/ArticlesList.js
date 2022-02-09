@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+// import '../assets/ArticlesList.scss';
 
 import { 
     Grid,
@@ -30,23 +31,32 @@ export const ArticlesList = (props) => (
             ) : (
                 Object.keys(props.data).map((rowKey) => (
                     <Container> 
-                    <Grid>
-                        <Grid.Row columns={1}>
-                    
-                        <Grid.Column verticalAlign='middle'>
+                     <Grid>
+                        <Grid.Row >
+              
+                     
+                            <Grid.Column >
+                                <Grid.Row>
                             <Header as="h1">
                                 { props.data[rowKey]['title'] }
                             </Header>
-                            <Image  verticalAlign='middle'
+                            </Grid.Row>
+                            <Grid.Row> 
+                            <Grid.Column textAlign='left' computer={6}>
+                            <p>
+                            <Image 
+                            className="newsImage"
                             alt="news-image"
+                            align="left"
                             src={ props.data[rowKey]['image'] }
-                            size='big'
-                        />
-                            <Grid.Column>
-                                { props.data[rowKey]['description'] }
-                            </Grid.Column>
+                            size='medium'
+                            vspace="5" hspace="5"
+                        />  <p className="articlesText">{ props.data[rowKey]['description'] }</p> </p> 
                         </Grid.Column>
-                        </Grid.Row>
+                                
+                                </Grid.Row>
+                            </Grid.Column>
+                            </Grid.Row>
                     </Grid>
                     </Container>
                 ))

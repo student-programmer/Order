@@ -31,22 +31,25 @@ export const NewsList = (props) => (
                 Object.keys(props.data).map((rowKey) => (
                     <Container> 
                     <Grid>
-                        <Grid.Row columns={1}>
-                    
-                        <Grid.Column verticalAlign='middle'>
-                            <Header as="h1">
-                                { props.data[rowKey]['title'] }
-                            </Header>
+                        <Grid.Row columns={2}>
+                            <Grid.Column computer={6}>
                             <Image  verticalAlign='middle'
                             alt="news-image"
                             src={ props.data[rowKey]['image'] }
-                            size='big'
-                        />
-                            <Grid.Column>
+                            size='medium'
+                        /> </Grid.Column>
+                     
+                            <Grid.Column >
+                                <Grid.Row>
+                            <Header as="h1">
+                                { props.data[rowKey]['title'] }
+                            </Header>
+                            </Grid.Row>
+                            <Grid.Row> 
                                 { props.data[rowKey]['description'] }
+                                </Grid.Row>
                             </Grid.Column>
-                        </Grid.Column>
-                        </Grid.Row>
+                            </Grid.Row>
                     </Grid>
                     </Container>
                 ))

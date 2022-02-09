@@ -3,7 +3,7 @@
   background-color: #FE3E3C; }
 
 #footerBlock .right-block {
-  text-align: right;
+  text-align: center;
   font-weight: normal; }
 
 #footerBlock .ui.menu .item {
@@ -214,7 +214,9 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
-  font-weight: normal; }
+  font-weight: normal;
+  display: flex;
+  align-items: center; }
 
 #homePage .card-text {
   color: #FE3E3C;
@@ -732,6 +734,14 @@
   border: 1px solid #FE3E3C; }
 
 
+.newsImage {
+  float: left; }
+
+.articlesText {
+  text-align: left; }
+
+.accordingInFaq {
+  width: 100px; }
 
 /* Slider */
 .slick-slider
@@ -1576,7 +1586,7 @@ p {
     box-shadow: none; }
 
 #bestVpnDeals .image:not(.header) {
-  padding: 1em; }
+  padding: 0px; }
 
 #bestVpnDeals .content {
   padding-left: 0; }
@@ -39865,7 +39875,7 @@ a.ui.card:hover,
      Styled
 ---------------*/
 .ui.styled.accordion {
-  width: 600px;
+  width: 100%;
 }
 .ui.styled.accordion,
 .ui.styled.accordion .accordion {

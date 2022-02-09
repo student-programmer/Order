@@ -63,7 +63,7 @@ const head = (url, info) => {
     ]}>
       <title></title>
       <meta name="robots" content="index, follow"/>
-      <meta name="description" content={description}/> 
+      <meta name="description" content="offer"/> 
       <link rel="canonical" href={canonical}/>
     </Helmet>
   )

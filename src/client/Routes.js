@@ -18,6 +18,8 @@ import News from './routes/News'
 import Sitemap from './routes/Sitemap/Sitemap'
 import Page404 from './routes/Page404'
 import Articles from './routes/Articles'
+import Question from './routes/FAQ'
+
 
 
 
@@ -96,6 +98,10 @@ export default [
             {
                 ...Articles,
                 path: '/articles',
+            },
+            {
+                ...Question,
+                path: '/faq',
             },
             {
                 ...PagePayReturn,

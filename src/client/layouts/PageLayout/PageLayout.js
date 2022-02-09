@@ -14,7 +14,8 @@ import {
     Dropdown,
     Grid,
     Icon,
-    Image
+    Image, 
+    Button
 } from 'semantic-ui-react'
 
 
@@ -104,36 +105,55 @@ class PageLayout extends  React.Component{
                 <div id="footerBlock">
                     <div className="ui container">
                         <div width="12" className="ui centered middle aligned grid">
-                        <Grid.Column width={4} textAlign='center'>
+                        <Grid.Column width={3} textAlign='center'>
                                 <Menu borderless compact vertical>
-                                    <Menu.Item
+                                <Menu.Item
                                         as={Link}
-                                        to='/vpn'
+                                        to='/faq'
                                         className="footer-link"
                                     >
-                                        VPN
+                                        FAQ
                                     </Menu.Item>
                                     <Menu.Item
                                         as={Link}
-                                        to='/compare'
+                                        to='/news'
                                         className="footer-link"
                                     >
-                                       Compare
+                                        News
                                     </Menu.Item>
                                     <Menu.Item
                                         as={Link}
-                                        to='/checkout'
+                                        to='/articles'
                                         className="footer-link"
                                     >
-                                        Check Out
+                                       Articles
                                     </Menu.Item>
+                              
                                 </Menu>
                             </Grid.Column>
+                            <Grid.Column
+                           width={3}
+                           textAlign='center'
+                           className='right-block'
+                            >
+                           <a href="https://www.facebook.com/" className="iconsLink"><i class="fab fa-facebook-square iconsFooter"></i></a>
+                           <a href="https://www.instagram.com/#" className="iconsLink"><i class="fab fa-instagram iconsFooter"></i></a>
+                            </Grid.Column> 
                             <Grid.Column width={4} textAlign='center'>
+                                <Image src="/images/logo.png"  alt="logo" centered/>
                                 Our mission: Give you best price to keep your money
                             </Grid.Column>
+                            <Grid.Column width={3} textAlign='center'>
+                            <Button
+                      className="card-button"
+                      as={Link}
+                      to="/vpn"
+                      primary
+                      content="Select VPN >"
+                    />
+                            </Grid.Column>
 
-                            <Grid.Column width={4} textAlign='center'>
+                            <Grid.Column width={3} textAlign='center'>
                                 <Menu borderless compact vertical>
                                     <Menu.Item
                                         as={Link}
@@ -158,17 +178,6 @@ class PageLayout extends  React.Component{
                                     </Menu.Item>
                                 </Menu>
                             </Grid.Column>
-
-                            <Grid.Column
-                           width={4}
-                           textAlign='center'
-                           className='right-block'
-                            >
-                           <div className="stayCont">social networks</div>
-
-                           <a href="https://www.facebook.com/" className="iconsLink"><i class="fab fa-facebook-square iconsFooter"></i></a>
-                           <a href="https://www.instagram.com/#" className="iconsLink"><i class="fab fa-instagram iconsFooter"></i></a>
-                            </Grid.Column> 
                         </div>
                     </div>
                 </div>

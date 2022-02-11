@@ -35,24 +35,32 @@
             color: #000000;
         }
     }
+
 }
+
 
 @media only screen and (max-width: 400px) {
     #registerBlock #registerButton button {
         width: 300px !important;
     }
 }
-.block-title {
+.block-title-register {
     font-size: 40px;
     line-height: 50px;
     font-weight: 500;
     position:absolute;
-    left:50%;
-    transform:translateX(-50%)
+    // left:50%;
+    // transform:translateX(-50%)
 }
 @media only screen and (max-width: 400px) {
-    .block-title {
+    .block-title-register {
         font-size: 35px !important;
         line-height: 35px !important;
     }
+}
+@media only screen and (max-width: 350px) {
+    #registerBlock #registerButton button {
+        width: 200px !important;
+    }
+
 }

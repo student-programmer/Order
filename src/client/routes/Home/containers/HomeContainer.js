@@ -40,9 +40,11 @@ class HomeContainer extends React.Component {
 
     this.state = {
       loading : 0,
-      offers  : {}
+      offers  : {},
+      size: 0
     }
   }
+
 
   getRecomendationOffers = (category) => {
     let {
@@ -92,7 +94,8 @@ class HomeContainer extends React.Component {
             url
         } = offer
     return (
-      <Card key={'of-' + id} style={{ width: 230 }}>
+      // <Card key={'of-' + id} style={{ width: 230, }}>
+      <Card key={'of-' + id} style={{ width: 230, left:"50%", transform:"translateX(-50%)" }}> 
         <Card.Header>
           <Image
           alt="offer"
@@ -137,23 +140,27 @@ class HomeContainer extends React.Component {
     )
   }
 
+
   getRecommendationPanes = () => {
     let vpnOffers = this.getRecomendationOffers('vpn')
+    
+
 
     const loaderItems = [
       1, 2, 3, 4, 5, 6, 7, 8, 9, 0
     ]
-
     return [
       {
         // menuItem: 'VPN service',
         render: () => (
+          
           <Tab.Pane attached={false} key='vpn-tab'>
-            <Slider {...settings}>
+                <Slider {...settings}>
               {
-                vpnOffers ? (
-
+                vpnOffers ? (   
+      
                   Object.keys(vpnOffers).map((rowKey) => this.displayOffer(vpnOffers[rowKey]))
+             
 
                 ) : (
                   Object.keys(loaderItems).map((k) => (
@@ -170,18 +177,142 @@ class HomeContainer extends React.Component {
                   ))
                 )
               }
-            </Slider>
-          </Tab.Pane>
+         </Slider> 
+       </Tab.Pane>
+
         ),
       },
     ]
+
+    // if(size  > 1200){
+    //   return [
+    //     {
+    //       // menuItem: 'VPN service',
+    //       render: () => (
+            
+    //         <Tab.Pane attached={false} key='vpn-tab'>
+    //               <Slider {...settings}>
+    //             {
+    //               vpnOffers ? (   
+        
+    //                 Object.keys(vpnOffers).map((rowKey) => this.displayOffer(vpnOffers[rowKey]))
+               
+  
+    //               ) : (
+    //                 Object.keys(loaderItems).map((k) => (
+    //                   <Placeholder style={{ width: 230 }} key={'pl-' + k}>
+    //                     <Placeholder.Image/>
+    //                     <Placeholder.Header>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                     </Placeholder.Header>
+    //                   </Placeholder>
+    //                 ))
+    //               )
+    //             }
+    //        </Slider> 
+    //      </Tab.Pane>
+    
+          
+    //       ),
+    //     },
+    //   ]
+    // } else {
+    //   return [
+    //     {
+    //       // menuItem: 'VPN service',
+    //       render: () => (
+    //         <Grid textAlign='center'> 
+    //         {/* <Tab.Pane attached={false} key='vpn-tab'> */}
+    //           {/* <Slider {...settings}> */}
+    //             {
+    //               vpnOffers ? (   
+        
+    //                 Object.keys(vpnOffers).map((rowKey) => (<Grid.Column textAlign='center' width={8}> { this.displayOffer(vpnOffers[rowKey])}</Grid.Column> ))
+               
+  
+    //               ) : (
+    //                 Object.keys(loaderItems).map((k) => (
+    //                   <Placeholder style={{ width: 230 }} key={'pl-' + k}>
+    //                     <Placeholder.Image/>
+    //                     <Placeholder.Header>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                       <Placeholder.Line length='full'/>
+    //                     </Placeholder.Header>
+    //                   </Placeholder>
+    //                 ))
+    //               )
+    //             }
+    //           {/* </Slider> */}
+    //         {/* </Tab.Pane> */}
+    //         </Grid>
+          
+    //       ),
+    //     },
+    //   ]
+    // } 
+
+    
   }
+  getTwoRecommendationPanes = () => {
+    let vpnOffers = this.getRecomendationOffers('vpn')
+
+
+
+    const loaderItems = [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    ]
+
+   
+      return [
+        {
+          // menuItem: 'VPN service',
+          render: () => (
+            
+            <Grid textAlign='center'> 
+    {/* //         <Tab.Pane attached={false} key='vpn-tab'> */}
+               {/* <Slider {...settings}> */}
+              { 
+                   vpnOffers ? (   
+                    Object.keys(vpnOffers).map((rowKey) => (<Grid.Column textAlign='center' width={8}> { this.displayOffer(vpnOffers[rowKey])}</Grid.Column> ))
+                   ) : (
+                     Object.keys(loaderItems).map((k) => (
+                       <Placeholder style={{ width: 230 }} key={'pl-' + k}>
+                         <Placeholder.Image/>
+                         <Placeholder.Header>
+                           <Placeholder.Line length='full'/>
+                           <Placeholder.Line length='full'/>
+                           <Placeholder.Line length='full'/>
+                           <Placeholder.Line length='full'/>
+                           <Placeholder.Line length='full'/>
+                         </Placeholder.Header>
+                       </Placeholder>
+                     ))
+                   )
+                 }
+               {/* </Slider> */}
+             {/* </Tab.Pane> */}
+           </Grid>
+
+          ),
+        },
+      ]
+  }
+ 
 
   render () {
     return <HomeView
       {...this.state}
 
       getRecomedationPanes={this.getRecommendationPanes}
+
+      getTwoRecomedationPanes={this.getTwoRecommendationPanes}
                 />
   }
 }

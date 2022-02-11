@@ -38,15 +38,7 @@ const head = (url) => {
 
 export const CheckoutView = (props) => (
   <div>  
-    <Header className='block-title' as="h1" textAlign="center">
-      {/* <h1 className='block-title'>Checkout deals</h1> */}
-      Checkout deals
-  <Header.Subheader as="h2">
-  Online shopping model steps
 
-</Header.Subheader>
-</Header>
-   
     {head(props.url)}
     <Container>
       <Breadcrumb id="breadcrumb">
@@ -62,7 +54,20 @@ export const CheckoutView = (props) => (
           Checkout
         </Breadcrumb.Section>
       </Breadcrumb>
-
+      <Container >
+    <Grid>
+      <Grid.Row columns={1}  textAlign="center">
+              <Grid.Column textAlign="center" className="block-title-checkout" >
+              <Header as="h1" textAlign="center">
+              Checkout deals
+        </Header>
+        <Header.Subheader as="h2" >
+        Online shopping model steps
+            </Header.Subheader>
+              </Grid.Column>
+           </Grid.Row>
+      </Grid>
+    </Container>
       <Grid id="checkoutBlock">
         <Grid.Column computer={10} mobile={16}>  {/* width={10} */}
           <Grid>

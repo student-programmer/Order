@@ -141,7 +141,7 @@ class PageLayout extends  React.Component{
                             </Grid.Column> 
                             <Grid.Column width={4} textAlign='center'>
                                 <Image src="/images/logo.png"  alt="logo" centered/>
-                                Our mission: Give you best price to keep your money
+                                <p className="LogoText">Our mission: Give you best price to keep your money</p>
                             </Grid.Column>
                             <Grid.Column width={3} textAlign='center'>
                             <Button
@@ -153,8 +153,15 @@ class PageLayout extends  React.Component{
                     />
                             </Grid.Column>
 
-                            <Grid.Column width={3} textAlign='center'>
-                                <Menu borderless compact vertical>
+                            <Grid.Column width={3} textAlign='center' className="footerLinks">
+                                <Menu borderless compact vertical className="footerLinks">
+                                <Menu.Item
+                                        as={Link}
+                                        to='/contact-us'
+                                        className="footer-link"
+                                    >
+                                        Contact us
+                                    </Menu.Item>
                                     <Menu.Item
                                         as={Link}
                                         to='/privacy-policy'
@@ -168,13 +175,6 @@ class PageLayout extends  React.Component{
                                         className="footer-link"
                                     >
                                         Terms and conditions of use
-                                    </Menu.Item>
-                                    <Menu.Item
-                                        as={Link}
-                                        to='/contact-us'
-                                        className="footer-link"
-                                    >
-                                        Contact us
                                     </Menu.Item>
                                 </Menu>
                             </Grid.Column>

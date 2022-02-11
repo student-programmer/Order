@@ -27,6 +27,12 @@
 }
 
 @media only screen and (max-width: 400px) {
+    .LogoText{
+        display:none;
+    }
+    .footerLinks{
+        display:none!important;
+    }
     #headerBlock .ui.menu .item {
         font-size: 16px !important;
     }

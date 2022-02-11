@@ -44,6 +44,9 @@ import compression from 'compression'
 import renderer from './helpers/renderer'
 import createStore from './store/createStore'
 import Routes from './client/Routes'
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const html = "http://localhost:3000"
 
 import Loadable from 'react-loadable'
 
@@ -72,7 +75,8 @@ app.get('*', (req, res) => {
   // We create store before rendering html
   const store = createStore()
   // We pass store to renderer
-
+  // global.document = new JSDOM(html).window.document;
+  global.window = new JSDOM(html).window;
   // Checks the given path, matches with component and returns array of items about to be rendered
   const routes = matchRoutes(Routes, req.path)
 

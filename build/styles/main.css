@@ -26,6 +26,10 @@
   cursor: pointer; }
 
 @media only screen and (max-width: 400px) {
+  .LogoText {
+    display: none; }
+  .footerLinks {
+    display: none !important; }
   #headerBlock .ui.menu .item {
     font-size: 16px !important; }
   #headerBlock .ui.menu .item:first-child {
@@ -66,10 +70,10 @@
     margin-bottom: 40px; }
 
 #homePage .white-block {
-  background-color: #FFFFFF; }
+  background-color: #ffffff; }
 
 #homePage .grey-block {
-  background-color: #FCFCFD; }
+  background-color: #fcfcfd; }
 
 #homePage .h1 {
   font-weight: 600;
@@ -82,7 +86,7 @@
 #homePage .title {
   font-weight: 500;
   font-size: 20px;
-  color: #241B04;
+  color: #241b04;
   width: 70%;
   text-align: center;
   margin: 15px auto; }
@@ -90,7 +94,7 @@
 #homePage .title-wide {
   font-weight: 500;
   font-size: 20px;
-  color: #241B04;
+  color: #241b04;
   width: 80%;
   text-align: center;
   margin: 15px auto; }
@@ -100,27 +104,27 @@
   background: transparent; }
 
 #homePage #chooseUsBlock div.column > div {
-  background: #FCFCFD;
+  background: #fcfcfd;
   box-shadow: 0px 15px 20px rgba(206, 206, 227, 0.15);
   border-radius: 10px; }
 
 #homePage #categoryBlock div.column > div {
-  background: #FCFCFD;
+  background: #fcfcfd;
   box-shadow: 0px 15px 20px rgba(206, 206, 227, 0.15);
   border-radius: 10px; }
   #homePage #categoryBlock div.column > div .description {
-    background: #FFFFFF;
+    background: #ffffff;
     padding: 27px; }
     #homePage #categoryBlock div.column > div .description .title {
       font-weight: 600;
       font-size: 20px;
-      color: #241B04;
+      color: #241b04;
       margin-bottom: 19px; }
 
 #homePage #bundleBlock {
   font-size: 30px;
   line-height: 35px;
-  color: #241B04; }
+  color: #241b04; }
   #homePage #bundleBlock .old-price {
     text-decoration: line-through; }
   #homePage #bundleBlock .btn-block > div {
@@ -135,11 +139,11 @@
             margin-right: 0;
         }*/ }
   #homePage #recommendationBlock .menu.secondary .item.active {
-    border: 2px solid #FE3E3C;
+    border: 2px solid #fe3e3c;
     box-sizing: border-box;
     border-radius: 5px;
     background: transparent;
-    color: #FE3E3C; }
+    color: #fe3e3c; }
   #homePage #recommendationBlock .slick-slide {
     margin: 0 15px; }
   #homePage #recommendationBlock .slick-track .slick-current {
@@ -155,9 +159,9 @@
       height: 150px;
       vertical-align: middle; }
   #homePage #recommendationBlock .card {
-    background: #FFFFFF; }
+    background: #ffffff; }
     #homePage #recommendationBlock .card .header {
-      background: #FCFCFD;
+      background: #fcfcfd;
       display: table-cell; }
   #homePage #recommendationBlock .card > div,
   #homePage #recommendationBlock .placeholder > div {
@@ -190,11 +194,11 @@
   #homePage #feedbackBlock .card .name {
     font-weight: 500;
     font-size: 20px;
-    color: #241B04; }
+    color: #241b04; }
   #homePage #feedbackBlock .card .date {
     vertical-align: bottom; }
   #homePage #feedbackBlock .card .content {
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 10px;
     border-top: none; }
 
@@ -218,15 +222,26 @@
   display: flex;
   align-items: center; }
 
+#homePage .first-card-button {
+  width: 136px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  font-weight: normal;
+  display: flex;
+  align-items: center; }
+
 #homePage .card-text {
-  color: #FE3E3C;
+  color: #fe3e3c;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
   font-size: 14px;
   font-weight: bold;
-  font-family: Balsamiq Sans,Helvetica Neue,Arial,Helvetica,sans-serif; }
+  font-family: Balsamiq Sans, Helvetica Neue, Arial, Helvetica, sans-serif; }
 
 #homePage .item-block {
   max-width: 300px;
@@ -284,14 +299,56 @@
   font-size: 30px;
   line-height: 40px; }
 
+@media only screen and (max-width: 1200px) {
+  #homePage .card-button,
+  #homePage .first-card-button {
+    width: 100px;
+    font-size: 10px;
+    height: 25px;
+    bottom: 8px; } }
+
 @media only screen and (max-width: 992px) {
+  .item-block {
+    width: 200px; }
+  .first-item-block {
+    width: 200px; }
   .item-block {
     margin-top: 30px; }
   .first-item-block {
     margin-left: 20px;
-    margin-top: 30px; } }
+    margin-top: 30px; }
+  .first-card-button {
+    margin-left: 10px; }
+  #homePage .card-button,
+  #homePage .first-card-button {
+    width: 136px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    font-size: 14px; }
+  #homePage #buyWithDiscountBlock div.button {
+    width: 160px;
+    height: 40px;
+    font-size: 15px; }
+  #buyWithDiscountBlock div.button {
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    bottom: -10px;
+    transform: translateX(-40%);
+    left: 40%; }
+    #buyWithDiscountBlock div.button .button {
+      width: 160px;
+      bottom: -10px; } }
 
 @media only screen and (max-width: 400px) {
+  #homePage #buyWithDiscountBlock div.button {
+    display: none; }
   .block-title {
     font-size: 35px !important;
     line-height: 35px !important; }
@@ -299,13 +356,7 @@
     font-size: 35px !important;
     line-height: 35px !important; }
   #buyWithDiscountBlock {
-    max-width: 300px !important; }
-    #buyWithDiscountBlock div.button {
-      position: absolute;
-      width: auto !important;
-      left: 10%; }
-      #buyWithDiscountBlock div.button .button {
-        width: auto !important; } }
+    display: none; } }
 
 .block-titleH2 {
   position: absolute;
@@ -319,7 +370,11 @@
 
 .pText {
   font-size: 1.71428571rem;
-  font-weight: 700; }
+  font-weight: 700;
+  text-align: center; }
+
+.cardCentered {
+  align-items: center; }
 
 @media only screen and (min-width: 768px) {
   #bundlePage #contentBlock {
@@ -384,18 +439,20 @@
   #registerBlock #registerButton button {
     width: 300px !important; } }
 
-.block-title {
+.block-title-register {
   font-size: 40px;
   line-height: 50px;
   font-weight: 500;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); }
+  position: absolute; }
 
 @media only screen and (max-width: 400px) {
-  .block-title {
+  .block-title-register {
     font-size: 35px !important;
     line-height: 35px !important; } }
+
+@media only screen and (max-width: 350px) {
+  #registerBlock #registerButton button {
+    width: 200px !important; } }
 
 #signinBlock {
   width: 37.5em;
@@ -566,7 +623,7 @@
   .ui.items:not(.unstackable) > .item > .image, .ui.items:not(.unstackable) > .item > .image > img {
     max-width: 150px !important; } }
 
-.block-title {
+.block-title-checkout {
   font-size: 40px;
   line-height: 50px;
   font-weight: 500;
@@ -35183,6 +35240,8 @@ Floated Menu / Item
 .ui.card {
   max-width: 100%;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   width: 290px;

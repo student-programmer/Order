@@ -8,7 +8,8 @@ import {
   Segment,
   Breadcrumb,
   Popup,
-  Message
+  Message,
+  Grid
 } from 'semantic-ui-react'
 
 const head = (url) => {
@@ -23,13 +24,13 @@ const head = (url) => {
 
 export const RegisterView = (props) => (
   <div>
-        <Header className='block-title' as="h1" textAlign="center">
+        {/* <Header className='block-title' as="h1" textAlign="center"> */}
       {/* <h1 className='block-title'>Checkout deals</h1> */}
-      Find your VPN Online
+      {/* Find your VPN Online
   <Header.Subheader as="h2">
   Discover The Best VPN in Your Country
 </Header.Subheader>
-</Header>
+</Header> */}
 
     <Container>
       {head(props.url)}
@@ -46,7 +47,20 @@ export const RegisterView = (props) => (
           Register
         </Breadcrumb.Section>
       </Breadcrumb>
-
+      <Container >
+    <Grid>
+      <Grid.Row columns={1}  textAlign="center">
+              <Grid.Column textAlign="center" className="block-title-register" >
+              <Header as="h1" textAlign="center">
+              Find your VPN Online
+        </Header>
+        <Header.Subheader as="h2" >
+          Discover The Best VPN in Your Country
+            </Header.Subheader>
+              </Grid.Column>
+           </Grid.Row>
+      </Grid>
+    </Container>
       <Segment id="registerBlock" loading={!props.loading}>
         <Header
           as="h1"

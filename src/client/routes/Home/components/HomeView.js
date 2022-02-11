@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
-
 import { Helmet } from 'react-helmet'
+import { useEffect, useState } from 'react';
+import useWindowDimensions from './useWindowDimensions';
+import useMediaQuery from 'react-use-media-query-hook';
 import {
   Grid,
   Image,
@@ -10,7 +12,8 @@ import {
   Tab,
   Card,
   Container, 
-  Header
+  Header,
+  GridColumn
 } from 'semantic-ui-react'
 import MainSlider from '../../../blocks/MainSlider'
 // import('schema-dts').Organization
@@ -65,25 +68,32 @@ const settings = {
       </div>
     )
   },
-}
+}  
 
-export const HomeView = (props) => (
+
+
+export const HomeView = (props) => {
+  const { width } = useWindowDimensions();
+  return( 
+
   <div>
  {head(props.url, props.title)}
     <div id="homePage">
         <div className="grey-block">
         <Container >
-          <Grid id="recommendationBlock">
+          <Grid textAlign='center' id="recommendationBlock">
             <Grid.Row textAlign="center">
               <Grid.Column className="block-title-rates">
               Popular VPN rates
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row columns={1}>
-              <Grid.Column>
+            <Grid.Row columnst={1}>
+              <Grid.Column> 
                 {/* <Tab panes={props.getRecomedationPanes()}/> */}
-                <Tab menu={{ secondary: true }} panes={props.getRecomedationPanes()}/>
-              </Grid.Column>
+          
+              {(width >= 992) ? <Tab menu={{ secondary: true }} panes={props.getRecomedationPanes()}/> : <Tab menu={{ secondary: true }} panes={props.getTwoRecomedationPanes()}/>}
+          
+                </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>
@@ -107,7 +117,7 @@ export const HomeView = (props) => (
               </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={5} textAlign="center" stretched id="chooseUsBlock" centered>
-              <Grid.Column mobile={12} computer={3}>
+              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
                 <div className="first-item-block">
                   <Image
                   alt="price tag"
@@ -118,14 +128,14 @@ export const HomeView = (props) => (
                     Best price you can find
                   </div>
                   <Button
-                      className="card-button"
+                      className="first-card-button"
                       as={Link}
                       primary
                       content="Learn more >"
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3}>
+              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="piggy bank"
@@ -144,7 +154,7 @@ export const HomeView = (props) => (
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3}>
+              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="percentages"
@@ -162,7 +172,7 @@ export const HomeView = (props) => (
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3}>
+              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="bank card"
@@ -180,7 +190,7 @@ export const HomeView = (props) => (
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3}>
+              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="magnifier"
@@ -205,8 +215,8 @@ export const HomeView = (props) => (
       <div className="grey-block">
         <Container>
           <Grid>
-            <Grid.Row textAlign="center" column={1}>
-              <Grid.Column className="block-title category">
+            <Grid.Row  column={1}>
+              <Grid.Column className="block-title category" textAlign="center" >
                 Category
               </Grid.Column>
             </Grid.Row>
@@ -414,16 +424,17 @@ export const HomeView = (props) => (
       </div>
       <div className="grey-block">
         <Container>
-          <Grid id="feedbackBlock">
-            <Grid.Row textAlign="center" column={1}>
-              <Grid.Column className="block-ttile">
+          <Grid id="feedbackBlock" textAlign="center">
+            <Grid.Row textAlign="center" column={1}  divided >
+              <Grid.Column  textAlign="center" className="block-ttile">
                 Feedback
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row columns={1}>
-              <Grid.Column>
-                <Slider {...settings}>
-                  <Card style={{ width: 354 }}>
+            <Grid.Row columns={1} textAlign="center" centered>
+            {/* <Grid.Column>  */}
+                {/* <Slider {...settings}> */}
+                <Grid.Column computer={5}  mobile={16}> 
+                  <Card style={{ width: 354 }} className="feedbackCard">
                     <Card.Header>
                       <Image
                       alt="feedback"
@@ -450,6 +461,9 @@ export const HomeView = (props) => (
                       Thanks you guys, you are awesome!
                     </Card.Content>
                   </Card>
+                  </Grid.Column>
+                  <Grid.Column computer={1}></Grid.Column>
+                  <Grid.Column  computer={5}  mobile={16} >
                   <Card style={{ width: 354 }}>
                     <Card.Header>
                       <Image
@@ -479,7 +493,10 @@ export const HomeView = (props) => (
                       I got 80% off! You are right, dont pay full price use your brain!
                     </Card.Content>
                   </Card>
-                  <Card style={{ width: 354 }}>
+                  </Grid.Column>
+                  <Grid.Column computer={1}></Grid.Column>
+                  <Grid.Column   computer={4} mobile={16} >
+                  <Card style={{ width: 354 }} className="feedbakCard">
                     <Card.Header>
                       <Image
                       alt="feedback"
@@ -505,8 +522,9 @@ export const HomeView = (props) => (
                       Hosting, VPN, Antivirus and cloud storage with huge discount!
                     </Card.Content>
                   </Card>
-                </Slider>
-              </Grid.Column>
+                  </Grid.Column>
+                {/* </Slider> */}
+              {/* </Grid.Column> */}
             </Grid.Row>
           </Grid>
         </Container>
@@ -546,6 +564,6 @@ export const HomeView = (props) => (
       </div>
     </div>
   </div>
-)
+)}
 // export default props => renderToString(<HomeView title="The best place to buy VPN coupon with discount" />)
 export default HomeView

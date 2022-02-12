@@ -30,7 +30,7 @@ export const ArticlesList = (props) => (
                 ))
             ) : (
                 Object.keys(props.data).map((rowKey) => (
-                    <Container> 
+                    <Container className="articlesList"> 
                      <Grid>
                         <Grid.Row >
               

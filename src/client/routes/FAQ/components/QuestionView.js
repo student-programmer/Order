@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import {
   Grid,
-  Container
+  Container,
+  Header
 
 } from 'semantic-ui-react'
 import {
@@ -13,7 +14,7 @@ import QuestionList from '../../../blocks/QuestionList'
 const head = () => {
   return (
     <Helmet key={Math.random()}>
-              <title>FAQ</title>
+              <title>Frequently Asked Questions</title>
       <meta property="og:title" content="FAQ" />
       <meta property="og:url" content="https://savingsdealz.com/articles" />
       <meta property="og:image" content="https://savingsdealz.com/images/logo.png" />
@@ -36,9 +37,21 @@ const head = () => {
 }
 
 export const QuestionView = (props) => (
- <div>
+ <div className="block-title-question">
      {head()}
    <Container> 
+   <Container>
+    <Grid>
+      <Grid.Row columns={1}>
+              <Grid.Column >
+              <Header as="h1" textAlign="center">
+                Frequently Asked Questions (FAQ)
+                </Header>
+              </Grid.Column>
+
+           </Grid.Row>
+      </Grid>
+    </Container>
      <Grid > 
       <Grid.Row columns={1} textAlign="center"> 
       <Grid.Column> 

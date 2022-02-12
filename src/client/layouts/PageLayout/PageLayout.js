@@ -105,7 +105,7 @@ class PageLayout extends  React.Component{
                 <div id="footerBlock">
                     <div className="ui container">
                         <div width="12" className="ui centered middle aligned grid">
-                        <Grid.Column width={3} textAlign='center'>
+                        <Grid.Column width={3} textAlign='left'>
                                 <Menu borderless compact vertical>
                                 <Menu.Item
                                         as={Link}
@@ -153,7 +153,7 @@ class PageLayout extends  React.Component{
                     />
                             </Grid.Column>
 
-                            <Grid.Column width={3} textAlign='center' className="footerLinks">
+                            <Grid.Column width={3} textAlign='right' className="footerLinks">
                                 <Menu borderless compact vertical className="footerLinks">
                                 <Menu.Item
                                         as={Link}

@@ -41,9 +41,21 @@ const head = () => {
 }
 
 export const ArticlesView = (props) => (
- <div>
+ <div className="articlesBlock">
      {head()}
    <Container> 
+   <Container>
+    <Grid>
+      <Grid.Row columns={1}>
+              <Grid.Column className="block-title-articles">
+              <Header as="h1" textAlign="center">
+                Articles
+                </Header>
+              </Grid.Column>
+
+           </Grid.Row>
+      </Grid>
+    </Container>
      <Grid > 
       <Grid.Row columns={1} textAlign="center"> 
       <Grid.Column> 

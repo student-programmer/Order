@@ -42,10 +42,22 @@ const head = () => {
 
 export const NewsView = (props) => (
 
- <div>
+ <div className="blockNews">
      {head()}
    <Container> 
-     <Grid > 
+   <Container >
+    <Grid>
+      <Grid.Row columns={1}>
+              <Grid.Column >
+              <Header as="h1" textAlign="center">
+               News
+                </Header>
+              </Grid.Column>
+
+           </Grid.Row>
+      </Grid>
+    </Container>
+     <Grid className="NewsListChild" > 
       <Grid.Row columns={1} textAlign="center"> 
       <Grid.Column> 
   <NewsList getData={getNewsList}/>

@@ -790,6 +790,11 @@
 #vendorBlock .active .divider {
   border: 1px solid #FE3E3C; }
 
+.blockNews {
+  margin-top: 40px; }
+
+.NewsListChild {
+  margin: 40px 0; }
 
 .newsImage {
   float: left; }
@@ -797,8 +802,17 @@
 .articlesText {
   text-align: left; }
 
+.articlesList {
+  margin: 40px 0; }
+
+.articlesBlock {
+  margin-top: 30px; }
+
 .accordingInFaq {
   width: 100px; }
+
+.block-title-question {
+  margin-top: 40px; }
 
 /* Slider */
 .slick-slider

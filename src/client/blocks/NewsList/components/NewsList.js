@@ -29,7 +29,7 @@ export const NewsList = (props) => (
                 ))
             ) : (
                 Object.keys(props.data).map((rowKey) => (
-                    <Container> 
+                    <Container className="NewsListChild"> 
                     <Grid>
                         <Grid.Row columns={2}>
                             <Grid.Column computer={6}>
@@ -39,7 +39,7 @@ export const NewsList = (props) => (
                             size='medium'
                         /> </Grid.Column>
                      
-                            <Grid.Column >
+                            <Grid.Column computer={10}>
                                 <Grid.Row>
                             <Header as="h1">
                                 { props.data[rowKey]['title'] }

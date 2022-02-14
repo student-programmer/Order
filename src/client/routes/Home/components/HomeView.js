@@ -44,7 +44,7 @@ const head = (url) => {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "savingsdealz",
-          "url": "https://savingsdealz.com/",
+          "url": "https://savingsdealz.com/"
         }
     `}</script>
       {/*<link rel="canonical" href={canonical} />*/}

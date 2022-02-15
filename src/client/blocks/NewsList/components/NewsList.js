@@ -41,7 +41,7 @@ export const NewsList = (props) => (
                      
                             <Grid.Column computer={10}>
                                 <Grid.Row>
-                            <Header as="h1">
+                            <Header as="h1" className="NamesNews">
                                 { props.data[rowKey]['title'] }
                             </Header>
                             </Grid.Row>

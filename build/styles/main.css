@@ -25,19 +25,51 @@
   height: 25px;
   cursor: pointer; }
 
+#headerBlock .menu.transition {
+  border: none !important; }
+
+#headerBlock .ui.menu .item {
+  text-align: center; }
+
 @media only screen and (max-width: 400px) {
   .LogoText {
     display: none; }
-  .footerLinks {
-    display: none !important; }
   #headerBlock .ui.menu .item {
-    font-size: 16px !important; }
+    font-size: 16px !important;
+    text-align: center; }
   #headerBlock .ui.menu .item:first-child {
-    padding: 0 5px 0 0 !important; }
+    padding: 10px 5px 10px 5px !important;
+    border: none; }
   #headerBlock .ui.menu .item {
     padding: 10px !important; }
   #footerBlock .ui.menu .item {
-    padding: initial !important; } }
+    padding: initial !important; }
+  .card-buttonFooter {
+    font-size: 13px !important; }
+  .footer-link {
+    font-size: 13px; }
+  .footerLinks {
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    left: -90px;
+    width: 250px !important; }
+  #footerBlock {
+    height: 250px !important; }
+  .footerLinks1 {
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    left: -20px;
+    width: 250px !important; }
+  .ui.compact.vertical.menu {
+    width: 250px !important; } }
+
+@media only screen and (max-width: 375px) {
+  .footerLinks1 {
+    left: -30px; }
+  .footerLinks {
+    left: -80px; } }
 
 .iconsFooter {
   color: #fe3e3c;
@@ -50,6 +82,12 @@
 
 #footerBlock .ui.menu .item:hover {
   color: #fe3e3c; }
+
+.footer-sitemap-link {
+  color: white;
+  font-size: 10px;
+  right: 0px;
+  bottom: 0px; }
 
 #cartButton {
   position: relative; }
@@ -279,7 +317,7 @@
 #homePage .choose {
   margin-bottom: 60px; }
 
-#homePage .category {
+#homePage .categoryHome {
   margin-bottom: 20px; }
 
 #homePage .block-title-rates {
@@ -318,7 +356,7 @@
     margin-left: 20px;
     margin-top: 30px; }
   .first-card-button {
-    margin-left: 10px; }
+    margin-left: 10px !important; }
   #homePage .card-button,
   #homePage .first-card-button {
     width: 136px;
@@ -346,7 +384,47 @@
       width: 160px;
       bottom: -10px; } }
 
+@media only screen and (max-width: 670px) {
+  .categoryHome {
+    top: 0px !important; }
+  .block-title {
+    width: 500px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 35px !important;
+    line-height: 35px !important; } }
+
+@media only screen and (max-width: 439px) {
+  .first-item-block, .item-block {
+    width: 170px; }
+  .TextChoose {
+    height: 10px; }
+  #homePage .choose {
+    margin-bottom: none;
+    top: 5px; }
+  #homePage .container {
+    padding: 0; }
+  #homePage #buyWithDiscountBlock div.button {
+    display: none; }
+  .block-title {
+    font-size: 35px !important;
+    line-height: 35px !important; }
+  .block-title-rates {
+    font-size: 35px !important;
+    line-height: 35px !important; }
+  #buyWithDiscountBlock {
+    display: none; }
+  #homePage #recommendationBlock .card .header {
+    height: 90px; }
+  #homePage #recommendationBlock .card > div, #homePage #recommendationBlock .placeholder > div {
+    padding: 5px; } }
+
 @media only screen and (max-width: 400px) {
+  .TextChoose {
+    height: 10px; }
+  #homePage .container {
+    padding: 0; }
   #homePage #buyWithDiscountBlock div.button {
     display: none; }
   .block-title {
@@ -375,6 +453,26 @@
 
 .cardCentered {
   align-items: center; }
+
+@media only screen and (max-width: 375px) {
+  #homePage .card-button, #homePage .first-card-button {
+    width: 100px;
+    font-size: 10px;
+    height: 25px;
+    bottom: 8px; }
+  .first-item-block, .item-block {
+    width: 140px; }
+  .item-block {
+    margin-left: 10px; }
+  .first-item-block {
+    margin-left: 0px;
+    margin-right: 10px; }
+  #homePage .item-block {
+    margin-right: 10px;
+    margin-left: 0px; }
+  .first-card-button {
+    margin-left: 0px !important;
+    margin-right: 10px !important; } }
 
 @media only screen and (min-width: 768px) {
   #bundlePage #contentBlock {
@@ -620,7 +718,7 @@
   max-height: 1em; }
 
 @media only screen and (max-width: 400px) {
-  .ui.items:not(.unstackable) > .item > .image, .ui.items:not(.unstackable) > .item > .image > img {
+  .checkoutImg {
     max-width: 150px !important; } }
 
 .block-title-checkout {
@@ -790,14 +888,41 @@
 #vendorBlock .active .divider {
   border: 1px solid #FE3E3C; }
 
+.ListContainerPolice {
+  width: 1000px !important; }
+
+@media only screen and (max-width: 1200px) {
+  .ListContainerPolice {
+    width: 800px !important; } }
+
+@media only screen and (max-width: 992px) {
+  .ListContainerPolice {
+    width: 550px !important; } }
+
+.ListContainerPolice {
+  width: 1000px !important; }
+
+@media only screen and (max-width: 1200px) {
+  .ListContainerPolice {
+    width: 800px !important; } }
+
+@media only screen and (max-width: 992px) {
+  .ListContainerPolice {
+    width: 550px !important; } }
+
 .blockNews {
   margin-top: 40px; }
 
 .NewsListChild {
   margin: 40px 0; }
 
+.NamesNews {
+  font-size: 25px !important; }
+
 .newsImage {
-  float: left; }
+  float: left;
+  margin-right: 145px;
+  margin-bottom: 30px; }
 
 .articlesText {
   text-align: left; }
@@ -807,6 +932,12 @@
 
 .articlesBlock {
   margin-top: 30px; }
+
+.NamesArticles {
+  font-size: 25px !important; }
+
+.ComponentName {
+  font-size: 40px !important; }
 
 .accordingInFaq {
   width: 100px; }

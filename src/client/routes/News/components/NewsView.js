@@ -49,7 +49,7 @@ export const NewsView = (props) => (
     <Grid>
       <Grid.Row columns={1}>
               <Grid.Column >
-              <Header as="h1" textAlign="center">
+              <Header as="h1" textAlign="center" className="ComponentName">
                News
                 </Header>
               </Grid.Column>
@@ -58,7 +58,7 @@ export const NewsView = (props) => (
       </Grid>
     </Container>
      <Grid className="NewsListChild" > 
-      <Grid.Row columns={1} textAlign="center"> 
+      <Grid.Row columns={1} textAlign="justified"> 
       <Grid.Column> 
   <NewsList getData={getNewsList}/>
   </Grid.Column>

@@ -32,6 +32,14 @@ const head = (url) => {
       <meta property="og:image:height" content="50"/>
       <meta name="robots" content="all"/>
       <meta name="description" content="Online shopping process, follow the steps indicated to complete the transaction"/>
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "savingsdealz",
+          "url": "https://savingsdealz.com/checkout"
+        }
+    `}</script>
     </Helmet>
   )
 }
@@ -83,7 +91,7 @@ export const CheckoutView = (props) => (
                   <Item.Group>
                     {Object.keys(props.offers).map((rowKey) => (
                       <Item key={'c-' + props.offers[rowKey]['id']}>
-                        <Item.Image alt="$" size="tiny" src={props.offers[rowKey]['image']}/>
+                        <Item.Image alt="$" className="checkoutImg" size="tiny" src={props.offers[rowKey]['image']}/>
 
                         <Item.Content>
                           <Item.Header as="a">{props.offers[rowKey]['title']}</Item.Header>

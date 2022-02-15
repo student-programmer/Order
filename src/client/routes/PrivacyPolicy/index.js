@@ -1,5 +1,6 @@
 import React from 'react';
 import Loadable from 'react-loadable';
+import './assets/PrivacyPolicy.scss';
 
 const PrivacyPolicyContainer = Loadable({
   loader: () => import('./containers/PrivacyPolicyContainer'),

@@ -1,5 +1,6 @@
 import React from 'react';
 import Loadable from 'react-loadable';
+import './assets/TermsAndConditions.scss';
 
 const TermsAndConditionsOfUseContainer = Loadable({
   loader: () => import('./containers/TermsAndConditionsOfUseContainer'),

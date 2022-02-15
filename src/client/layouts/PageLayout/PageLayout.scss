@@ -25,20 +25,28 @@
     height:25px;
     cursor:pointer;
 }
+#headerBlock .menu.transition {
+    border:none!important;
+}
+#headerBlock .ui.menu .item {
+    text-align: center;
+}
 
 @media only screen and (max-width: 400px) {
     .LogoText{
         display:none;
     }
-    .footerLinks{
-        display:none!important;
-    }
+    // .footerLinks{
+    //     display:none!important;
+    // }
     #headerBlock .ui.menu .item {
         font-size: 16px !important;
+        text-align: center;
     }
 
     #headerBlock .ui.menu .item:first-child {
-        padding: 0 5px 0 0 !important;
+        padding: 10px 5px 10px 5px!important;
+        border:none;
     }
 
     #headerBlock .ui.menu .item {
@@ -48,7 +56,43 @@
     #footerBlock .ui.menu .item {
         padding: initial !important;
     }
+    .card-buttonFooter{
+        font-size:13px!important;
+    }
+    .footer-link{
+        font-size:13px;
+    }
+    .footerLinks{
+        position:absolute;
+        text-align:center;
+        top:50px;
+        left:-90px;
+        width:250px!important;
+
+
+    }
+    #footerBlock{
+        height:250px!important;
+    }
+    .footerLinks1{
+        position:absolute;
+        text-align:center;
+        top:50px;
+        left:-20px;
+        width:250px!important;
+    }
+    .ui.compact.vertical.menu{
+        width:250px!important;
+    }
 }
+@media only screen and (max-width: 375px) {
+    .footerLinks1{
+        left:-30px;
+    }
+    .footerLinks{
+        left:-80px;
+    }
+ }
 .iconsFooter{
     color:#fe3e3c;
     font-size:25px;
@@ -60,4 +104,10 @@
 }
  #footerBlock .ui.menu .item:hover{
     color:#fe3e3c;
+}
+.footer-sitemap-link{
+    color:white;
+    font-size:10px;
+    right:0px;
+    bottom:0px;
 }

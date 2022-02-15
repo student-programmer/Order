@@ -68,6 +68,7 @@ class PageLayout extends  React.Component{
                                     <Dropdown.Item
                                         as={Link}
                                         to='/vpn'
+                                        className="VpnDropdown"
                                  
                                     >
                                         VPN
@@ -105,8 +106,9 @@ class PageLayout extends  React.Component{
                 <div id="footerBlock">
                     <div className="ui container">
                         <div width="12" className="ui centered middle aligned grid">
-                        <Grid.Column width={3} textAlign='left'>
-                                <Menu borderless compact vertical>
+                     
+                        <Grid.Column  computer={3} textAlign='left' className="footerLinks1">
+                                <Menu borderless compact vertical className="footerLinks1">
                                 <Menu.Item
                                         as={Link}
                                         to='/faq'
@@ -132,28 +134,28 @@ class PageLayout extends  React.Component{
                                 </Menu>
                             </Grid.Column>
                             <Grid.Column
-                           width={3}
+                           computer={3}
+                         
                            textAlign='center'
                            className='right-block'
                             >
                            <a href="https://www.facebook.com/" className="iconsLink"><i class="fab fa-facebook-square iconsFooter"></i></a>
                            <a href="https://www.instagram.com/#" className="iconsLink"><i class="fab fa-instagram iconsFooter"></i></a>
                             </Grid.Column> 
-                            <Grid.Column width={4} textAlign='center'>
+                            <Grid.Column computer={4} textAlign='center'>
                                 <Image src="/images/logo.png"  alt="logo" centered/>
                                 <p className="LogoText">Our mission: Give you best price to keep your money</p>
                             </Grid.Column>
-                            <Grid.Column width={3} textAlign='center'>
+                            <Grid.Column computer={3} textAlign='center'>
                             <Button
-                      className="card-button"
+                      className="card-buttonFooter"
                       as={Link}
                       to="/vpn"
                       primary
                       content="Select VPN >"
                     />
                             </Grid.Column>
-
-                            <Grid.Column width={3} textAlign='right' className="footerLinks">
+                            <Grid.Column computer={3} textAlign='right' className="footerLinks">
                                 <Menu borderless compact vertical className="footerLinks">
                                 <Menu.Item
                                         as={Link}
@@ -180,6 +182,8 @@ class PageLayout extends  React.Component{
                             </Grid.Column>
                         </div>
                     </div>
+                    <a 
+                    href="/sitemap.xml" className="footer-sitemap-link">sitemap</a>
                 </div>
             </React.Fragment>
         )

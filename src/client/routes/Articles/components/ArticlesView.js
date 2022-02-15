@@ -48,7 +48,7 @@ export const ArticlesView = (props) => (
     <Grid>
       <Grid.Row columns={1}>
               <Grid.Column className="block-title-articles">
-              <Header as="h1" textAlign="center">
+              <Header as="h1" textAlign="center" className="ComponentName">
                 Articles
                 </Header>
               </Grid.Column>

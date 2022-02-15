@@ -1,0 +1,13 @@
+.ListContainerPolice{
+    width:1000px!important;
+}
+@media only screen and (max-width: 1200px) {
+    .ListContainerPolice{
+        width:800px!important;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .ListContainerPolice{
+        width:550px!important;
+    }
+}

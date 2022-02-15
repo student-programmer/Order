@@ -48,20 +48,21 @@ const head = (url, info) => {
 // console.log(description)
 
   return (
-    <Helmet key={Math.random()} script={[
-      helmetJsonLdProp<ProductCollection>({
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name:"vpn",
-        image: "",
-        description: 'All vpn on your choice',
-        brand: {
-          "@type": "Brand",
-          name: "vpn"
-        }
-      }),
-    ]}>
+    <Helmet key={Math.random()}>
       <title></title>
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name":"vpn",
+          "image": "",
+          "description": 'All vpn on your choice',
+          "brand": {
+            "@type": "Brand",
+            "name": "vpn"
+          }
+        }
+    `}</script>
       <meta name="robots" content="index, follow"/>
       <meta name="description" content="offer"/> 
       <link rel="canonical" href={canonical}/>

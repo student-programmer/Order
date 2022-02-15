@@ -10,64 +10,7 @@ const head = (url) => {
   const pageUrl = (typeof url !== 'undefined') ? url : '';
   let canonical = "https://savingsdealz.com" + pageUrl;
   return (
-    <Helmet key={Math.random()}
-    script={[
-      helmetJsonLdProp<FAQPage>({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [{
-          "@type": "Question",
-          "name": "Introduction",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We are committed to safeguarding the privacy of our website visitors; in this policy we explain how we will treat your personal information."
-          }
-        },{
-          "@type": "Question",
-          "name": "Collecting personal information",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": ""
-          }
-        },{
-          "@type": "Question",
-          "name": "Using your personal information:",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": ""
-          }
-        },{
-          "@type": "Question",
-          "name": "Disclosing personal information",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": ""
-          }
-        },{
-          "@type": "Question",
-          "name": "International data transfers",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": ""
-          }
-        },{
-          "@type": "Question",
-          "name": "Retaining personal information",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": ""
-          }
-        },{
-          "@type": "Question",
-          "name": "Security of your personal information",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": ""
-          }
-        }]
-      }),
-    ]}
-    >
+    <Helmet key={Math.random()}>
       <title>Privacy Policy</title>
       <meta property="og:title" content="Privacy Policy" />
       <meta property="og:url" content="https://savingsdealz.com/privacy-policy" />
@@ -79,6 +22,61 @@ const head = (url) => {
       <meta name="robots" content="index, follow"/>
       <meta name="description" content='A privacy policy is a statement or legal document that states how a company or website collects, processes and processes data from its customers and visitors. It clearly states whether this information is confidential, transferred or sold to third parties.'/>
       {/* <link rel="canonical" href={canonical}/> */}
+      <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "Introduction",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We are committed to safeguarding the privacy of our website visitors; in this policy we explain how we will treat your personal information."
+            }
+          },{
+            "@type": "Question",
+            "name": "Collecting personal information",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": ""
+            }
+          },{
+            "@type": "Question",
+            "name": "Using your personal information:",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": ""
+            }
+          },{
+            "@type": "Question",
+            "name": "Disclosing personal information",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": ""
+            }
+          },{
+            "@type": "Question",
+            "name": "International data transfers",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": ""
+            }
+          },{
+            "@type": "Question",
+            "name": "Retaining personal information",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": ""
+            }
+          },{
+            "@type": "Question",
+            "name": "Security of your personal information",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": ""
+            } 
+        }
+    `}</script>
     </Helmet>
   )
 }
@@ -107,6 +105,7 @@ export const PrivacyPolicyView = (props) => (
         General Provisions 
         </Header.Subheader>
         </Header>
+        <Container className="ListContainerPolice" textAlign='justified'>
         <List as="ol" size="big">
           <List.Item as="li">
             Introduction
@@ -484,6 +483,7 @@ export const PrivacyPolicyView = (props) => (
             </List.List>
           </List.Item>
         </List>
+        </Container>
       </Segment>
     </Container>
   </div>

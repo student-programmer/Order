@@ -89,6 +89,7 @@ export const TermsAndConditionsOfUseView = (props) => (
           Important information
         </Header.Subheader>
         </Header>
+        <Container className="ListContainerPolice" textAlign='justified'> 
         <List as="ol" size="big">
           <List.Item as="li">
             Introduction
@@ -653,7 +654,9 @@ export const TermsAndConditionsOfUseView = (props) => (
             <br/>
             You can contact us by filling in the contact us form <Link to="/contact-us">here</Link>.
           </List.Item>
+
         </List>
+        </Container>
       </Segment>
     </Container>
   </div>

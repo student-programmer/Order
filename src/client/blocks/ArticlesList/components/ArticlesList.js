@@ -33,11 +33,9 @@ export const ArticlesList = (props) => (
                     <Container className="articlesList"> 
                      <Grid>
                         <Grid.Row >
-              
-                     
                             <Grid.Column >
                                 <Grid.Row>
-                            <Header as="h1">
+                            <Header as="h1" className="NamesArticles">
                                 { props.data[rowKey]['title'] }
                             </Header>
                             </Grid.Row>

@@ -83,7 +83,7 @@ export const HomeView = (props) => {
         <Container >
           <Grid textAlign='center' id="recommendationBlock">
             <Grid.Row textAlign="center">
-              <Grid.Column className="block-title-rates">
+              <Grid.Column  className="block-title-rates">
               Popular VPN rates
               </Grid.Column>
             </Grid.Row>
@@ -111,13 +111,13 @@ export const HomeView = (props) => {
         <Container>
         
           <Grid>
-            <Grid.Row columns={1} textAlign="center">
+            <Grid.Row columns={1} textAlign="center" className="TextChoose">
               <Grid.Column className="block-title choose">
                 Why choose us?
               </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={5} textAlign="center" stretched id="chooseUsBlock" centered>
-              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
+              <Grid.Column mobile={8} computer={3} textAlign="center" className="cardCentered">
                 <div className="first-item-block">
                   <Image
                   alt="price tag"
@@ -135,7 +135,7 @@ export const HomeView = (props) => {
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
+              <Grid.Column mobile={8} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="piggy bank"
@@ -154,7 +154,7 @@ export const HomeView = (props) => {
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
+              <Grid.Column mobile={8} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="percentages"
@@ -172,7 +172,7 @@ export const HomeView = (props) => {
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
+              <Grid.Column mobile={8} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="bank card"
@@ -190,7 +190,7 @@ export const HomeView = (props) => {
                     />
                 </div>
               </Grid.Column>
-              <Grid.Column mobile={12} computer={3} textAlign="center" className="cardCentered">
+              <Grid.Column mobile={8} computer={3} textAlign="center" className="cardCentered">
                 <div className="item-block">
                   <Image
                     alt="magnifier"
@@ -216,7 +216,7 @@ export const HomeView = (props) => {
         <Container>
           <Grid>
             <Grid.Row  column={1}>
-              <Grid.Column className="block-title category" textAlign="center" >
+              <Grid.Column className="block-title categoryHome" textAlign="center" >
                 Category
               </Grid.Column>
             </Grid.Row>

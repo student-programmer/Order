@@ -55,8 +55,8 @@ const head = (url) => {
               "@type": "Answer",
               "text": ""
             }
-        }
-      }]
+        }]
+      }
     `}</script>
     </Helmet>
 

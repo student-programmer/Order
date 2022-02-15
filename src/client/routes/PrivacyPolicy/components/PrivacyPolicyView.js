@@ -74,7 +74,8 @@ const head = (url) => {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": ""
-             }] 
+             }
+            }]
         }
     `}</script>
     </Helmet>

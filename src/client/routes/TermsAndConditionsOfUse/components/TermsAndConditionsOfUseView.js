@@ -54,8 +54,9 @@ const head = (url) => {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": ""
-            }]
+            }
         }
+      }]
     `}</script>
     </Helmet>
 
@@ -64,7 +65,6 @@ const head = (url) => {
 
 export const TermsAndConditionsOfUseView = (props) => (
   <div>
-  
     {head(props.url)}
     <Container>
       <Breadcrumb id="breadcrumb">

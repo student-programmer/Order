@@ -35,16 +35,12 @@ const head = (url) => {
       <meta name="robots" content="index, follow"/>
       <link rel="canonical" href={canonical}/>
       <script type="application/ld+json">{`
-        {
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": "vendor",
-          "description": "Vendor product",
-          "brand": {
-            "@type": "Brand",
-            "name": "Vendor product"
-          }
-        }
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "savingsdealz",
+        "url": "https://savingsdealz.com/"
+      }
     `}</script>
     </Helmet>
   )

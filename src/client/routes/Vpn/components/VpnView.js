@@ -53,6 +53,7 @@ const head = (url) => {
           "name": "vpn",
           "image": "https://api.savingsdealz.com/images/vpnsecure-logo.png",
           "description": "VPNsecure 1 month premium 50% Off",
+          "offers": "55$", 
           "brand": {
             "@type": "Brand",
             "name": "VPNSecure.me"

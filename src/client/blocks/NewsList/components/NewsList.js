@@ -32,14 +32,14 @@ export const NewsList = (props) => (
                     <Container className="NewsListChild"> 
                     <Grid>
                         <Grid.Row columns={2}>
-                            <Grid.Column computer={6}>
+                            <Grid.Column computer={5}>
                             <Image  verticalAlign='middle'
                             alt="news-image"
                             src={ props.data[rowKey]['image'] }
                             size='medium'
                         /> </Grid.Column>
                      
-                            <Grid.Column computer={10}>
+                            <Grid.Column computer={11}>
                                 <Grid.Row>
                             <Header as="h1" className="NamesNews">
                                 { props.data[rowKey]['title'] }

@@ -34,11 +34,13 @@ export const ArticlesList = (props) => (
                      <Grid>
                         <Grid.Row >
                             <Grid.Column >
-                                <Grid.Row>
+                                {/* <Grid.Row className="NamesArticlesRow">
+                                   
                             <Header as="h1" className="NamesArticles">
                                 { props.data[rowKey]['title'] }
                             </Header>
-                            </Grid.Row>
+  
+                            </Grid.Row> */}
                             <Grid.Row> 
                             <Grid.Column textAlign='left' computer={6}>
                             <p>
@@ -49,7 +51,9 @@ export const ArticlesList = (props) => (
                             src={ props.data[rowKey]['image'] }
                             size='medium'
                             vspace="5" hspace="5"
-                        />  <p className="articlesText">{ props.data[rowKey]['description'] }</p> </p> 
+                        />  <p className="NamesArticlesP"><Header as="h1" className="NamesArticles">
+                        { props.data[rowKey]['title'] }
+                    </Header> </p><p className="articlesText">{ props.data[rowKey]['description'] }</p> </p> 
                         </Grid.Column>
                                 
                                 </Grid.Row>

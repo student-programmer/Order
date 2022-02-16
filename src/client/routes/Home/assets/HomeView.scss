@@ -395,6 +395,9 @@
   }
 }
 @media only screen and (max-width: 670px){ 
+  .homeSeoText{
+    top:50px!important;
+  }
   .categoryHome{
     top: 0px!important;
   }
@@ -409,6 +412,9 @@
   }
 
 @media only screen and (max-width: 439px) {
+  .homeSeoText{
+    top:30px!important;
+  }
   
   .first-item-block, .item-block{
     width:170px;
@@ -420,11 +426,18 @@
          margin-bottom: none;
         top: 5px;
   }
+
   #homePage {
     .container {
       padding:0;
   
     }
+    .ChooseContainer{
+      padding-top:40px!important;
+    }
+  }
+  .CategoryContainer{
+    padding-top:40px!important;
   }
     #homePage #buyWithDiscountBlock div.button{
     display: none;

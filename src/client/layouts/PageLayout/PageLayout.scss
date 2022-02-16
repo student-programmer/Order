@@ -31,6 +31,11 @@
 #headerBlock .ui.menu .item {
     text-align: center;
 }
+@media only screen and (max-width: 439px) {
+    #headerBlock .ui.dropdown .menu{
+        top:62px!important;
+      }
+ }
 
 @media only screen and (max-width: 400px) {
     .LogoText{
@@ -48,6 +53,9 @@
         padding: 10px 5px 10px 5px!important;
         border:none;
     }
+    #headerBlock .ui.dropdown .menu{
+        top:62px!important;
+      }
 
     #headerBlock .ui.menu .item {
         padding: 10px !important;
@@ -64,33 +72,40 @@
     }
     .footerLinks{
         position:absolute;
-        text-align:center;
-        top:50px;
+        // text-align:center;
+        top:35px;
         left:-90px;
         width:250px!important;
 
 
     }
     #footerBlock{
-        height:250px!important;
+        height:190px!important;
+        position:relative;
     }
     .footerLinks1{
         position:absolute;
-        text-align:center;
-        top:50px;
-        left:-20px;
-        width:250px!important;
+        // text-align:center;
+        top:35px;
+        // left:-20px;
+        width:220px!important;
     }
     .ui.compact.vertical.menu{
         width:250px!important;
     }
+    .footer-sitemap-link{
+        position:absolute;
+    }
 }
 @media only screen and (max-width: 375px) {
     .footerLinks1{
-        left:-30px;
+        left:0px;
     }
     .footerLinks{
-        left:-80px;
+        left:-95px;
+    }
+    .footer-sitemap-link{
+        position:absolute;
     }
  }
 .iconsFooter{
@@ -108,6 +123,6 @@
 .footer-sitemap-link{
     color:white;
     font-size:10px;
-    right:0px;
-    bottom:0px;
+    left:5px;
+    bottom:5px;
 }

@@ -108,7 +108,7 @@ export const HomeView = (props) => {
       </Grid.Row>
     </Grid>
     </Container>
-        <Container>
+        <Container className="ChooseContainer">
         
           <Grid>
             <Grid.Row columns={1} textAlign="center" className="TextChoose">
@@ -213,7 +213,7 @@ export const HomeView = (props) => {
         </Container>
       </div>
       <div className="grey-block">
-        <Container>
+        <Container className="CategoryContainer">
           <Grid>
             <Grid.Row  column={1}>
               <Grid.Column className="block-title categoryHome" textAlign="center" >
@@ -531,7 +531,7 @@ export const HomeView = (props) => {
         <Container>
     <Grid>
       <Grid.Row columns={1}>
-              <Grid.Column className="block-title">
+              <Grid.Column className="block-title homeSeoText" >
               <Header as="h1" textAlign="center">
               The Best VPNs to Protect Yourself Online
         </Header>

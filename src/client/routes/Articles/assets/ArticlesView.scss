@@ -1,10 +1,11 @@
 .newsImage{
     float:left;
-   margin-right:145px;
+   margin-right:70px;
    margin-bottom:30px;
 }
 .articlesText{
-    text-align: left;
+    font-size:  14px !important;
+    text-align: justify;
 }
 .articlesList{
     margin: 40px 0;
@@ -14,6 +15,21 @@
 }
 .NamesArticles{
     font-size:25px!important;
+    text-align:left;
+//     left:calc(50%-40px);
+// transform: translateX(-50%);
+// position:absolute;
+
+}
+.NamesArticlesP{
+    margin-bottom:0!important;
+    font-size:  14px !important;
+    margin-block-start: 0px!important;
+    margin-block-end: 0px!important;
+}
+.NamesArticlesRow{
+text-align:none;
+
 }
 .ComponentName{
     font-size:40px!important;

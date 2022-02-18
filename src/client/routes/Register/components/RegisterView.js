@@ -51,10 +51,10 @@ export const RegisterView = (props) => (
     <Grid>
       <Grid.Row columns={1}  textAlign="center">
               <Grid.Column textAlign="center" className="block-title-register" >
-              <Header as="h1" textAlign="center">
+              <Header as="h1" textAlign="center" className="register-header">
               Find your VPN Online
         </Header>
-        <Header.Subheader as="h2" >
+        <Header.Subheader as="h2" className="register-header">
           Discover The Best VPN in Your Country
             </Header.Subheader>
               </Grid.Column>

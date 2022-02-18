@@ -44,7 +44,7 @@ export const QuestionView = (props) => (
     <Grid>
       <Grid.Row columns={1}>
               <Grid.Column >
-              <Header as="h1" textAlign="center">
+              <Header as="h1" textAlign="center" className="faq-header">
                 Frequently Asked Questions (FAQ)
                 </Header>
               </Grid.Column>

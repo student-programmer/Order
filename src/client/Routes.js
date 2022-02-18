@@ -15,7 +15,7 @@ import PrivacyPolicy from './routes/PrivacyPolicy'
 import TermsAndConditionsOfUse from './routes/TermsAndConditionsOfUse'
 import PagePayReturn from './routes/PagePayReturn'
 import News from './routes/News'
-import Sitemap from './routes/Sitemap/Sitemap'
+import Sitemap from './routes/Sitemap'
 import Page404 from './routes/Page404'
 import Articles from './routes/Articles'
 import Question from './routes/FAQ'
@@ -107,13 +107,13 @@ export default [
                 ...PagePayReturn,
                 path: '/payment/return',
             },
-            // {
-            //     Sitemap,
-            //     path:'/compare-'
-            // },
+            {
+                ...Sitemap,
+                path:'/sitemap'
+            },
             {
                 ...Page404,
-                path: '*',
+                path: '',
             },
         ]
     }

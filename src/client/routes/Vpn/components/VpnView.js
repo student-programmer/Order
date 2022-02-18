@@ -131,7 +131,7 @@ export const VpnView = (props) => (
     <Container>
     <Grid>
       <Grid.Row columns={1}>
-              <Grid.Column className="block-title">
+              <Grid.Column className="block-title vpn-seo-text">
               <Header as="h1" textAlign="center">
               The Best VPN Services for 2022
         </Header>

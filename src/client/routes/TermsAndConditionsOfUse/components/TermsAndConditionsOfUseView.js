@@ -81,7 +81,7 @@ export const TermsAndConditionsOfUseView = (props) => (
         </Breadcrumb.Section>
       </Breadcrumb>
       <Segment>
-        <Header as="h1" textAlign="center">
+        <Header as="h1" textAlign="center" id='termsHeader' className="termsHeaderDeals">
           Terms of Service
           <Header.Subheader as="h2">
           Important information

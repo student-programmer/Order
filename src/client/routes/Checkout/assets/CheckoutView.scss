@@ -1,7 +1,16 @@
+#checkout-header{
+    font-weight:500!important;
+}
+
 #checkoutBlock {
     .form {
         img {
             display: inline-block;
+        }
+    }
+    #mainCheck{
+        .ui.header{
+            font-weight:500;
         }
     }
 
@@ -58,6 +67,7 @@
         }
     }
 
+
     .payment-method-logo {
         max-width: 5em;
         max-height: 1em;
@@ -73,7 +83,7 @@
 .block-title-checkout {
     font-size: 40px;
     line-height: 50px;
-    font-weight: 500;
+    font-weight: 500!important;
     position:absolute;
     left:50%;
     transform:translateX(-50%)

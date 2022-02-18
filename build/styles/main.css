@@ -75,9 +75,7 @@
   .footerLinks1 {
     left: 0px; }
   .footerLinks {
-    left: -95px; }
-  .footer-sitemap-link {
-    position: absolute; } }
+    left: -95px; } }
 
 .iconsFooter {
   color: #fe3e3c;
@@ -90,12 +88,6 @@
 
 #footerBlock .ui.menu .item:hover {
   color: #fe3e3c; }
-
-.footer-sitemap-link {
-  color: white;
-  font-size: 10px;
-  left: 5px;
-  bottom: 5px; }
 
 #cartButton {
   position: relative; }
@@ -228,6 +220,9 @@
     #homePage #buyWithDiscountBlock div.button .button {
       width: 100%; }
 
+#homePage .seoTextMainBlock {
+  padding: 0px !important; }
+
 #homePage #feedbackBlock .card {
   background: transparent;
   box-shadow: none; }
@@ -317,6 +312,24 @@
   transition: all 0.5s ease;
   overflow: hidden; }
 
+#homePage .button-vpn-service {
+  color: #fe3e3c;
+  background-color: transparent;
+  border: 2px solid #fe3e3c;
+  border-radius: 5px;
+  right: 30px;
+  position: absolute;
+  top: 50px;
+  cursor: pointer;
+  z-index: 3; }
+
+#homePage .button-vpn-service:hover {
+  color: #b80200;
+  border: 2px solid #b80200; }
+
+#homePage .button-vpn-service2 {
+  display: none; }
+
 #homePage .block-title {
   font-size: 50px;
   line-height: 50px;
@@ -333,6 +346,7 @@
   line-height: 50px;
   font-weight: 500;
   position: absolute;
+  z-index: 3;
   top: 30px; }
 
 .seo-text {
@@ -354,6 +368,21 @@
     bottom: 8px; } }
 
 @media only screen and (max-width: 992px) {
+  .button-vpn-service2 {
+    display: inline-block !important;
+    color: #fe3e3c !important;
+    background-color: transparent !important;
+    border: 2px solid #fe3e3c !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    z-index: 3; }
+  .button-vpn-service {
+    display: none !important; }
+  .button-vpn-service2:hover {
+    color: #b80200;
+    border: 2px solid #b80200; }
+  .offerListHome {
+    margin-top: 50px !important; }
   .item-block {
     width: 200px; }
   .first-item-block {
@@ -506,7 +535,11 @@
 @media only screen and (max-width: 400px) {
   .block-title {
     font-size: 35px !important;
-    line-height: 35px !important; } }
+    line-height: 35px !important; }
+  .vpn-seo-text {
+    top: 0px !important; }
+  .vpn-page .block-title {
+    padding-top: 50px; } }
 
 .block-titleH2 {
   position: absolute;
@@ -558,6 +591,9 @@
   line-height: 50px;
   font-weight: 500;
   position: absolute; }
+
+.register-header {
+  font-weight: 500 !important; }
 
 @media only screen and (max-width: 400px) {
   .block-title-register {
@@ -612,6 +648,14 @@
   text-align: center;
   display: flex;
   justify-content: center; }
+
+.contact-header {
+  font-weight: 500 !important;
+  font-size: 40px !important; }
+
+.contact-header2 {
+  font-weight: 500 !important;
+  font-size: 25px; }
 
 @media only screen and (max-width: 400px) {
   .block-title {
@@ -703,8 +747,14 @@
     width: 70%;
     margin: 2em !important; } }
 
+#checkout-header {
+  font-weight: 500 !important; }
+
 #checkoutBlock .form img {
   display: inline-block; }
+
+#checkoutBlock #mainCheck .ui.header {
+  font-weight: 500; }
 
 #checkoutBlock #payBlock {
   width: 30.82%;
@@ -753,7 +803,7 @@
 .block-title-checkout {
   font-size: 40px;
   line-height: 50px;
-  font-weight: 500;
+  font-weight: 500 !important;
   position: absolute;
   left: 50%;
   transform: translateX(-50%); }
@@ -920,6 +970,9 @@
 .ListContainerPolice {
   width: 1000px !important; }
 
+.privicy-header {
+  font-weight: 500 !important; }
+
 @media only screen and (max-width: 1200px) {
   .ListContainerPolice {
     width: 800px !important; } }
@@ -930,6 +983,12 @@
 
 .ListContainerPolice {
   width: 1000px !important; }
+
+#termasHeader {
+  font-weight: 500 !important; }
+
+.termsHeaderDeals {
+  font-weight: 500 !important; }
 
 @media only screen and (max-width: 1200px) {
   .ListContainerPolice {
@@ -946,7 +1005,18 @@
   margin: 40px 0; }
 
 .NamesNews {
-  font-size: 25px !important; }
+  font-size: 25px !important;
+  font-weight: 500 !important; }
+
+.componentName {
+  font-weight: 500 !important; }
+
+.SitemapContainer li {
+  font-size: 16px; }
+
+.SitemapHeader {
+  margin-top: 20px !important;
+  font-weight: 500 !important; }
 
 .newsImage {
   float: left;
@@ -965,6 +1035,7 @@
 
 .NamesArticles {
   font-size: 25px !important;
+  font-weight: 500 !important;
   text-align: left; }
 
 .NamesArticlesP {
@@ -977,13 +1048,17 @@
   text-align: none; }
 
 .ComponentName {
-  font-size: 40px !important; }
+  font-size: 40px !important;
+  font-weight: 500 !important; }
 
 .accordingInFaq {
   width: 100px; }
 
 .block-title-question {
   margin-top: 40px; }
+
+.faq-header {
+  font-weight: 500 !important; }
 
 /* Slider */
 .slick-slider

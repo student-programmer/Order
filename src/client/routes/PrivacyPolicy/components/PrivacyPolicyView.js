@@ -100,7 +100,7 @@ export const PrivacyPolicyView = (props) => (
         </Breadcrumb.Section>
       </Breadcrumb>
       <Segment>
-        <Header as="h1" textAlign="center">
+        <Header as="h1" textAlign="center" className="privicy-header">
         Site privacy policy 
         <Header.Subheader as="h2">
         General Provisions 

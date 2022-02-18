@@ -45,7 +45,7 @@ const head = (url) => {
 }
 
 export const CheckoutView = (props) => (
-  <div>  
+  <div id="mainCheck">  
 
     {head(props.url)}
     <Container>
@@ -66,10 +66,10 @@ export const CheckoutView = (props) => (
     <Grid>
       <Grid.Row columns={1}  textAlign="center">
               <Grid.Column textAlign="center" className="block-title-checkout" >
-              <Header as="h1" textAlign="center">
+              <Header as="h1" textAlign="center" id="checkout-header">
               Checkout deals
         </Header>
-        <Header.Subheader as="h2" >
+        <Header.Subheader as="h2" id="checkout-header">
         Online shopping model steps
             </Header.Subheader>
               </Grid.Column>

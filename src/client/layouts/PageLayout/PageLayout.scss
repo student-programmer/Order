@@ -20,6 +20,12 @@
    top:50%;
    transform: translate(-50%, -50%);
 }
+// .footer-sitemap-link{
+//     color:white!important;
+//     font-size:10px!important;
+//     left:5px;
+//     bottom:5px;
+// }
 .iconsLink{
     width:25px;
     height:25px;
@@ -104,9 +110,9 @@
     .footerLinks{
         left:-95px;
     }
-    .footer-sitemap-link{
-        position:absolute;
-    }
+    // .footer-sitemap-link{
+    //     position:absolute;
+    // }
  }
 .iconsFooter{
     color:#fe3e3c;
@@ -119,10 +125,4 @@
 }
  #footerBlock .ui.menu .item:hover{
     color:#fe3e3c;
-}
-.footer-sitemap-link{
-    color:white;
-    font-size:10px;
-    left:5px;
-    bottom:5px;
 }

@@ -180,6 +180,10 @@
       }
     }
   }
+  .seoTextMainBlock{
+    padding:0px!important;
+  }
+
 
   #feedbackBlock {
     .card {
@@ -289,7 +293,26 @@
     transition: all 0.5s ease;
     overflow: hidden;
   }
-
+  .button-vpn-service{
+    color: #fe3e3c;
+    background-color: transparent;
+    border:2px solid #fe3e3c;
+    // width:150px;
+    // height:40px;
+    border-radius:5px;
+    right:30px;
+    position:absolute;
+    top:50px;
+    cursor:pointer;
+    z-index:3;
+  }
+  .button-vpn-service:hover{
+    color: #b80200;
+    border:2px solid #b80200;
+  }
+  .button-vpn-service2{
+    display:none;
+  }
   .block-title {
     font-size: 50px;
     line-height: 50px;
@@ -307,8 +330,10 @@
     line-height: 50px;
     font-weight: 500;
     position: absolute;
+    z-index:3;
     top: 30px;
   }
+
   // .block-title-category {
   //   font-size: 50px;
   //   line-height: 50px;
@@ -331,6 +356,11 @@
   font-size: 30px;
   line-height: 40px;
 }
+// #homePage #recommendationBlock .menu.secondary .item.active{
+
+//   right:50%;
+//   transform:translateX(-50%)
+// }
 
 @media only screen and (max-width: 1200px) {
   #homePage .card-button,
@@ -342,6 +372,32 @@
   }
 }
 @media only screen and (max-width: 992px) {
+  .button-vpn-service2{
+    display:inline-block!important;
+    color: #fe3e3c!important;
+    background-color: transparent!important;
+    border:2px solid #fe3e3c!important;
+    border-radius:5px!important;
+    cursor:pointer!important;
+    z-index:3;
+  }
+
+  .button-vpn-service{
+    display:none!important;
+  }
+  .button-vpn-service2:hover{
+    color: #b80200;
+    border:2px solid #b80200;
+  }
+
+  // #homePage #recommendationBlock .menu.secondary .item.active{
+
+  //   left:50%;
+  //   transform:translateX(-50%)
+  // }
+  .offerListHome{
+    margin-top:50px!important;
+  }
   .item-block {
     width: 200px;
   }
@@ -412,6 +468,10 @@
   }
 
 @media only screen and (max-width: 439px) {
+  // #homePage #recommendationBlock .menu.secondary .item.active{
+  //   top:2320px;
+
+  // }
   .homeSeoText{
     top:30px!important;
   }
@@ -432,6 +492,7 @@
       padding:0;
   
     }
+
     .ChooseContainer{
       padding-top:40px!important;
     }
@@ -463,6 +524,9 @@
   }
 }
 @media only screen and (max-width: 400px) {
+  #homePage #recommendationBlock .menu.secondary .item.active{
+
+  }
   .TextChoose{
     height:10px;
   }

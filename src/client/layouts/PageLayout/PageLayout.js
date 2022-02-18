@@ -15,7 +15,8 @@ import {
     Grid,
     Icon,
     Image, 
-    Button
+    Button,
+    Header
 } from 'semantic-ui-react'
 
 
@@ -130,6 +131,13 @@ class PageLayout extends  React.Component{
                                     >
                                        Articles
                                     </Menu.Item>
+                                    <Menu.Item
+                                        as={Link}
+                                        to='/sitemap'
+                                        className="footer-link"
+                                    >
+                                       Sitemap
+                                    </Menu.Item>
                               
                                 </Menu>
                             </Grid.Column>
@@ -182,8 +190,8 @@ class PageLayout extends  React.Component{
                             </Grid.Column>
                         </div>
                     </div>
-                    <a 
-                    href="/sitemap.xml" className="footer-sitemap-link">sitemap</a>
+                    {/* <Header as={Link}
+                    to="/sitemap" className="footer-sitemap-link" >sitemap</Header> */}
                 </div>
             </React.Fragment>
         )

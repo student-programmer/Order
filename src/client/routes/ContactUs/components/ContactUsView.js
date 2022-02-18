@@ -26,8 +26,8 @@ const head = (url) => {
 export const ContactUsView = (props) => (
   <div>
 
-  <h1 className='block-title marginContackt'>Сontact details </h1>
-  <h2 className='block-title2 marginContackt'>Savingsdealz is a comparison platform</h2>
+  <h1 className='block-title marginContackt contact-header'>Сontact details </h1>
+  <h2 className='block-title2 marginContackt contact-header2'>Savingsdealz is a comparison platform</h2>
            
     {head(props.url)}
     <Container className="containerContacktUs">

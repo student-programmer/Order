@@ -87,7 +87,18 @@ export const HomeView = (props) => {
               Popular VPN rates
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row columnst={1}>
+            <Grid.Row textAlign="right">
+              <Grid.Column>
+                <Button
+                 className="button-vpn-service"
+                 as={Link}
+                 to="/vpn"
+                 primary
+                 content="VPN service"
+                />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columnst={1} className="offerListHome">
               <Grid.Column> 
                 {/* <Tab panes={props.getRecomedationPanes()}/> */}
           
@@ -95,11 +106,22 @@ export const HomeView = (props) => {
           
                 </Grid.Column>
             </Grid.Row>
+            <Grid.Row textAlign="center">
+              <Grid.Column>
+              <Button
+                 className="button-vpn-service2"
+                 as={Link}
+                 to="/vpn"
+                 primary
+                 content="VPN service"
+                />
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </Container>
         </div>
       <div className="white-block">
-      <Container> 
+      <Container className="sliderContainer"> 
       <Grid>
            <Grid.Row textAlign="center" id="sliderBlock">
           <Grid.Column width={16} verticalAlign="middle">
@@ -528,7 +550,7 @@ export const HomeView = (props) => {
             </Grid.Row>
           </Grid>
         </Container>
-        <Container>
+        <Container className="seoTextMainBlock">
     <Grid>
       <Grid.Row columns={1}>
               <Grid.Column className="block-title homeSeoText" >
@@ -541,7 +563,7 @@ export const HomeView = (props) => {
         <Header as="h2" textAlign="center">
         Safe and confidential Internet access
         </Header>
-        <div><p>What are VPNs and what are they for?<br/>
+        <div className="seoTextMainBlockChild"><p>What are VPNs and what are they for?<br/>
            VPN (Virtual Private Network) is a technology that allows you to run a virtual cable through the Internet to your remote network (server). Today World Wide Web became a very insecure place. Everyone needs protection, and much more people are ready to sacrifice rate for security, we provide a better solution, no sacrifices, we provide the best VPN service, fastest, and safest.</p>
            <Header as="h2" textAlign="center">
            What is a VPN?
@@ -551,14 +573,7 @@ export const HomeView = (props) => {
           Best VPN with the highest speed, sounds amazing, but, how much does it cost? Our prices will pleasantly surprise you, as they surprise and please, thousands of our customers. The first-rate VPN for any purpose. Choose what you want and enjoy speed and security always and everywhere.</p><br/>
             </div>
               </Grid.Column>
-
            </Grid.Row>
-        
-         {/* <Grid.Row id="sliderBlock">
-          <Grid.Column width={16} verticalAlign="middle">
-            <MainSlider/>
-          </Grid.Column> 
-        </Grid.Row>*/}
       </Grid>
     </Container>
       </div>

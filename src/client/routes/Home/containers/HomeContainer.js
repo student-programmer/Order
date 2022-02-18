@@ -272,7 +272,7 @@ class HomeContainer extends React.Component {
    
       return [
         {
-          // menuItem: 'VPN service',
+          // menuItem: 'VPN service' href="",
           render: () => (
             
             <Grid textAlign='center'> 

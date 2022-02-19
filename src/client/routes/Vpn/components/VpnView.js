@@ -128,7 +128,7 @@ export const VpnView = (props) => (
         </Grid.Row>
       </Grid>
     </Container>
-    <Container>
+    <Container className="vpn-main-seo-container">
     <Grid>
       <Grid.Row columns={1}>
               <Grid.Column className="block-title vpn-seo-text">
@@ -148,7 +148,7 @@ export const VpnView = (props) => (
         </Header>
          <p> VPN connection service is called a "tunnel" between user's computer and a server. Each node encrypts data before it enters the "tunnel". What is a VPN serves for and when to use a VPN facility?  You connect to the VPN exploitation, the system identifies your network and starts authentication (compares the password you entered with the password in its database). Then the server authorizes you the right to perform certain actions: read your mail, surf the Internet, etc. Once the connection is established, all traffic is transmitted between your PC and the server in encrypted form. Your PC has an IP address provided by your Internet service provider. How to unblock movies, recent TV shows and other media resources with a VPN ministry? Sometimes your IP blocks access to some sites. The VPN server changes your IP to its own. Already from the VPN server all data is transmitted to external resources that you request. Now you can use our VPN servicing to browse any resources and not be tracked.<br/>
          Why our VPN maintenance is one of the best VPN departments in the world? <br/>
-         Everything is pretty simple, we’re fastest and safest VPN servicing.</p><br/>
+         Everything is pretty simple, we’re fastest and safest VPN servicing.</p>
             </div>
               </Grid.Column>
            </Grid.Row>

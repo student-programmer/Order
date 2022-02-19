@@ -570,7 +570,7 @@ export const HomeView = (props) => {
         </Header>
          <p> The general hallmarks of outstanding VPN’s choice are connection rate and data encryption quality. You have been looking the prime VPN for a long time, or, happy accident led you here, be sure, you are at the right place, the best VPN for gaming, mining & crypto-trading from every part of the world. A good VPN is fast and secure... what is the superior VPN? Fastest VPN that provides such rate and level of security that you just don't notice it. Confidence and full situation control, that's what perfect VPN is.<br/>
           VPN works on «above» the Internet. This means, you can connect to it from anywhere. The principle of VPN is to create a secure connection over the network. The connection encrypts and protects the data being sent.<br/>
-          Best VPN with the highest speed, sounds amazing, but, how much does it cost? Our prices will pleasantly surprise you, as they surprise and please, thousands of our customers. The first-rate VPN for any purpose. Choose what you want and enjoy speed and security always and everywhere.</p><br/>
+          Best VPN with the highest speed, sounds amazing, but, how much does it cost? Our prices will pleasantly surprise you, as they surprise and please, thousands of our customers. The first-rate VPN for any purpose. Choose what you want and enjoy speed and security always and everywhere.</p>
             </div>
               </Grid.Column>
            </Grid.Row>

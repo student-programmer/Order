@@ -104,6 +104,9 @@
   }
 
   #recommendationBlock {
+    .ui.secondary.menu{
+      display:none;
+    }
     .menu.secondary .item.active {
       border: 2px solid #fe3e3c;
       box-sizing: border-box;
@@ -181,7 +184,8 @@
     }
   }
   .seoTextMainBlock{
-    padding:0px!important;
+    padding-top:0px!important;
+    padding-bottom:30px;
   }
 
 
@@ -300,9 +304,9 @@
     // width:150px;
     // height:40px;
     border-radius:5px;
-    right:30px;
+    right:0px;
     position:absolute;
-    top:50px;
+    top:-10px;
     cursor:pointer;
     z-index:3;
   }
@@ -468,10 +472,9 @@
   }
 
 @media only screen and (max-width: 439px) {
-  // #homePage #recommendationBlock .menu.secondary .item.active{
-  //   top:2320px;
-
-  // }
+  .offerListHome{
+    margin-top:20px!important;
+  }
   .homeSeoText{
     top:30px!important;
   }
@@ -524,9 +527,7 @@
   }
 }
 @media only screen and (max-width: 400px) {
-  #homePage #recommendationBlock .menu.secondary .item.active{
 
-  }
   .TextChoose{
     height:10px;
   }

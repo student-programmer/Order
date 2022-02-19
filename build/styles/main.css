@@ -176,6 +176,8 @@
   /*    .slick-track .slick-active:last-child {
             margin-right: 0;
         }*/ }
+  #homePage #recommendationBlock .ui.secondary.menu {
+    display: none; }
   #homePage #recommendationBlock .menu.secondary .item.active {
     border: 2px solid #fe3e3c;
     box-sizing: border-box;
@@ -221,7 +223,8 @@
       width: 100%; }
 
 #homePage .seoTextMainBlock {
-  padding: 0px !important; }
+  padding-top: 0px !important;
+  padding-bottom: 30px; }
 
 #homePage #feedbackBlock .card {
   background: transparent;
@@ -317,9 +320,9 @@
   background-color: transparent;
   border: 2px solid #fe3e3c;
   border-radius: 5px;
-  right: 30px;
+  right: 0px;
   position: absolute;
-  top: 50px;
+  top: -10px;
   cursor: pointer;
   z-index: 3; }
 
@@ -435,6 +438,8 @@
     line-height: 35px !important; } }
 
 @media only screen and (max-width: 439px) {
+  .offerListHome {
+    margin-top: 20px !important; }
   .homeSeoText {
     top: 30px !important; }
   .first-item-block, .item-block {
@@ -531,6 +536,9 @@
   line-height: 50px;
   font-weight: 500;
   margin-top: 50px; }
+
+.vpn-main-seo-container {
+  padding-bottom: 30px !important; }
 
 @media only screen and (max-width: 400px) {
   .block-title {
